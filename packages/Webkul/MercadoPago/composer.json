@@ -1,0 +1,27 @@
+{
+    "name": "bagisto/mercadopago",
+    "description": "Mercado Pago Payment Gateway for Bagisto",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Julian Vasquez",
+            "email": "julian@javm.tech"
+        }
+    ],
+    "require": {
+        "mercadopago/dx-php": "^2.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Webkul\\MercadoPago\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Webkul\\MercadoPago\\Providers\\MercadoPagoServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev"
+}
