@@ -4383,16 +4383,16 @@
         },
         {
             "name": "midnightgb/mercadopago",
-            "version": "1.0.1",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Midnightgb/mercadopago-payment-gateaway.git",
-                "reference": "509d558f1784292eb7c4fd09735712e136c8b645"
+                "reference": "71d6704204b16df1c9828a3fb0677e8b39433330"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Midnightgb/mercadopago-payment-gateaway/zipball/509d558f1784292eb7c4fd09735712e136c8b645",
-                "reference": "509d558f1784292eb7c4fd09735712e136c8b645",
+                "url": "https://api.github.com/repos/Midnightgb/mercadopago-payment-gateaway/zipball/71d6704204b16df1c9828a3fb0677e8b39433330",
+                "reference": "71d6704204b16df1c9828a3fb0677e8b39433330",
                 "shasum": ""
             },
             "require": {
@@ -4424,9 +4424,9 @@
             "description": "Mercado Pago Payment Gateway for Bagisto",
             "support": {
                 "issues": "https://github.com/Midnightgb/mercadopago-payment-gateaway/issues",
-                "source": "https://github.com/Midnightgb/mercadopago-payment-gateaway/tree/1.0.1"
+                "source": "https://github.com/Midnightgb/mercadopago-payment-gateaway/tree/1.1.2"
             },
-            "time": "2025-03-15T21:22:46+00:00"
+            "time": "2025-03-16T01:28:05+00:00"
         },
         {
             "name": "mobiledetect/mobiledetectlib",
