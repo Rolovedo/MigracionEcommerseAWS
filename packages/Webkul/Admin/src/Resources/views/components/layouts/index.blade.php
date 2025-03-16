@@ -122,8 +122,7 @@
                 <div class="mt-auto pt-6">
                     <div class="border-t bg-white py-6 text-center text-sm font-normal dark:border-gray-800 dark:bg-gray-900 dark:text-white">
                         @lang('admin::app.components.layouts.powered-by.description', [
-                            'bagisto' => '<a class="text-blue-600 hover:underline dark:text-darkBlue" href="https://bagisto.com/en/">Bagisto</a>',
-                            'webkul' => '<a class="text-blue-600 hover:underline dark:text-darkBlue" href="https://webkul.com/">Webkul</a>',
+                        'J&D Digital Labs' => '<a class="text-blue-600 hover:underline" href="https://github.com/J-D-Digital-Labs">J&D Digital Labs</a>'
                         ])
                     </div>
                 </div>
