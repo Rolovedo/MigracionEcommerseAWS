@@ -10,7 +10,7 @@
     >
         <!-- Left Panel -->
         <div class="flex flex-1 flex-col gap-2 max-xl:flex-auto">
-            <div class="box-shadow rounded bg-white p-4 dark:bg-gray-900">
+            <div class="box-shadow rounded bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900">
                 <!-- Add Links-->
                 <div class="mb-2.5 flex items-center justify-between gap-x-2.5">
                     <div class="flex flex-col gap-1">
@@ -71,7 +71,7 @@
                             <div class="flex gap-2.5">
                                 <div class="grid place-content-start gap-1.5">
                                     <p class="text-gray-600 dark:text-gray-300">
-                                        @lang('admin::app.settings.themes.edit.column'): 
+                                        @lang('admin::app.settings.themes.edit.column'):
 
                                         <span class="text-gray-600 transition-all dark:text-gray-300">
                                             @{{ link.column }}
@@ -113,17 +113,17 @@
                             <!-- Actions -->
                             <div class="grid place-content-start gap-1 text-right">
                                 <div class="flex items-center gap-x-5">
-                                    <p 
+                                    <p
                                         class="cursor-pointer text-blue-600 transition-all hover:underline"
                                         @click="edit(link, key)"
-                                    > 
+                                    >
                                         @lang('admin::app.settings.themes.edit.edit')
                                     </p>
 
-                                    <p 
+                                    <p
                                         class="cursor-pointer text-red-600 transition-all hover:underline"
                                         @click="remove(link, key)"
-                                    > 
+                                    >
                                         @lang('admin::app.settings.themes.edit.delete')
                                     </p>
                                 </div>
@@ -141,7 +141,7 @@
                         src="{{ bagisto_asset('images/empty-placeholders/default.svg') }}"
                         alt="@lang('admin::app.settings.themes.edit.footer-link')"
                     >
-    
+
                     <div class="flex flex-col items-center gap-1.5">
                         <p class="text-base font-semibold text-gray-400">
                             @lang('admin::app.settings.themes.edit.footer-link')
@@ -252,7 +252,7 @@
 
                         <!-- Modal Footer -->
                         <x-slot:footer>
-                            <button 
+                            <button
                                 type="submit"
                                 class="cursor-pointer rounded-md border border-blue-700 bg-blue-600 px-3 py-1.5 font-semibold text-gray-50"
                             >
@@ -329,7 +329,7 @@
                     this.isUpdating = true;
 
                     this.$refs.footerLinkUpdateOrCreateModal.setValues({
-                        ...footerLink, 
+                        ...footerLink,
                         key,
                     });
 
@@ -338,4 +338,4 @@
             },
         });
     </script>
-@endPushOnce    
+@endPushOnce

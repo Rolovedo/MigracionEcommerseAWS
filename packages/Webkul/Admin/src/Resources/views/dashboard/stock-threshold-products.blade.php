@@ -26,7 +26,7 @@
                     class="relative"
                     v-for="product in report.statistics"
                 >
-                    <div class="row grid grid-cols-2 gap-y-6 border-b bg-white p-4 transition-all hover:bg-gray-50 dark:border-gray-800 dark:bg-gray-900 dark:hover:bg-gray-950 max-sm:grid-cols-[1fr_auto]">
+                    <div class="row grid grid-cols-2 gap-y-6 border-b bg-white p-4 transition-all hover:bg-gray-50 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:bg-zinc-950 max-sm:grid-cols-[1fr_auto]">
                         <div class="flex gap-2.5">
                             <template v-if="product.image">
                                 <div class="">
@@ -89,12 +89,12 @@
             >
                 <div class="grid justify-center justify-items-center gap-3.5 px-2.5 py-10">
                     <img src="{{ bagisto_asset('images/icon-add-product.svg') }}" class="h-20 w-20 dark:mix-blend-exclusion dark:invert">
-                    
+
                     <div class="flex flex-col items-center">
                         <p class="text-base font-semibold text-gray-400">
                             @lang('admin::app.dashboard.index.empty-threshold')
                         </p>
-    
+
                         <p class="text-gray-400">
                             @lang('admin::app.dashboard.index.empty-threshold-description')
                         </p>

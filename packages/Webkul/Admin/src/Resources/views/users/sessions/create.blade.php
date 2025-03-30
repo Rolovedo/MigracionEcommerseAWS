@@ -21,7 +21,7 @@
                 />
             @endif
 
-            <div class="box-shadow flex min-w-[300px] flex-col rounded-md bg-white dark:bg-gray-900">
+            <div class="box-shadow flex min-w-[300px] flex-col rounded-md bg-white dark:border-zinc-800 dark:bg-zinc-900">
                 <!-- Login Form -->
                 <x-admin::form :action="route('admin.session.store')">
                     <p class="p-4 text-xl font-bold text-gray-800 dark:text-white">

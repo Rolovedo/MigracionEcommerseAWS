@@ -34,7 +34,7 @@
         <!-- Container -->
         <div class="mt-3.5 flex gap-2.5 max-xl:flex-wrap">
             <!-- Left Container -->
-            <div class="box-shadow flex flex-1 flex-col gap-2 rounded bg-white dark:bg-gray-900 max-xl:flex-auto">
+            <div class="box-shadow flex flex-1 flex-col gap-2 rounded bg-white dark:border-zinc-800 dark:bg-zinc-900 max-xl:flex-auto">
                 <v-family-attributes>
                     <x-admin::shimmer.catalog.families.attributes-panel />
                 </v-family-attributes>
@@ -50,7 +50,7 @@
                             @lang('admin::app.catalog.families.create.general')
                         </p>
                     </x-slot>
-                
+
                     <!-- Panel Content -->
                     <x-slot:content>
                         <!-- Code -->
@@ -98,8 +98,8 @@
     </x-admin::form>
 
     @pushOnce('scripts')
-        <script 
-            type="text/x-template" 
+        <script
+            type="text/x-template"
             id="v-family-attributes-template"
         >
             <div>
@@ -115,12 +115,12 @@
                             @lang('admin::app.catalog.families.create.groups-info')
                         </p>
                     </div>
-                    
+
                     <!-- Panel Content -->
                     <div class="flex items-center gap-x-1">
                         <!-- Delete Group Button -->
                         <div
-                            class="cursor-pointer whitespace-nowrap rounded-md border-2 border-transparent px-3 py-1.5 font-semibold text-red-600 transition-all hover:bg-gray-100 dark:hover:bg-gray-950"
+                            class="cursor-pointer whitespace-nowrap rounded-md border-2 border-transparent px-3 py-1.5 font-semibold text-red-600 transition-all hover:bg-gray-100 dark:hover:bg-zinc-950"
                             @click="deleteGroup"
                         >
                             @lang('admin::app.catalog.families.create.delete-group-btn')
@@ -149,7 +149,7 @@
                                     : "@lang('admin::app.catalog.families.create.right-column')"
                                 }}
                             </p>
-                            
+
                             <p class="text-xs font-medium text-gray-800 dark:text-white">
                                 @lang('admin::app.catalog.families.create.edit-group-info')
                             </p>
@@ -171,7 +171,7 @@
                                     <div class="group flex items-center">
                                         <!-- Toggle -->
                                         <i
-                                            class="icon-sort-down cursor-pointer rounded-md text-xl transition-all hover:bg-gray-100 group-hover:text-gray-800 dark:hover:bg-gray-950 dark:group-hover:text-white"
+                                            class="icon-sort-down cursor-pointer rounded-md text-xl transition-all hover:bg-gray-100 group-hover:text-gray-800 dark:hover:bg-zinc-950 dark:group-hover:text-white"
                                             @click="element.hide = ! element.hide"
                                         >
                                         </i>
@@ -247,7 +247,7 @@
                                                     :class="[element.is_user_defined ? 'icon-attribute' : 'icon-attribute-block']"
                                                 >
                                                 </i>
-                                                
+
 
                                                 <span class="font-regular text-sm transition-all group-hover:text-gray-800 dark:group-hover:text-white max-xl:text-xs">
                                                     @{{ element.admin_name }}
@@ -387,7 +387,7 @@
                                         </option>
                                     </x-admin::form.control-group.control>
 
-                                    <x-admin::form.control-group.error control-name="column" /> 
+                                    <x-admin::form.control-group.error control-name="column" />
                                 </x-admin::form.control-group>
                             </x-slot>
 
@@ -395,7 +395,7 @@
                             <x-slot:footer>
                                 <div class="flex items-center gap-x-2.5">
                                     <!-- Add Group Button -->
-                                    <button 
+                                    <button
                                         type="submit"
                                         class="primary-button"
                                     >
@@ -526,11 +526,11 @@
                     isGroupCodeAlreadyExists(code) {
                         return this.columnGroups[1].find(group => group.code == code) || this.columnGroups[2].find(group => group.code == code);
                     },
-                    
+
                     isGroupNameAlreadyExists(name) {
                         return this.columnGroups[1].find(group => group.name == name) || this.columnGroups[2]?.find(group => group.name == name);
                     },
-                    
+
                     isGroupContainsSystemAttributes(group) {
                         return group.custom_attributes.find(attribute => ! attribute.is_user_defined);
                     },

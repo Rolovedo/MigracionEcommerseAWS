@@ -13,10 +13,10 @@
         <template v-if="isLoading">
             <x-admin::shimmer.reporting.customers.top-customer-groups />
         </template>
-        
+
         <!-- Top Customers Section -->
         <template v-else>
-            <div class="box-shadow relative flex-1 rounded bg-white p-4 dark:bg-gray-900">
+            <div class="box-shadow relative flex-1 rounded bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900">
                 <!-- Header -->
                 <div class="mb-4 flex items-center justify-between">
                     <p class="text-base font-semibold text-gray-600 dark:text-white">

@@ -45,7 +45,7 @@
                 {!! view_render_event('bagisto.admin.settings.data_transfer.imports.create.card.general.before', ['import' => $import]) !!}
 
                 <!-- Setup Import Panel -->
-                <div class="box-shadow rounded bg-white p-4 dark:bg-gray-900">
+                <div class="box-shadow rounded bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900">
                     <p class="mb-4 text-base font-semibold text-gray-800 dark:text-white">
                         @lang('admin::app.settings.data-transfer.imports.edit.general')
                     </p>
@@ -99,8 +99,8 @@
                         @if(isset($import) && $import->file_path)
                             <div class="mt-2 text-sm text-gray-600 dark:text-gray-300">
                                 @lang('admin::app.settings.data-transfer.imports.edit.current-file'):
-                                <a 
-                                    href="{{ route('admin.settings.data_transfer.imports.download', $import->id) }}" 
+                                <a
+                                    href="{{ route('admin.settings.data_transfer.imports.download', $import->id) }}"
                                     class="cursor-pointer text-sm text-blue-600 transition-all hover:underline"
                                     target="_blank"
                                 >

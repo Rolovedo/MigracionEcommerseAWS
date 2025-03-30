@@ -1,4 +1,4 @@
-<div class="box-shadow rounded bg-white p-4 dark:bg-gray-900">
+<div class="box-shadow rounded bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900">
     <div class="flex justify-between">
         <!-- Total Reviews Count -->
         <p class="text-base font-semibold leading-none text-gray-800 dark:text-white">
@@ -25,7 +25,7 @@
             </template>
 
             <template v-else>
-                <div class="row grid grid-cols-[2fr_1fr_1fr] grid-rows-1 items-center border-b border-gray-200 bg-gray-50 px-4 py-2.5 text-sm text-gray-600 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-300">
+                <div class="row grid grid-cols-[2fr_1fr_1fr] grid-rows-1 items-center border-b border-gray-200 bg-gray-50 px-4 py-2.5 text-sm text-gray-600 dark:border-zinc-800 dark:bg-zinc-900 dark:text-gray-300">
                     <div
                         class="flex select-none items-center gap-2.5"
                         v-for="(columnGroup, index) in [['product_name', 'status', 'title', 'comment'], ['rating', 'created_at', 'product_review_id']]"
@@ -72,15 +72,15 @@
             </template>
 
             <template v-else>
-                <div 
+                <div
                     v-if="available.meta.total"
-                    class="grid gap-y-4 border-b p-4 transition-all hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-950"
+                    class="grid gap-y-4 border-b p-4 transition-all hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-zinc-950"
                     v-for="record in available.records"
                 >
                     <div class="flex justify-start [&amp;>*]:flex-1">
                         <div class="flex flex-col gap-1.5">
                             <!-- Review Name -->
-                            <p  
+                            <p
                                 class="text-base font-semibold leading-none text-gray-800 dark:text-white"
                                 v-text="record.name"
                             >
@@ -138,7 +138,7 @@
                         </div>
 
                         <!-- Review associated with product -->
-                        <a 
+                        <a
                             :href="`{{ route('admin.catalog.products.edit', '') }}/${record.product_id}`"
                             target="_blank"
                             class="icon-sort-right rtl:icon-sort-left cursor-pointer rounded-md p-1.5 text-2xl transition-all hover:bg-gray-200 dark:hover:bg-gray-800 ltr:ml-1 rtl:mr-1"
@@ -147,7 +147,7 @@
                     </div>
                 </div>
 
-                <div    
+                <div
                     v-else
                     class="table-responsive grid w-full"
                 >

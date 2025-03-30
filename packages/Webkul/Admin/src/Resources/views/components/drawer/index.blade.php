@@ -23,7 +23,7 @@
 
                 <div class="absolute top-3 ltr:right-3 rtl:left-3">
                     <span
-                        class="icon-cross cursor-pointer text-3xl hover:rounded-md hover:bg-gray-100 dark:hover:bg-gray-950"
+                        class="icon-cross cursor-pointer text-3xl hover:rounded-md hover:bg-gray-100 dark:hover:bg-zinc-950"
                         @click="close"
                     >
                     </span>
@@ -90,7 +90,7 @@
                 :leave-to-class="enterFromLeaveToClasses"
             >
                 <div
-                    class="fixed z-[10002] bg-white dark:bg-gray-900 max-sm:!w-full"
+                    class="fixed z-[10002] bg-white dark:border-zinc-800 dark:bg-zinc-900 max-sm:!w-full"
                     :class="{
                         'inset-x-0 top-0': position == 'top',
                         'inset-x-0 bottom-0': position == 'bottom',
@@ -100,7 +100,7 @@
                     :style="'width:' + width"
                     v-if="isOpen"
                 >
-                    <div class="pointer-events-auto h-full w-full overflow-auto bg-white dark:bg-gray-900">
+                    <div class="pointer-events-auto h-full w-full overflow-auto bg-white dark:border-zinc-800 dark:bg-zinc-900">
                         <div class="flex h-full w-full flex-col">
                             <div class="min-h-0 min-w-0 flex-1 overflow-auto">
                                 <div class="flex h-full flex-col">

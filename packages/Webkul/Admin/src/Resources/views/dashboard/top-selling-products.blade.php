@@ -34,7 +34,7 @@
                 >
                     <a
                         :href="`{{route('admin.catalog.products.edit', '')}}/${item.id}`"
-                        class="flex gap-2.5 border-b p-4 transition-all last:border-b-0 hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-950"
+                        class="flex gap-2.5 border-b p-4 transition-all last:border-b-0 hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-zinc-950"
                         v-for="item in report.statistics"
                     >
                         <!-- Product Item -->
@@ -49,7 +49,7 @@
                             class="relative h-[65px] max-h-[65px] w-full max-w-[65px] overflow-hidden rounded border border-dashed border-gray-300 dark:border-gray-800 dark:mix-blend-exclusion dark:invert"
                         >
                             <img src="{{ bagisto_asset('images/product-placeholders/front.svg')}}">
-                            
+
                             <p class="absolute bottom-1.5 w-full text-center text-[6px] font-semibold text-gray-400">
                                 @lang('admin::app.dashboard.index.product-image')
                             </p>

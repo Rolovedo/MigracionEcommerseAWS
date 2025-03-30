@@ -1,7 +1,7 @@
 <!-- Total Customer Vue Component -->
 <v-reporting-customers-total-customers>
     <!-- Shimmer -->
-    <x-admin::shimmer.reporting.customers.total-customers /> 
+    <x-admin::shimmer.reporting.customers.total-customers />
 </v-reporting-customers-total-customers>
 
 @pushOnce('scripts')
@@ -16,7 +16,7 @@
 
         <!-- Total Customer Section -->
         <template v-else>
-            <div class="box-shadow relative flex-1 rounded bg-white p-4 dark:bg-gray-900">
+            <div class="box-shadow relative flex-1 rounded bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900">
                 <!-- Header -->
                 <div class="mb-4 flex items-center justify-between">
                     <p class="text-base font-semibold text-gray-600 dark:text-white">
@@ -30,14 +30,14 @@
                         @lang('admin::app.reporting.customers.index.view-details')
                     </a>
                 </div>
-                
+
                 <!-- Content -->
                 <div class="grid gap-4">
                     <div class="flex gap-4">
                         <p class="text-3xl font-bold leading-9 text-gray-600 dark:text-gray-300">
                             @{{ report.statistics.customers.current }}
                         </p>
-                        
+
                         <div class="flex items-center gap-0.5">
                             <span
                                 class="text-base text-emerald-500"

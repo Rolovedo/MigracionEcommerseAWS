@@ -9,14 +9,14 @@
         type="text/x-template"
         id="v-reporting-product-top-selling-by-quantity-template"
     >
-        <!-- Shimmer --> 
+        <!-- Shimmer -->
         <template v-if="isLoading">
             <x-admin::shimmer.reporting.products.top-selling-by-quantity />
         </template>
-        
+
         <!-- Top Selling Products By Quantity Section -->
         <template v-else>
-            <div class="box-shadow relative flex-1 rounded bg-white p-4 dark:bg-gray-900">
+            <div class="box-shadow relative flex-1 rounded bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900">
                 <!-- Header -->
                 <div class="mb-4 flex items-center justify-between">
                     <p class="text-base font-semibold text-gray-600 dark:text-white">
@@ -30,7 +30,7 @@
                         @lang('admin::app.reporting.products.index.view-details')
                     </a>
                 </div>
-                
+
                 <!-- Content -->
                 <div class="grid gap-4">
                     <!-- Top Selling Products By Quantity -->

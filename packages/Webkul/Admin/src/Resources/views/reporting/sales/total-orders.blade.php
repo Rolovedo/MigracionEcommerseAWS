@@ -1,7 +1,7 @@
 <!-- Total Orders Vue Component -->
 <v-reporting-sales-total-orders>
     <!-- Shimmer -->
-    <x-admin::shimmer.reporting.sales.total-orders /> 
+    <x-admin::shimmer.reporting.sales.total-orders />
 </v-reporting-sales-total-orders>
 
 @pushOnce('scripts')
@@ -11,12 +11,12 @@
     >
         <!-- Shimmer -->
         <template v-if="isLoading">
-            <x-admin::shimmer.reporting.sales.total-orders /> 
+            <x-admin::shimmer.reporting.sales.total-orders />
         </template>
 
         <!-- Total Orders Section -->
         <template v-else>
-            <div class="box-shadow relative flex-1 rounded bg-white p-4 dark:bg-gray-900">
+            <div class="box-shadow relative flex-1 rounded bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900">
                 <!-- Header -->
                 <div class="mb-4 flex items-center justify-between">
                     <p class="text-base font-semibold text-gray-600 dark:text-white">
@@ -37,7 +37,7 @@
                         <p class="text-3xl font-bold leading-9 text-gray-600 dark:text-gray-300">
                             @{{ report.statistics.orders.current }}
                         </p>
-                        
+
                         <div class="flex items-center gap-0.5">
                             <span
                                 class="text-base text-emerald-500"

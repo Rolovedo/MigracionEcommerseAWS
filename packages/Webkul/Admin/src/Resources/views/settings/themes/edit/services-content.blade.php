@@ -9,18 +9,18 @@
         id="v-services-content-template"
     >
         <div class="flex flex-1 flex-col gap-2 max-xl:flex-auto">
-            <div class="box-shadow rounded bg-white p-4 dark:bg-gray-900">
+            <div class="box-shadow rounded bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900">
                 <div class="flex items-center justify-between gap-x-2.5">
                     <div class="flex flex-col gap-1">
                         <p class="text-base font-semibold text-gray-800 dark:text-white">
                             @lang('admin::app.settings.themes.edit.services-content.services')
                         </p>
-                        
+
                         <p class="text-xs font-medium text-gray-500 dark:text-gray-300">
                             @lang('admin::app.settings.themes.edit.services-content.service-info')
                         </p>
                     </div>
-    
+
                     <!-- Add Services Button -->
                     <div class="flex gap-2.5">
                         <div
@@ -70,9 +70,9 @@
                         :name="'{{ $currentLocale->code }}[options]['+ index +'][service_icon]'"
                         :value="service_details.service_icon"
                     />
-                
+
                     <!-- Service Details Listing -->
-                    <div 
+                    <div
                         class="flex cursor-pointer justify-between gap-2.5 py-5"
                         :class="{
                             'border-b border-slate-300 dark:border-gray-800': index < servicesContent.services.length - 1
@@ -81,8 +81,8 @@
                         <div class="flex gap-2.5">
                             <div class="grid place-content-start gap-1.5">
                                 <p class="text-gray-600 dark:text-gray-300">
-                                    <div> 
-                                        @lang('admin::app.settings.themes.edit.services-content.title'): 
+                                    <div>
+                                        @lang('admin::app.settings.themes.edit.services-content.title'):
 
                                         <span class="text-gray-600 transition-all dark:text-gray-300">
                                             @{{ service_details.title }}
@@ -91,8 +91,8 @@
                                 </p>
 
                                 <p class="text-gray-600 dark:text-gray-300">
-                                    <div> 
-                                        @lang('admin::app.settings.themes.edit.services-content.description'): 
+                                    <div>
+                                        @lang('admin::app.settings.themes.edit.services-content.description'):
 
                                         <span class="text-gray-600 transition-all dark:text-gray-300">
                                             @{{ service_details.description }}
@@ -101,7 +101,7 @@
                                 </p>
 
                                 <p class="text-gray-600 dark:text-gray-300">
-                                    @lang('admin::app.settings.themes.edit.services-content.service-icon'): 
+                                    @lang('admin::app.settings.themes.edit.services-content.service-icon'):
 
                                     <span class="text-gray-600 transition-all dark:text-gray-300">
                                         @{{ service_details.service_icon }}
@@ -113,17 +113,17 @@
                         <!-- Service Actions -->
                         <div class="grid place-content-start gap-1 text-right">
                             <div class="flex items-center gap-x-5">
-                                <p 
+                                <p
                                     class="cursor-pointer text-blue-600 transition-all hover:underline"
                                     @click="edit(service_details)"
-                                > 
+                                >
                                     @lang('admin::app.settings.themes.edit.edit')
                                 </p>
 
-                                <p 
+                                <p
                                     class="cursor-pointer text-red-600 transition-all hover:underline"
                                     @click="remove(service_details)"
-                                > 
+                                >
                                     @lang('admin::app.settings.themes.edit.services-content.delete')
                                 </p>
                             </div>
@@ -146,7 +146,7 @@
                         <p class="text-base font-semibold text-gray-400">
                             @lang('admin::app.settings.themes.edit.services-content.add-btn')
                         </p>
-                        
+
                         <p class="text-gray-400">
                             @lang('admin::app.settings.themes.edit.services-content.service-info')
                         </p>
@@ -159,7 +159,7 @@
                 v-slot="{ meta, errors, handleSubmit }"
                 as="div"
             >
-                <form 
+                <form
                     @submit="handleSubmit($event, saveServices)"
                     ref="createServiceForm"
                 >
@@ -236,7 +236,7 @@
                         <!-- Modal Footer -->
                         <x-slot:footer>
                             <div class="flex items-center gap-x-2.5">
-                                <button 
+                                <button
                                     type="submit"
                                     class="cursor-pointer rounded-md border border-blue-700 bg-blue-600 px-3 py-1.5 font-semibold text-gray-50"
                                 >
@@ -258,7 +258,7 @@
 
             data() {
                 return {
-                    
+
                     servicesContent: @json($theme->translate($currentLocale->code)['options'] ?? null),
 
                     deletedServices: [],
@@ -268,14 +268,14 @@
                     isUpdating: false
                 };
             },
-            
+
             created() {
                 if (
-                    this.servicesContent == null 
+                    this.servicesContent == null
                     || this.servicesContent.length == 0
                 ) {
                     this.servicesContent = { services: [] };
-                }  
+                }
             },
 
             methods: {
@@ -298,7 +298,7 @@
                         }
                         this.isUpdating = false;
                     }
-                        
+
                     this.$refs.addServiceModal.toggle();
                 },
 
@@ -306,11 +306,11 @@
                     this.$emitter.emit('open-confirm-modal', {
                         agree: () => {
                             this.deletedServices.push(service_details);
-                    
+
                             this.servicesContent.services = this.servicesContent.services.filter(item => {
                                 return (
-                                    item.title !== service_details.title || 
-                                    item.description !== service_details.description || 
+                                    item.title !== service_details.title ||
+                                    item.description !== service_details.description ||
                                     item.service_icon !== service_details.service_icon
                                 );
                             });
@@ -336,4 +336,4 @@
             },
         });
     </script>
-@endPushOnce    
+@endPushOnce

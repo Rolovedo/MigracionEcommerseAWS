@@ -16,7 +16,7 @@
 
         <!-- Tax Collected Section -->
         <template v-else>
-            <div class="box-shadow relative flex-1 rounded bg-white p-4 dark:bg-gray-900">
+            <div class="box-shadow relative flex-1 rounded bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900">
                 <!-- Header -->
                 <div class="mb-4 flex items-center justify-between">
                     <p class="text-base font-semibold text-gray-600 dark:text-white">
@@ -30,14 +30,14 @@
                         @lang('admin::app.reporting.sales.index.view-details')
                     </a>
                 </div>
-                
+
                 <!-- Content -->
                 <div class="grid gap-4">
                     <div class="flex justify-between gap-4">
                         <p class="text-3xl font-bold leading-9 text-gray-600 dark:text-gray-300">
                             @{{ report.statistics.tax_collected.formatted_total }}
                         </p>
-                        
+
                         <div class="flex items-center gap-0.5">
                             <span
                                 class="text-base text-emerald-500"

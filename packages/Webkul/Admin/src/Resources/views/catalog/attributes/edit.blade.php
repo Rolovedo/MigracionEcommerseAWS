@@ -57,7 +57,7 @@
                     {!! view_render_event('bagisto.admin.catalog.attributes.edit.card.label.before', ['attribute' => $attribute]) !!}
 
                     <!-- Label -->
-                    <div class="box-shadow rounded bg-white p-4 dark:bg-gray-900">
+                    <div class="box-shadow rounded bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900">
                         <p class="mb-4 text-base font-semibold text-gray-800 dark:text-white">
                             @lang('admin::app.catalog.attributes.edit.label')
                         </p>
@@ -103,7 +103,7 @@
 
                     <!-- Options -->
                     <div
-                        class="box-shadow rounded bg-white p-4 dark:bg-gray-900 {{ in_array($attribute->type, ['select', 'multiselect', 'checkbox', 'price']) ?: 'hidden' }}"
+                        class="box-shadow rounded bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900 {{ in_array($attribute->type, ['select', 'multiselect', 'checkbox', 'price']) ?: 'hidden' }}"
                         v-if="showSwatch"
                     >
                         <div class="mb-3 flex items-center justify-between">
@@ -223,7 +223,7 @@
                                         >
                                             <template #item="{ element, index }">
                                                 <x-admin::table.thead.tr
-                                                    class="hover:bg-gray-50 dark:hover:bg-gray-950"
+                                                    class="hover:bg-gray-50 dark:hover:bg-zinc-950"
                                                     v-show="! element.isDelete"
                                                 >
                                                     <th>
@@ -232,7 +232,7 @@
                                                             :name="'options[' + element.id + '][isNew]'"
                                                             :value="element.isNew"
                                                         >
-        
+
                                                         <input
                                                             type="hidden"
                                                             :name="'options[' + element.id + '][isDelete]'"
@@ -487,7 +487,7 @@
                             </x-admin::form.control-group>
                         </x-slot>
                     </x-admin::accordion>
-                    
+
                     {!! view_render_event('bagisto.admin.catalog.attributes.edit.card.accordion.general.after', ['attribute' => $attribute]) !!}
 
                     {!! view_render_event('bagisto.admin.catalog.attributes.edit.card.accordion.validations.before', ['attribute' => $attribute]) !!}
@@ -546,7 +546,7 @@
                                                 v-bind="field"
                                                 :value="{{ json_encode($attribute->regex) }}"
                                                 :class="[errors['{{ $attribute->regex }}'] ? 'border border-red-600 hover:border-red-600' : '']"
-                                                class="flex min-h-[39px] w-full cursor-not-allowed rounded-md border px-3 py-2 text-sm text-gray-600 transition-all hover:border-gray-400 focus:border-gray-400 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-300 dark:hover:border-gray-400 dark:focus:border-gray-400"
+                                                class="flex min-h-[39px] w-full cursor-not-allowed rounded-md border px-3 py-2 text-sm text-gray-600 transition-all hover:border-gray-400 focus:border-gray-400 dark:border-zinc-800 dark:bg-zinc-900 dark:text-gray-300 dark:hover:border-gray-400 dark:focus:border-gray-400"
                                                 placeholder="{{ trans('admin::app.catalog.attributes.create.regex') }}"
                                                 disabled
                                             >
@@ -605,7 +605,7 @@
                                     for="is_unique"
                                 >
                                     @lang('admin::app.catalog.attributes.edit.is-unique')
-                                </label>    
+                                </label>
 
                                 <x-admin::form.control-group.control
                                     type="hidden"
@@ -648,7 +648,7 @@
                                     class="cursor-not-allowed text-xs font-medium text-gray-600 dark:text-gray-300"
                                 >
                                     @lang('admin::app.catalog.attributes.edit.value-per-locale')
-                                </label>   
+                                </label>
 
                                 <x-admin::form.control-group.control
                                     type="hidden"
@@ -674,7 +674,7 @@
 
                                 <label class="cursor-not-allowed text-xs font-medium text-gray-600 dark:text-gray-300">
                                     @lang('admin::app.catalog.attributes.edit.value-per-channel')
-                                </label>   
+                                </label>
 
                                 <x-admin::form.control-group.control
                                     type="hidden"
@@ -707,7 +707,7 @@
                                     for="is_filterable"
                                 >
                                     @lang('admin::app.catalog.attributes.edit.is-filterable')
-                                </label> 
+                                </label>
 
                                 <x-admin::form.control-group.control
                                     type="hidden"
@@ -736,7 +736,7 @@
                                     for="is_configurable"
                                 >
                                     @lang('admin::app.catalog.attributes.edit.is-configurable')
-                                </label> 
+                                </label>
 
                                 <x-admin::form.control-group.control
                                     type="hidden"
@@ -765,7 +765,7 @@
                                     for="is_visible_on_front"
                                 >
                                     @lang('admin::app.catalog.attributes.edit.is-visible-on-front')
-                                </label> 
+                                </label>
 
                                 <x-admin::form.control-group.control
                                     type="hidden"
@@ -794,7 +794,7 @@
                                     for="is_comparable"
                                 >
                                     @lang('admin::app.catalog.attributes.edit.is-comparable')
-                                </label> 
+                                </label>
 
                                 <x-admin::form.control-group.control
                                     type="hidden"

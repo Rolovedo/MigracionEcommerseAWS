@@ -21,7 +21,7 @@
 <div class="mt-3.5 flex gap-2.5 max-xl:flex-wrap">
     <!-- Left Section -->
     <div class="flex flex-1 flex-col gap-2 max-xl:flex-auto">
-        <div class="box-shadow rounded bg-white p-4 dark:bg-gray-900">
+        <div class="box-shadow rounded bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900">
             <div class="flex justify-between">
                 <div class="shimmer h-[18px] w-[77px]"></div>
 
@@ -31,7 +31,7 @@
             <div>
                 <x-admin::shimmer.datagrid.toolbar />
 
-                <div class="table-responsive box-shadow mt-4 grid w-full overflow-hidden rounded bg-white dark:bg-gray-900">
+                <div class="table-responsive box-shadow mt-4 grid w-full overflow-hidden rounded bg-white dark:border-zinc-800 dark:bg-zinc-900">
 
                     <x-admin::shimmer.datagrid.table.head :isMultiRow="true" />
 
@@ -43,11 +43,11 @@
 
     <!--Right Section -->
     <div class="flex w-[360px] max-w-full flex-col gap-2 max-sm:w-full">
-        <div class="box-shadow rounded bg-white dark:bg-gray-900">
+        <div class="box-shadow rounded bg-white dark:border-zinc-800 dark:bg-zinc-900">
             <x-admin::shimmer.accordion class="!h-[200px]" />
         </div>
 
-        <div class="box-shadow rounded bg-white dark:bg-gray-900">
+        <div class="box-shadow rounded bg-white dark:border-zinc-800 dark:bg-zinc-900">
             <x-admin::shimmer.accordion />
         </div>
     </div>

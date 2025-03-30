@@ -25,8 +25,8 @@
                     @lang('admin::app.catalog.families.edit.back-btn')
                 </a>
 
-                <button 
-                    type="submit" 
+                <button
+                    type="submit"
                     class="primary-button"
                 >
                     @lang('admin::app.catalog.families.edit.save-btn')
@@ -40,7 +40,7 @@
 
             {!! view_render_event('bagisto.admin.catalog.families.edit.card.attributes-panel.before', ['attributeFamily' => $attributeFamily]) !!}
 
-            <div class="box-shadow flex flex-1 flex-col gap-2 rounded bg-white dark:bg-gray-900 max-xl:flex-auto">
+            <div class="box-shadow flex flex-1 flex-col gap-2 rounded bg-white dark:border-zinc-800 dark:bg-zinc-900 max-xl:flex-auto">
                 <v-family-attributes>
                     <x-admin::shimmer.catalog.families.attributes-panel />
                 </v-family-attributes>
@@ -49,7 +49,7 @@
             {!! view_render_event('bagisto.admin.catalog.families.edit.card.attributes-panel.after', ['attributeFamily' => $attributeFamily]) !!}
 
             {!! view_render_event('bagisto.admin.catalog.families.edit.card.accordion.general.before', ['attributeFamily' => $attributeFamily]) !!}
-    
+
             <!-- Right Container -->
             <div class="flex w-[360px] max-w-full select-none flex-col gap-2">
                 <!-- General Panel -->
@@ -60,7 +60,7 @@
                             @lang('admin::app.catalog.families.edit.general')
                         </p>
                     </x-slot>
-                
+
                     <!-- Panel Content -->
                     <x-slot:content>
                         <x-admin::form.control-group>
@@ -133,7 +133,7 @@
                             @lang('admin::app.catalog.families.edit.groups-info')
                         </p>
                     </div>
-                    
+
                     <!-- Panel Content -->
                     <div class="flex items-center gap-x-1">
                         <!-- Delete Group Button -->
@@ -167,7 +167,7 @@
                                     : "@lang('admin::app.catalog.families.edit.right-column')"
                                 }}
                             </p>
-                            
+
                             <p class="text-xs font-medium text-gray-800 dark:text-white">
                                 @lang('admin::app.catalog.families.edit.edit-group-info')
                             </p>
@@ -189,7 +189,7 @@
                                     <div class="group flex items-center">
                                         <!-- Toggle -->
                                         <i
-                                            class="icon-sort-down cursor-pointer rounded-md text-xl transition-all hover:bg-gray-100 group-hover:text-gray-800 dark:hover:bg-gray-950 dark:group-hover:text-white"
+                                            class="icon-sort-down cursor-pointer rounded-md text-xl transition-all hover:bg-gray-100 group-hover:text-gray-800 dark:hover:bg-zinc-950 dark:group-hover:text-white"
                                             @click="element.hide = ! element.hide"
                                         ></i>
 
@@ -218,7 +218,7 @@
                                                 :name="'attribute_groups[' + element.id + '][code]'"
                                                 :value="element.code"
                                             />
-                                            
+
                                             <input
                                                 type="text"
                                                 :name="'attribute_groups[' + element.id + '][name]'"
@@ -262,7 +262,7 @@
                                                     class="text-xl transition-all group-hover:text-gray-800 dark:group-hover:text-white"
                                                     :class="[parseInt(element.is_user_defined) ? 'icon-attribute' : 'icon-attribute-block']"
                                                 ></i>
-                                                
+
                                                 <span class="font-regular text-sm transition-all group-hover:text-gray-800 dark:group-hover:text-white max-xl:text-xs">
                                                     @{{ element.admin_name }}
                                                 </span>
@@ -406,7 +406,7 @@
                             <!-- Modal Footer -->
                             <x-slot:footer>
                                 <div class="flex items-center gap-x-2.5">
-                                    <button 
+                                    <button
                                         type="submit"
                                         class="primary-button"
                                     >
@@ -456,11 +456,11 @@
                         this.columnGroups[2] = this.columnGroups[2] || [];
 
                         return this.customAttributes.filter(attribute => {
-                            const isInGroup1 = this.columnGroups[1].some(group => 
+                            const isInGroup1 = this.columnGroups[1].some(group =>
                                 group.custom_attributes.some(customAttribute => customAttribute.id === attribute.id)
                             );
 
-                            const isInGroup2 = this.columnGroups[2].some(group => 
+                            const isInGroup2 = this.columnGroups[2].some(group =>
                                 group.custom_attributes.some(customAttribute => customAttribute.id === attribute.id)
                             );
 
@@ -540,15 +540,15 @@
 
                         this.$refs.addGroupModal.close();
                     },
-                    
+
                     isGroupCodeAlreadyExists(code) {
                         return this.columnGroups[1].find(group => group.code == code) || this.columnGroups[2].find(group => group.code == code);
                     },
-                    
+
                     isGroupNameAlreadyExists(name) {
                         return this.columnGroups[1].find(group => group.name == name) || this.columnGroups[2].find(group => group.name == name);
                     },
-                    
+
                     isGroupContainsSystemAttributes(group) {
                         return group.custom_attributes.find(attribute => ! attribute.is_user_defined);
                     },

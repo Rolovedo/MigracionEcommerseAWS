@@ -131,9 +131,9 @@
                                 v-else
                             >
                                 @lang('admin::app.catalog.products.edit.price.group.create.update-title')
-                            </p>    
+                            </p>
                         </x-slot>
-        
+
                         <!-- Modal Content -->
                         <x-slot:content>
                             {!! view_render_event('bagisto.admin.catalog.products.create_form.general.controls.before') !!}
@@ -142,7 +142,7 @@
                                 <x-admin::form.control-group.label>
                                     @lang('admin::app.catalog.products.edit.price.group.create.customer-group')
                                 </x-admin::form.control-group.label>
-    
+
                                 <x-admin::form.control-group.control
                                     type="select"
                                     name="customer_group_id"
@@ -167,7 +167,7 @@
                                     <x-admin::form.control-group.label class="required">
                                         @lang('admin::app.catalog.products.edit.price.group.create.qty')
                                     </x-admin::form.control-group.label>
-        
+
                                     <x-admin::form.control-group.control
                                         type="text"
                                         name="qty"
@@ -175,7 +175,7 @@
                                         v-model="selectedPrice.qty"
                                         :label="trans('admin::app.catalog.products.edit.price.group.create.qty')"
                                     />
-        
+
                                     <x-admin::form.control-group.error control-name="qty" />
                                 </x-admin::form.control-group>
 
@@ -183,7 +183,7 @@
                                     <x-admin::form.control-group.label class="required">
                                         @lang('admin::app.catalog.products.edit.price.group.create.price-type')
                                     </x-admin::form.control-group.label>
-        
+
                                     <x-admin::form.control-group.control
                                         type="select"
                                         name="value_type"
@@ -199,7 +199,7 @@
                                             @lang('admin::app.catalog.products.edit.price.group.create.discount')
                                         </option>
                                     </x-admin::form.control-group.control>
-        
+
                                     <x-admin::form.control-group.error control-name="value_type" />
                                 </x-admin::form.control-group>
 
@@ -207,7 +207,7 @@
                                     <x-admin::form.control-group.label class="required">
                                         @lang('admin::app.catalog.products.edit.price.group.create.price')
                                     </x-admin::form.control-group.label>
-        
+
                                     <x-admin::form.control-group.control
                                         type="text"
                                         name="value"
@@ -215,28 +215,28 @@
                                         v-model="selectedPrice.value"
                                         :label="trans('admin::app.catalog.products.edit.price.group.create.price')"
                                     />
-        
+
                                     <x-admin::form.control-group.error control-name="value" />
                                 </x-admin::form.control-group>
                             </div>
 
                             {!! view_render_event('bagisto.admin.catalog.products.create_form.general.controls.before') !!}
                         </x-slot>
-        
+
                         <!-- Modal Footer -->
                         <x-slot:footer>
                             <!-- Modal Submission -->
                             <div class="flex items-center gap-x-2.5">
                                 <button
                                     type="button"
-                                    class="cursor-pointer whitespace-nowrap rounded-md border-2 border-transparent px-3 py-1.5 font-semibold text-red-600 transition-all hover:bg-gray-100 dark:hover:bg-gray-950"
+                                    class="cursor-pointer whitespace-nowrap rounded-md border-2 border-transparent px-3 py-1.5 font-semibold text-red-600 transition-all hover:bg-gray-100 dark:hover:bg-zinc-950"
                                     @click="remove"
                                     v-if="selectedPrice.id"
                                 >
                                     @lang('admin::app.catalog.products.edit.price.group.create.delete-btn')
                                 </button>
 
-                                <button 
+                                <button
                                     type="submit"
                                     class="primary-button"
                                 >

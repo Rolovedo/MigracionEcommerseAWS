@@ -81,7 +81,7 @@
     {!! view_render_event('bagisto.admin.layout.head.after') !!}
 </head>
 
-<body class="h-full dark:bg-gray-950">
+<body class="h-full dark:bg-zinc-950">
     {!! view_render_event('bagisto.admin.layout.body.before') !!}
 
     <div
@@ -106,7 +106,7 @@
             <!-- Page Sidebar Blade Component -->
             <x-admin::layouts.sidebar />
 
-            <div class="flex min-h-[calc(100vh-62px)] max-w-full flex-1 flex-col bg-white pt-3 transition-all duration-300 dark:bg-gray-950 max-lg:!px-4 ltr:pl-[270px] group-[.sidebar-collapsed]/container:ltr:pl-[85px] rtl:pr-[286px] group-[.sidebar-collapsed]/container:rtl:pr-[85px]">
+            <div class="flex min-h-[calc(100vh-62px)] max-w-full flex-1 flex-col bg-white pt-3 transition-all duration-300 dark:bg-zinc-950 max-lg:!px-4 ltr:pl-[270px] group-[.sidebar-collapsed]/container:ltr:pl-[85px] rtl:pr-[286px] group-[.sidebar-collapsed]/container:rtl:pr-[85px]">
                 <!-- Added dynamic tabs for third level menus  -->
                 <!-- Todo @suraj-webkul need to optimize below statement. -->
                 @if (! request()->routeIs('admin.configuration.index'))
@@ -120,7 +120,7 @@
 
                 <!-- Powered By -->
                 <div class="mt-auto pt-6">
-                    <div class="border-t bg-white py-6 text-center text-sm font-normal dark:border-gray-800 dark:bg-gray-900 dark:text-white">
+                    <div class="border-t bg-white py-6 text-center text-sm font-normal dark:border-zinc-800 dark:bg-zinc-900 dark:text-white">
                         @lang('admin::app.components.layouts.powered-by.description', [
                         'J&D Digital Labs' => '<a class="text-blue-600 hover:underline" href="https://github.com/J-D-Digital-Labs">J&D Digital Labs</a>'
                         ])

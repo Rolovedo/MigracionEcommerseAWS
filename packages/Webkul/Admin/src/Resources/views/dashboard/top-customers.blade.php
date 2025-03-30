@@ -28,7 +28,7 @@
                 </div>
 
                 <div
-                    class="flex flex-col gap-8 border-b p-4 transition-all last:border-b-0 hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-950"
+                    class="flex flex-col gap-8 border-b p-4 transition-all last:border-b-0 hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-zinc-950"
                     v-if="report.statistics.length"
                     v-for="customer in report.statistics"
                 >

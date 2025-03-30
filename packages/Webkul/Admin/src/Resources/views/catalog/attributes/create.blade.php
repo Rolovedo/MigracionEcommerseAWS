@@ -37,7 +37,7 @@
                 </button>
             </div>
         </div>
-        
+
         <!-- Create Attributes Vue Components -->
         <v-create-attributes>
             <!-- Shimmer Effect -->
@@ -63,7 +63,7 @@
                 <!-- Left sub Component -->
                 <div class="flex flex-1 flex-col gap-2 overflow-auto max-xl:flex-auto">
                     <!-- Label -->
-                    <div class="box-shadow rounded bg-white p-4 dark:bg-gray-900">
+                    <div class="box-shadow rounded bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900">
                         <p class="mb-4 text-base font-semibold text-gray-800 dark:text-white">
                             @lang('admin::app.catalog.attributes.create.label')
                         </p>
@@ -105,7 +105,7 @@
 
                     <!-- Options -->
                     <div
-                        class="box-shadow rounded bg-white p-4 dark:bg-gray-900"
+                        class="box-shadow rounded bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900"
                         v-if="swatchAttribute && (
                                 attributeType == 'select'
                                 || attributeType == 'multiselect'
@@ -229,7 +229,7 @@
                                         item-key="id"
                                     >
                                         <template #item="{ element, index }">
-                                            <x-admin::table.thead.tr class="hover:bg-gray-50 dark:hover:bg-gray-950">
+                                            <x-admin::table.thead.tr class="hover:bg-gray-50 dark:hover:bg-zinc-950">
                                                 <!-- Draggable Icon -->
                                                 <x-admin::table.td class="!px-0 text-center">
                                                     <i class="icon-drag cursor-grab text-xl transition-all group-hover:text-gray-700"></i>
@@ -378,7 +378,7 @@
                                     <input
                                         type="text"
                                         id="code"
-                                        class="flex min-h-[39px] w-full rounded-md border px-3 py-2 text-sm text-gray-600 transition-all hover:border-gray-400 focus:border-gray-400 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-300 dark:hover:border-gray-400 dark:focus:border-gray-400"
+                                        class="flex min-h-[39px] w-full rounded-md border px-3 py-2 text-sm text-gray-600 transition-all hover:border-gray-400 focus:border-gray-400 dark:border-zinc-800 dark:bg-zinc-900 dark:text-gray-300 dark:hover:border-gray-400 dark:focus:border-gray-400"
                                         name="code"
                                         v-bind="field"
                                         placeholder="{{ trans('admin::app.catalog.attributes.create.code') }}"
@@ -449,7 +449,7 @@
                             </x-admin::form.control-group>
                         </x-slot>
                     </x-admin::accordion>
-                    
+
                     <!-- Validations -->
                     <x-admin::accordion>
                         <x-slot:header>

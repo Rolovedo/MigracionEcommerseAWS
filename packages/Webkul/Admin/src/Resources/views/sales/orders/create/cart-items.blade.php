@@ -23,7 +23,7 @@
         </template>
 
         <template v-else>
-            <div class="box-shadow rounded bg-white dark:bg-gray-900">
+            <div class="box-shadow rounded bg-white dark:border-zinc-800 dark:bg-zinc-900">
                 <div class="flex items-center justify-between p-4">
                     <p class="text-base font-semibold text-gray-800 dark:text-white">
                         @lang('admin::app.sales.orders.create.cart-items.title')
@@ -36,7 +36,7 @@
                     v-if="items.length"
                 >
                     <div
-                        class="row flex gap-2.5 border-b bg-white p-4 transition-all hover:bg-gray-50 dark:border-gray-800 dark:bg-gray-900 dark:hover:bg-gray-950"
+                        class="row flex gap-2.5 border-b bg-white p-4 transition-all hover:bg-gray-50 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:bg-zinc-950"
                         v-for="item in items"
                     >
                         <!-- Image -->
@@ -46,7 +46,7 @@
                         >
                             <template v-if="! item.product.images.length">
                                 <img src="{{ bagisto_asset('images/product-placeholders/front.svg') }}">
-                            
+
                                 <p class="absolute bottom-1.5 w-full text-center text-[6px] font-semibold text-gray-400">
                                     @lang('admin::app.catalog.products.edit.types.grouped.image-placeholder')
                                 </p>
@@ -77,7 +77,7 @@
 
                                 <template v-else-if="displayTax.prices == 'both'">
                                     @{{ item.formatted_price_incl_tax }}
-                                    
+
                                     <span class="text-xs font-normal">
                                         @lang('admin::app.sales.orders.create.cart-items.excl-tax')
 
@@ -150,12 +150,12 @@
                     v-else
                 >
                     <img src="{{ bagisto_asset('images/icon-add-product.svg') }}" class="h-20 w-20 dark:mix-blend-exclusion dark:invert">
-                    
+
                     <div class="flex flex-col items-center gap-1.5">
                         <p class="text-base font-semibold text-gray-400">
                             @lang('admin::app.sales.orders.create.cart-items.empty-title')
                         </p>
-    
+
                         <p class="text-gray-400">
                             @lang('admin::app.sales.orders.create.cart-items.empty-description')
                         </p>
@@ -182,7 +182,7 @@
                     },
 
                     items: [],
-                    
+
                     isLoading: false,
                 };
             },
