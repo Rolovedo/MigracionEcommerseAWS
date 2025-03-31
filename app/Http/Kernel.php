@@ -22,6 +22,7 @@ class Kernel extends HttpKernel
         \App\Http\Middleware\TrimStrings::class,
         \Webkul\Core\Http\Middleware\SecureHeaders::class,
         \Webkul\Installer\Http\Middleware\CanInstall::class,
+        \App\Http\Middleware\GeoLocationRedirect::class,
     ];
 
     /**
@@ -37,6 +38,7 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            \App\Http\Middleware\GeoLocationRedirect::class,
         ],
 
         'api' => [
