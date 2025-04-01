@@ -11,6 +11,11 @@ class GeoLocationRedirect
 {
     public function handle(Request $request, Closure $next)
     {
+        // No redirecciona el admin
+        if (str_starts_with($request->path(), 'admin')) {
+            return $next($request);
+        }
+
         try {
             // Obtener la IP real o la IP pública
             $ip = $this->getPublicIP();
@@ -20,7 +25,7 @@ class GeoLocationRedirect
             $response = Http::get("https://ipapi.co/{$ip}/json/");
             $data = $response->json();
 
-            Log::info('Datos de localización:', $data);
+            Log::info('Datos de localización:', is_array($data) ? $data : []);
 
             if (isset($data['country_code'])) {
                 $countryCode = strtoupper($data['country_code']);
