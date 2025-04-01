@@ -6,55 +6,60 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\Config;
 
 class GeoLocationRedirect
 {
     public function handle(Request $request, Closure $next)
     {
-        // Verificar si ya tenemos una cookie de redirección
-        if ($request->cookie('country_redirect')) {
-            return $next($request);
-        }
-
         try {
-            // Obtener el código del país (ya sea de prueba o real)
-            $countryCode = $request->query('test_country') ?? $this->getCountryFromIP($request->ip());
-            
-            Log::info('País detectado: ' . $countryCode);
+            // Obtener IP de prueba y loggear para debug
+            $testIP = config('app.test_ip') ?: env('TEST_IP');
+            $realIP = $request->ip();
+            $ip = $testIP ?: $realIP;
 
-            // Define las URLs de redirección
+            Log::info('Debug IP:', [
+                'TEST_IP from env' => env('TEST_IP'),
+                'Real IP' => $realIP,
+                'IP being used' => $ip
+            ]);
+
+            // Determinar país directamente por la IP de prueba
+            if ($ip === '181.191.255.255') {
+                $countryCode = 'AR';
+            } elseif ($ip === '152.231.255.255') {
+                $countryCode = 'CL';
+            } elseif ($ip === '181.234.255.255') {
+                $countryCode = 'CO';
+            } else {
+                // Si no es una IP de prueba, usar el servicio de geolocalización
+                $response = Http::get("http://ip-api.com/json/{$ip}");
+                $data = $response->json();
+                $countryCode = $data['countryCode'] ?? null;
+            }
+
+            Log::info('País detectado:', ['country' => $countryCode]);
+
+            // Definir redirecciones
             $redirectUrls = [
                 'AR' => 'https://es.wikipedia.org/wiki/Argentina',
                 'CL' => 'https://es.wikipedia.org/wiki/Chile',
                 'CO' => null
             ];
 
-            // Si el país está en nuestra lista y tiene URL de redirección
+            // Si es Argentina o Chile, redirigir
             if ($countryCode && isset($redirectUrls[$countryCode]) && $redirectUrls[$countryCode] !== null) {
-                Log::info('Redirigiendo a: ' . $redirectUrls[$countryCode]);
-                return redirect()->away($redirectUrls[$countryCode], 302); // Forzar redirección temporal
+                Log::info('Intentando redirección a: ' . $redirectUrls[$countryCode]);
+                
+                // Forzar la redirección usando header nativo
+                header('Location: ' . $redirectUrls[$countryCode]);
+                exit();
             }
 
         } catch (\Exception $e) {
-            Log::error('Error en redirección: ' . $e->getMessage());
+            Log::error('Error en redirección:', ['error' => $e->getMessage()]);
         }
 
-        // Si no hay redirección, establecer la cookie de todas formas
-        Cookie::queue('country_redirect', 'VISITED', 1440);
-        
         return $next($request);
-    }
-
-    private function getCountryFromIP($ip)
-    {
-        try {
-            $response = Http::get("http://ip-api.com/json/{$ip}");
-            $data = $response->json();
-            return $data['countryCode'] ?? null;
-        } catch (\Exception $e) {
-            Log::error('Error al obtener país desde IP: ' . $e->getMessage());
-            return null;
-        }
     }
 }
