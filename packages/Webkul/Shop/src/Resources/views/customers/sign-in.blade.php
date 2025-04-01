@@ -106,7 +106,7 @@
                             />
 
                             <label
-                                class="icon-uncheck peer-checked:icon-check-box cursor-pointer text-2xl text-navyBlue peer-checked:text-navyBlue max-sm:text-xl"
+                                class="icon-uncheck peer-checked:icon-check-box cursor-pointer text-2xl text-brown peer-checked:text-brown max-sm:text-xl"
                                 for="show-password"
                             ></label>
 
@@ -157,7 +157,7 @@
                 @lang('shop::app.customers.login-form.new-customer')
 
                 <a
-                    class="text-navyBlue"
+                    class="text-brown"
                     href="{{ route('shop.customers.register.index') }}"
                 >
                     @lang('shop::app.customers.login-form.create-your-account')

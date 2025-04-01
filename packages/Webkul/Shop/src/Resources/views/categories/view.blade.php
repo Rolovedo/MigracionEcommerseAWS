@@ -181,7 +181,7 @@
                         >
                             <!-- Spinner -->
                             <img
-                                class="h-5 w-5 animate-spin text-navyBlue"
+                                class="h-5 w-5 animate-spin text-brown"
                                 src="{{ bagisto_asset('images/spinner.svg') }}"
                                 alt="Loading"
                             />
