@@ -11,9 +11,3 @@
 |
 */
 
-Route::get('/test-redirect', function (Request $request) {
-    if ($request->query('test_country') === 'AR') {
-        return redirect()->away('https://es.wikipedia.org/wiki/Argentina');
-    }
-    return 'No redirect';
-});

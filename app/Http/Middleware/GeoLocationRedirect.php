@@ -6,60 +6,56 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Config;
 
 class GeoLocationRedirect
 {
     public function handle(Request $request, Closure $next)
     {
         try {
-            // Obtener IP de prueba y loggear para debug
-            $testIP = config('app.test_ip') ?: env('TEST_IP');
-            $realIP = $request->ip();
-            $ip = $testIP ?: $realIP;
+            // Obtener la IP real o la IP pública
+            $ip = $this->getPublicIP();
+            Log::info('IP detectada: ' . $ip);
 
-            Log::info('Debug IP:', [
-                'TEST_IP from env' => env('TEST_IP'),
-                'Real IP' => $realIP,
-                'IP being used' => $ip
-            ]);
+            // Usar ipapi.co en lugar de ip-api.com
+            $response = Http::get("https://ipapi.co/{$ip}/json/");
+            $data = $response->json();
 
-            // Determinar país directamente por la IP de prueba
-            if ($ip === '181.191.255.255') {
-                $countryCode = 'AR';
-            } elseif ($ip === '152.231.255.255') {
-                $countryCode = 'CL';
-            } elseif ($ip === '181.234.255.255') {
-                $countryCode = 'CO';
-            } else {
-                // Si no es una IP de prueba, usar el servicio de geolocalización
-                $response = Http::get("http://ip-api.com/json/{$ip}");
-                $data = $response->json();
-                $countryCode = $data['countryCode'] ?? null;
+            Log::info('Datos de localización:', $data);
+
+            if (isset($data['country_code'])) {
+                $countryCode = strtoupper($data['country_code']);
+                Log::info('País detectado: ' . $countryCode);
+
+                // Definir las redirecciones por país
+                $redirectUrls = [
+                    'AR' => 'https://javm.tech', // Prueba de redirección 
+                    'CL' => 'https://chile.javm.tech', // Prueba de redirección chile
+                    'CO' => null // Se queda en la página actual
+                ];
+
+                // Redirigir si el país está en nuestra lista
+                if (isset($redirectUrls[$countryCode]) && $redirectUrls[$countryCode] !== null) {
+                    Log::info('Redirigiendo a: ' . $redirectUrls[$countryCode]);
+                    return redirect()->away($redirectUrls[$countryCode]);
+                }
             }
-
-            Log::info('País detectado:', ['country' => $countryCode]);
-
-            // Definir redirecciones
-            $redirectUrls = [
-                'AR' => 'https://es.wikipedia.org/wiki/Argentina',
-                'CL' => 'https://es.wikipedia.org/wiki/Chile',
-                'CO' => null
-            ];
-
-            // Si es Argentina o Chile, redirigir
-            if ($countryCode && isset($redirectUrls[$countryCode]) && $redirectUrls[$countryCode] !== null) {
-                Log::info('Intentando redirección a: ' . $redirectUrls[$countryCode]);
-                
-                // Forzar la redirección usando header nativo
-                header('Location: ' . $redirectUrls[$countryCode]);
-                exit();
-            }
-
         } catch (\Exception $e) {
-            Log::error('Error en redirección:', ['error' => $e->getMessage()]);
+            Log::error('Error en la detección de ubicación: ' . $e->getMessage());
         }
 
         return $next($request);
+    }
+
+    private function getPublicIP()
+    {
+        try {
+            // Intentar obtener la IP pública usando un servicio externo
+            $response = Http::get('https://api.ipify.org?format=json');
+            $data = $response->json();
+            return $data['ip'] ?? null;
+        } catch (\Exception $e) {
+            Log::error('Error al obtener IP pública: ' . $e->getMessage());
+            return request()->ip();
+        }
     }
 }
