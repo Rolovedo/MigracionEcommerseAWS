@@ -81,7 +81,7 @@
 
                         @if (core()->getConfigData('customer.settings.wishlist.wishlist_option'))
                             <span
-                                class="absolute top-2.5 flex h-6 w-6 items-center justify-center rounded-full border border-brown-200 bg-red-500 text-lg md:hidden ltr:right-1.5 rtl:left-1.5"
+                                class="absolute top-2.5 flex h-6 w-6 items-center justify-center rounded-full border border-brown-200 bg-lightBrown text-lg md:hidden ltr:right-1.5 rtl:left-1.5"
                                 role="button"
                                 aria-label="@lang('shop::app.components.products.card.add-to-wishlist')"
                                 tabindex="0"
@@ -97,7 +97,7 @@
 
                         @if (core()->getConfigData('catalog.products.settings.compare_option'))
                             <span
-                                class="icon-compare absolute top-10 flex h-6 w-6 items-center justify-center rounded-full border border-brown-200 bg-brown-500 text-lg sm:hidden ltr:right-1.5 rtl:left-1.5"
+                                class="icon-compare absolute top-10 flex h-6 w-6 items-center justify-center rounded-full border border-brown-200 bg-lightBrown text-lg sm:hidden ltr:right-1.5 rtl:left-1.5"
                                 role="button"
                                 aria-label="@lang('shop::app.components.products.card.add-to-compare')"
                                 tabindex="0"
