@@ -2,7 +2,7 @@
 {!! view_render_event('bagisto.shop.checkout.cart.summary.estimate_shipping.before') !!}
 
 <x-shop::accordion
-    class="overflow-hidden rounded-xl border max-md:rounded-lg max-md:!border-none max-md:!bg-gray-100"
+    class="overflow-hidden rounded-xl border max-md:rounded-lg max-md:!border-none max-md:!bg-lightOrange"
     :is-active="false"
 >
     <x-slot:header class="font-semibold max-md:py-3 max-md:font-medium max-sm:p-2 max-sm:text-sm">

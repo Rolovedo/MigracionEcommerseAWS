@@ -15,7 +15,7 @@
         <x-shop::layouts.account.navigation />
     </div>
 
-    <span class="mb-5 mt-2 w-full border-t border-zinc-300"></span>
+    <span class="mb-5 mt-2 w-full border-t border-brown-300"></span>
 
     <!--Customers logout-->
     @auth('customer')

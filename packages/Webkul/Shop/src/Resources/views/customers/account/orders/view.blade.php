@@ -102,7 +102,7 @@
                         <!-- Order Details -->
                         <div class="relative mt-8 overflow-x-auto rounded-xl border">
                             <table class="w-full text-left">
-                                <thead class="border-b border-brown-200 bg-zinc-100 text-sm text-black">
+                                <thead class="border-b border-brown-200 bg-brown-100 text-sm text-black">
                                     <tr class="[&>*]:font-medium [&>*]:px-6 [&>*]:py-4">
                                         <th scope="col">
                                             @lang('shop::app.customers.account.orders.view.information.sku')
@@ -445,7 +445,7 @@
                                 @if ($order->canReorder())
                                     <a
                                         href="{{ route('shop.customers.account.orders.reorder', $order->id) }}"
-                                        class="mx-auto w-full py-3 text-sm font-medium text-brown hover:bg-zinc-100 max-sm:py-2"
+                                        class="mx-auto w-full py-3 text-sm font-medium text-brown hover:bg-brown-100 max-sm:py-2"
                                     >
                                         @lang('shop::app.customers.account.orders.view.reorder-btn-title')
                                     </a>
@@ -453,11 +453,11 @@
 
                                 @if ($order->canCancel())
                                     <!-- Seperator -->
-                                    <span class="my-auto h-5 w-0.5 bg-zinc-200 py-3"></span>
+                                    <span class="my-auto h-5 w-0.5 bg-brown-200 py-3"></span>
 
                                     <a
                                         href="javascript:void(0);"
-                                        class="mx-auto w-full py-3 text-sm font-medium hover:bg-zinc-100 max-sm:py-2"
+                                        class="mx-auto w-full py-3 text-sm font-medium hover:bg-brown-100 max-sm:py-2"
                                         @click="$emitter.emit('open-confirm-modal', {
                                             message: '@lang('shop::app.customers.account.orders.view.cancel-confirm-msg')',
 
@@ -1136,7 +1136,7 @@
 
                                 <div class="relative mt-8 overflow-x-auto rounded-xl border">
                                     <table class="w-full text-left">
-                                        <thead class="border-b border-brown-200 bg-zinc-100 text-sm text-black">
+                                        <thead class="border-b border-brown-200 bg-brown-100 text-sm text-black">
                                             <tr class="[&>*]:font-medium [&>*]:px-6 [&>*]:py-4">
                                                 <th scope="col">
                                                     @lang('shop::app.customers.account.orders.view.invoices.sku')
@@ -1390,7 +1390,7 @@
                                 <!-- Table of Contents -->
                                 <div class="relative mt-8 overflow-x-auto rounded-xl border max-md:hidden">
                                     <table class="w-full text-left text-sm">
-                                        <thead class="border-b border-brown-200 bg-zinc-100 text-sm text-black">
+                                        <thead class="border-b border-brown-200 bg-brown-100 text-sm text-black">
                                             <tr class="[&>*]:font-medium [&>*]:px-6 [&>*]:py-4">
                                                 <th scope="col">
                                                     @lang('shop::app.customers.account.orders.view.shipments.sku')
@@ -1513,7 +1513,7 @@
 
                                 <div class="relative mt-8 overflow-x-auto rounded-xl border">
                                     <table class="w-full text-left text-sm">
-                                        <thead class="border-b border-brown-200 bg-zinc-100 text-sm text-black">
+                                        <thead class="border-b border-brown-200 bg-brown-100 text-sm text-black">
                                             <tr class="[&>*]:font-medium [&>*]:px-6 [&>*]:py-4">
                                                 <th scope="col">
                                                     @lang('shop::app.customers.account.orders.view.refunds.sku')

@@ -2,7 +2,7 @@
     class="overflow-hidden 1180:hidden"
     v-if="isMediaLoading"
 >
-    <div class="shimmer aspect-square max-h-screen w-screen bg-zinc-200"></div>
+    <div class="shimmer aspect-square max-h-screen w-screen bg-brown-200"></div>
 </div>
 
 <div

@@ -195,7 +195,7 @@
                                         <div class="row grid grid-cols-[1fr_2fr] items-center gap-4 max-md:grid-cols-[0.5fr_2fr] max-sm:flex-wrap max-sm:gap-0">
                                             <div class="whitespace-nowrap text-base font-medium max-sm:text-sm">{{ $i }} Stars</div>
 
-                                            <div class="h-4 w-[275px] max-w-full rounded-sm bg-neutral-200 max-sm:h-3.5 max-sm:w-full">
+                                            <div class="h-4 w-[275px] max-w-full rounded-sm bg-brown-100 max-sm:h-3.5 max-sm:w-full">
                                                 <div
                                                     class="h-4 rounded-sm bg-amber-500 max-sm:h-3.5"
                                                     style="width: {{ $percentageRatings[$i] }}%"
@@ -296,7 +296,7 @@
 
                 <template v-else>
                     <div
-                        class="flex max-h-[100px] min-h-[100px] min-w-[100px] max-w-[100px] items-center justify-center rounded-xl bg-zinc-100"
+                        class="flex max-h-[100px] min-h-[100px] min-w-[100px] max-w-[100px] items-center justify-center rounded-xl bg-brown-100"
                         :title="review.name"
                     >
                         <span class="text-2xl font-semibold text-zinc-500">
@@ -418,7 +418,7 @@
 
                     <div
                         v-else
-                        class="flex max-h-10 min-h-10 min-w-10 max-w-10 items-center justify-center rounded-full bg-zinc-100"
+                        class="flex max-h-10 min-h-10 min-w-10 max-w-10 items-center justify-center rounded-full bg-brown-100"
                         :title="review.name"
                     >
                         <span class="text-xs font-semibold text-zinc-500">

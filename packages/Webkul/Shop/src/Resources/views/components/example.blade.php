@@ -28,7 +28,7 @@
 
 <!-- basic/traditional form  -->
 <x-shop::form action="">
-     
+
     <!-- Type E-mail -->
     <x-shop::form.control-group>
         <x-shop::form.control-group.label>
@@ -56,7 +56,7 @@
         <x-shop::form.control-group.control
             type="date"
             id="dob"
-            name="date_of_birth" 
+            name="date_of_birth"
             value=""
             label="Date of Birth"
             placeholder="Date of Birth"
@@ -289,7 +289,7 @@
 
 <!-- Image/Media -->
 <x-shop::media.images.lazy
-    class="after:content-[' '] relative min-w-[250px] bg-zinc-100 transition-all duration-300 after:block after:pb-[calc(100%+9px)] group-hover:scale-105"
+    class="after:content-[' '] relative min-w-[250px] bg-brown-100 transition-all duration-300 after:block after:pb-[calc(100%+9px)] group-hover:scale-105"
     ::src="product.base_image.medium_image_url"
     ::key="product.id"
     ::index="product.id"
@@ -305,7 +305,7 @@
 
 <!-- Page Layout -->
 <x-shop::layouts>
-   Page Content 
+   Page Content
 </x-shop::layouts>
 
 <!-- label class -->

@@ -58,7 +58,7 @@
 
                         @auth('customer')
                             <div class="flex flex-col justify-between gap-2.5 max-md:gap-0">
-                                <p class="font-mediums break-all text-2xl max-md:text-xl">Hello! {{ auth()->user()?->first_name }}</p>
+                                <p class="font-mediums break-all text-2xl max-md:text-xl">Hola! {{ auth()->user()?->first_name }}</p>
 
                                 <p class="text-zinc-500 no-underline max-md:text-sm">{{ auth()->user()?->email }}</p>
                             </div>
@@ -301,7 +301,7 @@
             <template v-for="(category) in categories">
                 {!! view_render_event('bagisto.shop.components.layouts.header.mobile.category.before') !!}
 
-                <div class="flex items-center justify-between border border-b border-l-0 border-r-0 border-t-0 border-zinc-100 py-3.5 max-sm:py-2.5">
+                <div class="flex items-center justify-between border border-b border-l-0 border-r-0 border-t-0 border-brown-100 py-3.5 max-sm:py-2.5">
                     <a
                         :href="category.url"
                         class="flex items-center justify-between"
@@ -323,7 +323,7 @@
                 >
                     <ul v-if="category.children.length">
                         <li v-for="secondLevelCategory in category.children">
-                            <div class="flex items-center justify-between border border-b border-l-0 border-r-0 border-t-0 border-zinc-100 ltr:ml-3 rtl:mr-3">
+                            <div class="flex items-center justify-between border border-b border-l-0 border-r-0 border-t-0 border-brown-100 ltr:ml-3 rtl:mr-3">
                                 <a
                                     :href="secondLevelCategory.url"
                                     class="mt-5 flex items-center justify-between pb-5"
@@ -345,7 +345,7 @@
                             <div v-if="secondLevelCategory.category_show">
                                 <ul v-if="secondLevelCategory.children.length">
                                     <li v-for="thirdLevelCategory in secondLevelCategory.children">
-                                        <div class="flex items-center justify-between border border-b border-l-0 border-r-0 border-t-0 border-zinc-100 ltr:ml-3 rtl:mr-3">
+                                        <div class="flex items-center justify-between border border-b border-l-0 border-r-0 border-t-0 border-brown-100 ltr:ml-3 rtl:mr-3">
                                             <a
                                                 :href="thirdLevelCategory.url"
                                                 class="mt-5 flex items-center justify-between pb-5 ltr:ml-3 rtl:mr-3"
@@ -418,7 +418,7 @@
                     </x-shop::drawer>
 
                     <!-- Seperator -->
-                    <span class="h-5 w-0.5 bg-zinc-200"></span>
+                    <span class="h-5 w-0.5 bg-brown-200"></span>
 
                     <!-- Sort Drawer -->
                     <x-shop::drawer

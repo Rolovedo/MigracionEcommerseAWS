@@ -200,7 +200,7 @@
     </div>
 
     <div
-        class="flex flex-col gap-2 border-y py-2"
+        class="flex flex-col gap-2 border-y border-brown-200 py-2"
         v-else
     >
         <div
