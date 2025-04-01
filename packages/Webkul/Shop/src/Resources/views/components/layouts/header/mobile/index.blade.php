@@ -37,7 +37,7 @@
 
                 <x-slot:content>
                     <!-- Account Profile Hero Section -->
-                    <div class="mb-4 grid grid-cols-[auto_1fr] items-center gap-4 rounded-xl border border-zinc-200 p-2.5 max-md:mt-4">
+                    <div class="mb-4 grid grid-cols-[auto_1fr] items-center gap-4 rounded-xl border border-brown-200 p-2.5 max-md:mt-4">
                         <div>
                             <img
                                 src="{{ auth()->user()?->image_url ??  bagisto_asset('images/user-placeholder.png') }}"
@@ -140,7 +140,7 @@
                                     </p>
                                 </div>
 
-                                <p class="mt-3 w-full border border-zinc-200"></p>
+                                <p class="mt-3 w-full border border-brown-200"></p>
 
                                 {!! view_render_event('bagisto.shop.components.layouts.header.mobile.index.customers_action.before') !!}
 
@@ -182,20 +182,20 @@
                                     </p>
                                 </div>
 
-                                <p class="mt-3 w-full border border-zinc-200"></p>
+                                <p class="mt-3 w-full border border-brown-200"></p>
 
                                 <div class="mt-2.5 grid gap-1 pb-2.5">
                                     {!! view_render_event('bagisto.shop.components.layouts.header.mobile.index.profile_dropdown.links.before') !!}
 
                                     <a
-                                        class="cursor-pointer px-5 py-2 text-base hover:bg-gray-100"
+                                        class="cursor-pointer px-5 py-2 text-base hover:bg-brown-100"
                                         href="{{ route('shop.customers.account.profile.index') }}"
                                     >
                                         @lang('shop::app.components.layouts.header.profile')
                                     </a>
 
                                     <a
-                                        class="cursor-pointer px-5 py-2 text-base hover:bg-gray-100"
+                                        class="cursor-pointer px-5 py-2 text-base hover:bg-brown-100"
                                         href="{{ route('shop.customers.account.orders.index') }}"
                                     >
                                         @lang('shop::app.components.layouts.header.orders')
@@ -203,7 +203,7 @@
 
                                     @if ($showWishlist)
                                         <a
-                                            class="cursor-pointer px-5 py-2 text-base hover:bg-gray-100"
+                                            class="cursor-pointer px-5 py-2 text-base hover:bg-brown-100"
                                             href="{{ route('shop.customers.account.wishlist.index') }}"
                                         >
                                             @lang('shop::app.components.layouts.header.wishlist')
@@ -219,7 +219,7 @@
                                         />
 
                                         <a
-                                            class="cursor-pointer px-5 py-2 text-base hover:bg-gray-100"
+                                            class="cursor-pointer px-5 py-2 text-base hover:bg-brown-100"
                                             href="{{ route('shop.customer.session.destroy') }}"
                                             onclick="event.preventDefault(); document.getElementById('customerLogout').submit();"
                                         >
@@ -381,7 +381,7 @@
         <!-- Localization & Currency Section -->
         @if(core()->getCurrentChannel()->locales()->count() > 1 || core()->getCurrentChannel()->currencies()->count() > 1 )
             <div class="w-full border-t bg-lightOrange">
-                <div class="fixed bottom-0 z-10 grid w-full max-w-full grid-cols-[1fr_auto_1fr] items-center justify-items-center border-t border-zinc-200 bg-lightOrange px-5 ltr:left-0 rtl:right-0">
+                <div class="fixed bottom-0 z-10 grid w-full max-w-full grid-cols-[1fr_auto_1fr] items-center justify-items-center border-t border-brown-200 bg-lightOrange px-5 ltr:left-0 rtl:right-0">
                     <!-- Filter Drawer -->
                     <x-shop::drawer
                         position="bottom"

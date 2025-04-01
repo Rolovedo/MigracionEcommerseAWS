@@ -14,7 +14,7 @@
 
 <!-- Mobile Filters Navigation -->
 <div
-    class="fixed bottom-0 z-10 grid w-full max-w-full grid-cols-[1fr_auto_1fr] items-center justify-items-center border-t border-zinc-200 bg-lightOrange px-5 ltr:left-0 rtl:right-0"
+    class="fixed bottom-0 z-10 grid w-full max-w-full grid-cols-[1fr_auto_1fr] items-center justify-items-center border-t border-brown-200 bg-lightOrange px-5 ltr:left-0 rtl:right-0"
     v-if="isMobile"
 >
     <!-- Filter Drawer -->
@@ -65,7 +65,7 @@
     </x-shop::drawer>
 
     <!-- Separator -->
-    <span class="h-5 w-0.5 bg-zinc-200"></span>
+    <span class="h-5 w-0.5 bg-brown-200"></span>
 
     <!-- Sort Drawer -->
     <x-shop::drawer
@@ -118,7 +118,7 @@
         <template v-else>
             <div class="panel-side journal-scroll grid max-h-[1320px] min-w-[342px] grid-cols-[1fr] overflow-y-auto overflow-x-hidden max-xl:min-w-[270px] md:max-w-[400px] md:ltr:pr-7 md:rtl:pl-7">
                 <!-- Filters Header Container -->
-                <div class="flex h-[50px] items-center justify-between border-b border-zinc-200 pb-2.5 max-md:hidden">
+                <div class="flex h-[50px] items-center justify-between border-b border-brown-200 pb-2.5 max-md:hidden">
                     <p class="text-lg font-semibold max-sm:font-medium">
                         @lang('shop::app.categories.filters.filters')
                     </p>
@@ -181,7 +181,7 @@
                             :key="option.id"
                             v-for="(option, optionIndex) in filter.options"
                         >
-                            <div class="flex select-none items-center gap-x-4 rounded hover:bg-gray-100 max-sm:gap-x-1 max-sm:!p-0 ltr:pl-2 rtl:pr-2">
+                            <div class="flex select-none items-center gap-x-4 rounded hover:bg-brown-100 max-sm:gap-x-1 max-sm:!p-0 ltr:pl-2 rtl:pr-2">
                                 <input
                                     type="checkbox"
                                     :id="'option_' + option.id"

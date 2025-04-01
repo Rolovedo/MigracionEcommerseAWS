@@ -171,7 +171,7 @@
                             <!-- Left Section -->
                             <div class="sticky top-24 flex h-max flex-col gap-6 max-lg:relative max-lg:top-auto max-md:w-full">
 
-                                <div class="flex flex-col items-center gap-2 max-md:mt-3 max-md:gap-0 max-md:border-b max-md:border-zinc-200 max-md:pb-3">
+                                <div class="flex flex-col items-center gap-2 max-md:mt-3 max-md:gap-0 max-md:border-b max-md:border-brown-200 max-md:pb-3">
                                     <p class="text-5xl max-md:text-3xl">
                                         {{ $avgRatings }}
                                     </p>
@@ -283,7 +283,7 @@
         type="text/x-template"
         id="v-product-review-item-template"
     >
-        <div class="rounded-xl border border-zinc-200 p-6 max-md:hidden">
+        <div class="rounded-xl border border-brown-200 p-6 max-md:hidden">
             <div class="flex gap-5">
                 <template v-if="review.profile">
                     <img
@@ -406,7 +406,7 @@
 
         <!-- For Mobile View -->
         <div class="md:hidden">
-            <div class="grid gap-1.5 rounded-xl border border-zinc-200 p-4 max-md:mb-0">
+            <div class="grid gap-1.5 rounded-xl border border-brown-200 p-4 max-md:mb-0">
                 <div class="flex items-center gap-2.5">
                     <img
                         v-if="review.profile"

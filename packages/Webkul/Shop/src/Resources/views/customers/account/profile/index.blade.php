@@ -35,7 +35,7 @@
 
             <a
                 href="{{ route('shop.customers.account.profile.edit') }}"
-                class="secondary-button border-zinc-200 px-5 py-3 font-normal max-md:rounded-lg max-md:py-2 max-sm:py-1.5 max-sm:text-sm"
+                class="secondary-button border-brown-200 px-5 py-3 font-normal max-md:rounded-lg max-md:py-2 max-sm:py-1.5 max-sm:text-sm"
             >
                 @lang('shop::app.customers.account.profile.index.edit')
             </a>
@@ -47,7 +47,7 @@
         <div class="mt-8 grid grid-cols-1 gap-y-6 max-md:mt-5 max-sm:gap-y-4">
             {!! view_render_event('bagisto.shop.customers.account.profile.first_name.before') !!}
 
-            <div class="grid w-full grid-cols-[2fr_3fr] border-b border-zinc-200 px-8 py-3 max-md:px-0">
+            <div class="grid w-full grid-cols-[2fr_3fr] border-b border-brown-200 px-8 py-3 max-md:px-0">
                 <p class="text-sm font-medium">
                     @lang('shop::app.customers.account.profile.index.first-name')
                 </p>
@@ -61,7 +61,7 @@
 
             {!! view_render_event('bagisto.shop.customers.account.profile.last_name.before') !!}
 
-            <div class="grid w-full grid-cols-[2fr_3fr] border-b border-zinc-200 px-8 py-3 max-md:px-0">
+            <div class="grid w-full grid-cols-[2fr_3fr] border-b border-brown-200 px-8 py-3 max-md:px-0">
                 <p class="text-sm font-medium">
                     @lang('shop::app.customers.account.profile.index.last-name')
                 </p>
@@ -75,7 +75,7 @@
 
             {!! view_render_event('bagisto.shop.customers.account.profile.gender.before') !!}
 
-            <div class="grid w-full grid-cols-[2fr_3fr] border-b border-zinc-200 px-8 py-3 max-md:px-0">
+            <div class="grid w-full grid-cols-[2fr_3fr] border-b border-brown-200 px-8 py-3 max-md:px-0">
                 <p class="text-sm font-medium">
                     @lang('shop::app.customers.account.profile.index.gender')
                 </p>
@@ -89,7 +89,7 @@
 
             {!! view_render_event('bagisto.shop.customers.account.profile.date_of_birth.before') !!}
 
-            <div class="grid w-full grid-cols-[2fr_3fr] border-b border-zinc-200 px-8 py-3 max-md:px-0">
+            <div class="grid w-full grid-cols-[2fr_3fr] border-b border-brown-200 px-8 py-3 max-md:px-0">
                 <p class="text-sm font-medium">
                     @lang('shop::app.customers.account.profile.index.dob')
                 </p>
@@ -103,7 +103,7 @@
 
             {!! view_render_event('bagisto.shop.customers.account.profile.email.before') !!}
 
-            <div class="grid w-full grid-cols-[2fr_3fr] border-b border-zinc-200 px-8 py-3 max-md:px-0">
+            <div class="grid w-full grid-cols-[2fr_3fr] border-b border-brown-200 px-8 py-3 max-md:px-0">
                 <p class="text-sm font-medium">
                     @lang('shop::app.customers.account.profile.index.email')
                 </p>
@@ -112,7 +112,7 @@
                     {{ $customer->email }}
                 </p>
             </div>
-            
+
             {!! view_render_event('bagisto.shop.customers.account.profile.email.after') !!}
 
             {!! view_render_event('bagisto.shop.customers.account.profile.delete.before') !!}

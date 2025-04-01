@@ -40,7 +40,7 @@
                         <!-- Saved Customer Addresses Cards -->
                         <div class="mb-2 grid grid-cols-2 gap-5 max-1060:grid-cols-[1fr] max-lg:grid-cols-2 max-md:mt-2 max-md:grid-cols-1">
                             <div
-                                class="relative max-w-[414px] cursor-pointer select-none rounded-xl border border-zinc-200 p-0 max-md:flex-wrap max-md:rounded-lg"
+                                class="relative max-w-[414px] cursor-pointer select-none rounded-xl border border-brown-200 p-0 max-md:flex-wrap max-md:rounded-lg"
                                 v-for="address in customerSavedAddresses.billing"
                             >
                                 <!-- Actions -->
@@ -100,7 +100,7 @@
 
                             <!-- New Address Card -->
                             <div
-                                class="flex max-w-[414px] cursor-pointer items-center justify-center rounded-xl border border-zinc-200 p-5 max-md:flex-wrap max-md:rounded-lg"
+                                class="flex max-w-[414px] cursor-pointer items-center justify-center rounded-xl border border-brown-200 p-5 max-md:flex-wrap max-md:rounded-lg"
                                 @click="activeAddressForm = 'billing'"
                                 v-if="! cart.billing_address"
                             >
@@ -160,7 +160,7 @@
                                 <!-- Saved Customer Addresses Cards -->
                                 <div class="mb-2 grid grid-cols-2 gap-5 max-1060:grid-cols-[1fr] max-lg:grid-cols-2 max-md:mt-4 max-md:grid-cols-1">
                                     <div
-                                        class="relative max-w-[414px] cursor-pointer select-none rounded-xl border border-zinc-200 p-0 max-md:flex-wrap max-md:rounded-lg"
+                                        class="relative max-w-[414px] cursor-pointer select-none rounded-xl border border-brown-200 p-0 max-md:flex-wrap max-md:rounded-lg"
                                         v-for="address in customerSavedAddresses.shipping"
                                     >
                                         <!-- Actions -->
@@ -220,7 +220,7 @@
 
                                     <!-- New Address Card -->
                                     <div
-                                        class="flex max-w-[414px] cursor-pointer items-center justify-center rounded-xl border border-zinc-200 p-5 max-md:flex-wrap max-md:rounded-lg"
+                                        class="flex max-w-[414px] cursor-pointer items-center justify-center rounded-xl border border-brown-200 p-5 max-md:flex-wrap max-md:rounded-lg"
                                         @click="selectedAddressForEdit = null; activeAddressForm = 'shipping'"
                                         v-if="! cart.shipping_address"
                                     >

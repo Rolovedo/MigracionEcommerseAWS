@@ -198,7 +198,7 @@
                             </div>
 
                             <nav aria-label="@lang('shop::app.components.datagrid.table.page-navigation')">
-                                <ul class="inline-flex items-center -space-x-px rounded-lg border border-zinc-200 max-md:px-0">
+                                <ul class="inline-flex items-center -space-x-px rounded-lg border border-brown-200 max-md:px-0">
                                     <li  @click="changePage('previous')">
                                         <a
                                             href="javascript:void(0);"

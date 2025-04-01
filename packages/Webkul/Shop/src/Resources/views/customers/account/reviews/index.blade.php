@@ -63,13 +63,13 @@
                                     aria-label="{{ $review->title }}"
                                 >
                                     <!-- For Desktop View -->
-                                    <div class="flex gap-5 rounded-xl border border-zinc-200 p-6 max-md:hidden max-md:gap-1.5">
+                                    <div class="flex gap-5 rounded-xl border border-brown-200 p-6 max-md:hidden max-md:gap-1.5">
                                         {!! view_render_event('bagisto.shop.customers.account.reviews.image.before', ['reviews' => $reviews]) !!}
 
                                         <x-shop::media.images.lazy
                                             class="h-[146px] max-h-[146px] w-32 min-w-32 max-w-32 rounded-xl"
                                             src="{{ $review->product->base_image_url ?? bagisto_asset('images/small-product-placeholder.webp') }}"
-                                            alt="Review Image"                   
+                                            alt="Review Image"
                                         />
 
                                         {!! view_render_event('bagisto.shop.customers.account.reviews.image.after', ['reviews' => $reviews]) !!}
@@ -83,7 +83,7 @@
                                                 </p>
 
                                                 {!! view_render_event('bagisto.shop.customers.account.reviews.title.after', ['reviews' => $reviews]) !!}
-        
+
                                                 {!! view_render_event('bagisto.shop.customers.account.reviews.rating.before', ['reviews' => $reviews]) !!}
 
                                                 <div class="flex items-center gap-0.5">
@@ -94,13 +94,13 @@
 
                                                 {!! view_render_event('bagisto.shop.customers.account.reviews.rating.after', ['reviews' => $reviews]) !!}
                                             </div>
-        
+
                                             {!! view_render_event('bagisto.shop.customers.account.reviews.created_at.before', ['reviews' => $reviews]) !!}
 
                                             <p class="mt-2.5 text-sm font-medium">
                                                 {{ $review->created_at }}
                                             </p>
-        
+
                                             {!! view_render_event('bagisto.shop.customers.account.reviews.created_at.after', ['reviews' => $reviews]) !!}
 
                                             {!! view_render_event('bagisto.shop.customers.account.reviews.comment.before', ['reviews' => $reviews]) !!}
@@ -111,20 +111,20 @@
 
                                             {!! view_render_event('bagisto.shop.customers.account.reviews.comment.after', ['reviews' => $reviews]) !!}
                                         </div>
-                                       
+
                                     </div>
 
                                     <!-- For Mobile View -->
-                                    <div class="flex gap-5 rounded-xl border border-zinc-200 p-6 max-md:grid max-md:gap-2.5 max-md:p-4 md:hidden">
+                                    <div class="flex gap-5 rounded-xl border border-brown-200 p-6 max-md:grid max-md:gap-2.5 max-md:p-4 md:hidden">
                                         <div class="flex gap-2.5">
                                             {!! view_render_event('bagisto.shop.customers.account.reviews.image.before', ['reviews' => $reviews]) !!}
-    
+
                                             <x-shop::media.images.lazy
                                                 class="h-[146px] max-h-[146px] w-32 min-w-32 max-w-32 rounded-xl max-md:h-20 max-md:w-20 max-md:min-w-20 max-md:rounded-lg"
                                                 src="{{ $review->product->base_image_url ?? bagisto_asset('images/small-product-placeholder.webp') }}"
-                                                alt="Review Image"                   
+                                                alt="Review Image"
                                             />
-    
+
                                             {!! view_render_event('bagisto.shop.customers.account.reviews.image.after', ['reviews' => $reviews]) !!}
 
                                             <div class="justify-between">
@@ -141,9 +141,9 @@
                                                 <p class="mt-1.5 font-normal text-zinc-500 max-md:mt-0 max-md:text-xs">
                                                     {{ $review->created_at }}
                                                 </p>
-            
+
                                                 {!! view_render_event('bagisto.shop.customers.account.reviews.created_at.after', ['reviews' => $reviews]) !!}
-        
+
                                                 {!! view_render_event('bagisto.shop.customers.account.reviews.rating.before', ['reviews' => $reviews]) !!}
 
                                                 <div class="mt-1 flex items-center">

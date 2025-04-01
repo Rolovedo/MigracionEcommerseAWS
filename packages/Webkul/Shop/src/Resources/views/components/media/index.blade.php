@@ -21,10 +21,10 @@
         <div class="mb-4 flex cursor-pointer flex-col rounded-lg">
             <div :class="{'border border-dashed border-gray-300 rounded-2xl': isDragOver }">
                 <div
-                    class="flex h-[200px] w-[200px] cursor-pointer flex-col items-center justify-center rounded-xl bg-zinc-100 hover:bg-gray-100 max-md:h-36 max-md:w-36 max-sm:h-[100px] max-sm:w-[100px]"
+                    class="flex h-[200px] w-[200px] cursor-pointer flex-col items-center justify-center rounded-xl bg-zinc-100 hover:bg-brown-100 max-md:h-36 max-md:w-36 max-sm:h-[100px] max-sm:w-[100px]"
                     v-if="uploadedFiles.isPicked"
                 >
-                    <div 
+                    <div
                         class="group relative flex h-[200px] w-[200px] max-md:h-36 max-md:w-36 max-sm:h-[100px] max-sm:w-[100px]"
                         @mouseenter="uploadedFiles.showDeleteButton = true"
                         @mouseleave="uploadedFiles.showDeleteButton = false"
@@ -37,7 +37,7 @@
                         >
 
                         <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform opacity-0 transition-opacity group-hover:opacity-100">
-                            <span 
+                            <span
                                 class="icon-bin cursor-pointer text-2xl text-black"
                                 @click="remove"
                             >
@@ -46,16 +46,16 @@
                     </div>
                 </div>
 
-                <label 
+                <label
                     :for="`${$.uid}_fileInput`"
-                    class="flex h-[200px] w-[200px] cursor-pointer flex-col items-center justify-center gap-2 rounded-xl bg-zinc-100 hover:bg-gray-100 max-md:h-36 max-md:w-36 max-sm:h-[100px] max-sm:w-[100px] max-sm:gap-1"
+                    class="flex h-[200px] w-[200px] cursor-pointer flex-col items-center justify-center gap-2 rounded-xl bg-zinc-100 hover:bg-brown-100 max-md:h-36 max-md:w-36 max-sm:h-[100px] max-sm:w-[100px] max-sm:gap-1"
                     :style="{'max-width': this.width, 'max-height': this.height}"
                     v-show="! uploadedFiles.isPicked"
                     @dragover="onDragOver"
                     @dragleave="onDragLeave"
                     @drop="onDrop"
                 >
-                    <label 
+                    <label
                         :for="`${$.uid}_fileInput`"
                         class="icon-camera text-3xl max-sm:text-lg"
                     >
@@ -85,7 +85,7 @@
                 </label>
             </div>
 
-            <div 
+            <div
                 class="flex items-center"
                 v-if="isMultiple"
             >
@@ -130,7 +130,7 @@
                                 >
                                 </video>
                                 <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform opacity-0 transition-opacity group-hover:opacity-100">
-                                    <span 
+                                    <span
                                         class="icon-bin cursor-pointer text-2xl text-black"
                                         @click="remove(index)"
                                     >
@@ -150,7 +150,7 @@
 
             props: {
                 name: {
-                    type: String, 
+                    type: String,
                     default: 'attachments',
                 },
 
@@ -164,12 +164,12 @@
                 },
 
                 acceptedTypes: {
-                    type: String, 
+                    type: String,
                     default: 'image/*, video/*,'
                 },
 
                 label: {
-                    type: String, 
+                    type: String,
                     default: '@lang("shop::app.components.media.index.add-attachments")'
                 },
 
@@ -248,7 +248,7 @@
                         let file = files[i];
 
                         let reader = new FileReader();
-                        
+
                         reader.onload = () => {
                             if (! this.isMultiple) {
                                 this.uploadedFiles = {
@@ -289,7 +289,7 @@
 
                     this.isDragOver = false;
                 },
-                
+
                 onDrop(event) {
                     event.preventDefault();
 
@@ -305,7 +305,7 @@
                         this.uploadedFiles = [];
 
                         this.appliedRules = this.rules;
-                        
+
                         return;
                     }
 

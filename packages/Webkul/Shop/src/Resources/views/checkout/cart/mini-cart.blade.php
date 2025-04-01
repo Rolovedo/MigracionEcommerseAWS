@@ -242,7 +242,7 @@
                     class="grid-col-1 grid gap-5 max-md:gap-2.5"
                 >
                     <div
-                        class="my-8 flex items-center justify-between border-b border-zinc-200 px-6 pb-2 max-md:my-0 max-md:border-t max-md:px-5 max-md:py-2"
+                        class="my-8 flex items-center justify-between border-b border-brown-200 px-6 pb-2 max-md:my-0 max-md:border-t max-md:px-5 max-md:py-2"
                         :class="{'!justify-end': isLoading}"
                     >
                         {!! view_render_event('bagisto.shop.checkout.mini-cart.subtotal.before') !!}

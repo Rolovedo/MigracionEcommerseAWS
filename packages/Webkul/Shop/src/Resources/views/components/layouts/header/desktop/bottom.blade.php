@@ -152,7 +152,7 @@
                             </p>
                         </div>
 
-                        <p class="mt-3 w-full border border-zinc-200"></p>
+                        <p class="mt-3 w-full border border-brown-200"></p>
 
                         {!! view_render_event('bagisto.shop.components.layouts.header.desktop.bottom.customers_action.before') !!}
 
@@ -194,20 +194,20 @@
                             </p>
                         </div>
 
-                        <p class="mt-3 w-full border border-zinc-200"></p>
+                        <p class="mt-3 w-full border border-brown-200"></p>
 
                         <div class="mt-2.5 grid gap-1 pb-2.5">
                             {!! view_render_event('bagisto.shop.components.layouts.header.desktop.bottom.profile_dropdown.links.before') !!}
 
                             <a
-                                class="cursor-pointer px-5 py-2 text-base hover:bg-gray-100"
+                                class="cursor-pointer px-5 py-2 text-base hover:bg-brown-100"
                                 href="{{ route('shop.customers.account.profile.index') }}"
                             >
                                 @lang('shop::app.components.layouts.header.profile')
                             </a>
 
                             <a
-                                class="cursor-pointer px-5 py-2 text-base hover:bg-gray-100"
+                                class="cursor-pointer px-5 py-2 text-base hover:bg-brown-100"
                                 href="{{ route('shop.customers.account.orders.index') }}"
                             >
                                 @lang('shop::app.components.layouts.header.orders')
@@ -215,7 +215,7 @@
 
                             @if (core()->getConfigData('customer.settings.wishlist.wishlist_option'))
                                 <a
-                                    class="cursor-pointer px-5 py-2 text-base hover:bg-gray-100"
+                                    class="cursor-pointer px-5 py-2 text-base hover:bg-brown-100"
                                     href="{{ route('shop.customers.account.wishlist.index') }}"
                                 >
                                     @lang('shop::app.components.layouts.header.wishlist')
@@ -231,7 +231,7 @@
                                 />
 
                                 <a
-                                    class="cursor-pointer px-5 py-2 text-base hover:bg-gray-100"
+                                    class="cursor-pointer px-5 py-2 text-base hover:bg-brown-100"
                                     href="{{ route('shop.customer.session.destroy') }}"
                                     onclick="event.preventDefault(); document.getElementById('customerLogout').submit();"
                                 >
