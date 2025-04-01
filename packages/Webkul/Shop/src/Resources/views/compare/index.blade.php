@@ -92,7 +92,7 @@
                                         v-for="product in items"
                                     >
                                         <span
-                                            class="icon-cancel absolute top-5 z-[1] flex h-[30px] w-[30px] cursor-pointer items-center justify-center rounded-md border border-zinc-200 bg-white text-2xl max-md:top-10 max-md:h-6 max-md:w-6 max-md:rounded-full max-md:text-sm ltr:right-10 max-md:ltr:right-4 rtl:left-10 max-md:rtl:left-4"
+                                            class="icon-cancel absolute top-5 z-[1] flex h-[30px] w-[30px] cursor-pointer items-center justify-center rounded-md border border-zinc-200 bg-lightOrange text-2xl max-md:top-10 max-md:h-6 max-md:w-6 max-md:rounded-full max-md:text-sm ltr:right-10 max-md:ltr:right-4 rtl:left-10 max-md:rtl:left-4"
                                             @click="remove(product.id)"
                                         ></span>
 
@@ -141,7 +141,7 @@
                             src="{{ bagisto_asset('images/thank-you.png') }}"
                             alt="@lang('shop::app.compare.empty-text')"
                         />
-                        
+
                         <p
                             class="text-xl max-sm:text-sm"
                             role="heading"
@@ -186,11 +186,11 @@
                 methods: {
                     getItems() {
                         let productIds = [];
-                        
+
                         if (! this.isCustomer) {
                             productIds = this.getStorageValue('compare_items');
                         }
-                        
+
                         this.$axios.get("{{ route('shop.api.compare.index') }}", {
                                 params: {
                                     product_ids: productIds,
@@ -249,7 +249,7 @@
 
                                     return;
                                 }
-                                
+
                                 this.$axios.post("{{ route('shop.api.compare.destroy_all') }}", {
                                         '_method': 'DELETE',
                                     })

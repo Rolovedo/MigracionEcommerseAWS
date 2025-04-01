@@ -2,7 +2,7 @@
     <div class="mt-8 rounded-lg border border-gray-200 p-5 max-sm:grid max-sm:gap-y-2.5 max-sm:p-2.5">
         <div class="flex gap-12 max-sm:items-center max-sm:gap-4">
             <x-shop::media.images.lazy class="h-[110px] max-h-[110px] w-[110px] min-w-[110px] max-w-[110px] rounded-sm max-sm:h-[60px] max-sm:max-h-[60px] max-sm:min-h-[60px] max-sm:w-[60px] max-sm:min-w-[60px] max-sm:max-w-[60px] max-sm:rounded-xl" />
-    
+
             <div class="flex flex-col gap-4">
                 <span class="shimmer h-8 w-60 max-md:h-7 max-md:w-44"></span>
 
@@ -49,7 +49,7 @@
                     </h2>
 
                     <div class="flex flex-wrap gap-5 max-sm:hidden">
-                        <span 
+                        <span
                             class="flex cursor-pointer items-center justify-center rounded-full border border-navyBlue px-4 py-1.5 font-medium text-navyBlue"
                             :class="{'rounded-full bg-navyBlue text-white': term.name.trim() === queryParameter.trim()}"
                             v-for="term in searchedTerms"
@@ -65,8 +65,8 @@
 
             <!-- For Mobile View -->
             <div class="hidden flex-wrap gap-2 max-sm:flex">
-                <span 
-                    class="flex cursor-pointer items-center justify-center rounded-full border border-navyBlue bg-white font-medium text-navyBlue"
+                <span
+                    class="flex cursor-pointer items-center justify-center rounded-full border border-navyBlue bg-lightOrange font-medium text-navyBlue"
                     v-for="term in searchedTerms"
                     @click="search(term)"
                 >

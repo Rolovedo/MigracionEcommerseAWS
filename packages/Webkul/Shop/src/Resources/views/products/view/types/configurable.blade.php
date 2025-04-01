@@ -29,12 +29,12 @@
                         <h2 class="mb-4 text-xl max-sm:mb-1.5 max-sm:text-base max-sm:font-medium">
                             @{{ attribute.label }}
                         </h2>
-                        
+
                         <!-- Dropdown Options -->
                         <v-field
                             as="select"
                             :name="'super_attribute[' + attribute.id + ']'"
-                            class="custom-select mb-3 block w-full cursor-pointer rounded-lg border border-zinc-200 bg-white px-5 py-3 text-base text-zinc-500 focus:border-blue-500 focus:ring-blue-500"
+                            class="custom-select mb-3 block w-full cursor-pointer rounded-lg border border-zinc-200 bg-lightOrange px-5 py-3 text-base text-zinc-500 focus:border-blue-500 focus:ring-blue-500"
                             :class="[errors['super_attribute[' + attribute.id + ']'] ? 'border border-red-500' : '']"
                             :id="'attribute_' + attribute.id"
                             v-model="attribute.selectedValue"
@@ -100,8 +100,8 @@
                                     </label>
 
                                     <!-- Image Swatch Options -->
-                                    <label 
-                                        class="group relative flex h-[60px] w-[60px] cursor-pointer items-center justify-center overflow-hidden rounded-md border bg-white font-medium uppercase text-gray-900 hover:bg-gray-50 sm:py-6"
+                                    <label
+                                        class="group relative flex h-[60px] w-[60px] cursor-pointer items-center justify-center overflow-hidden rounded-md border bg-lightOrange font-medium uppercase text-gray-900 hover:bg-gray-50 sm:py-6"
                                         :class="{'border-navyBlue' : option.id == attribute.selectedValue }"
                                         :title="option.label"
                                         v-if="attribute.swatch_type == 'image'"
@@ -135,8 +135,8 @@
                                     </label>
 
                                     <!-- Text Swatch Options -->
-                                    <label 
-                                        class="group relative flex h-fit min-w-fit cursor-pointer items-center justify-center rounded-full border border-gray-300 bg-white px-5 py-3 font-medium uppercase text-gray-900 hover:bg-gray-50 max-sm:h-fit max-sm:w-fit max-sm:px-3.5 max-sm:py-2"
+                                    <label
+                                        class="group relative flex h-fit min-w-fit cursor-pointer items-center justify-center rounded-full border border-gray-300 bg-lightOrange px-5 py-3 font-medium uppercase text-gray-900 hover:bg-gray-50 max-sm:h-fit max-sm:w-fit max-sm:px-3.5 max-sm:py-2"
                                         :class="{'border-transparent !bg-navyBlue text-white' : option.id == attribute.selectedValue }"
                                         :title="option.label"
                                         v-if="attribute.swatch_type == 'text'"
@@ -251,7 +251,7 @@
 
                         if (optionId) {
                             attribute.selectedValue = optionId;
-                            
+
                             if (attribute.nextAttribute) {
                                 attribute.nextAttribute.disabled = false;
 
@@ -272,7 +272,7 @@
                         }
 
                         this.reloadPrice();
-                        
+
                         this.reloadImages();
                     },
 
