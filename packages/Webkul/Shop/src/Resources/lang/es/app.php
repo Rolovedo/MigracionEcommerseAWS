@@ -334,7 +334,7 @@ return [
             ],
 
             'reviews' => [
-                'empty-review' => 'Todavía no has revisado ningún producto',
+                'empty-review' => 'Aún no has escrito ninguna reseña',
                 'title'        => 'Opiniones',
             ],
 
@@ -605,7 +605,7 @@ return [
                 'rating'           => 'Calificación',
                 'ratings'          => 'Calificaciones',
                 'submit-review'    => 'Enviar reseña',
-                'success'          => 'Revisión enviada con éxito.',
+                'success'          => 'Reseña enviada con éxito.',
                 'title'            => 'Título',
                 'translate'        => 'Traducir',
                 'translating'      => 'Traduciendo...',
