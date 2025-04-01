@@ -518,7 +518,7 @@ return [
                 'already-in-compare'     => 'El elemento ya está agregado a la lista de comparación.',
                 'new'                    => 'Nuevo',
                 'review-description'     => 'Sé el primero en revisar este producto',
-                'sale'                   => 'Venta',
+                'sale'                   => 'Oferta',
             ],
 
             'carousel' => [
