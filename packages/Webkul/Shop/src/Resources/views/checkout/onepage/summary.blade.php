@@ -4,7 +4,7 @@
 </h1>
 
 <!-- Cart Items -->
-<div class="mt-10 grid border-b border-zinc-200 max-md:mt-3 max-sm:mt-0">
+<div class="mt-10 grid border-b border-brown-200 max-md:mt-3 max-sm:mt-0">
     <div
         class="flex gap-x-4 pb-5 max-md:gap-x-3 max-md:pb-4"
         v-for="item in cart.items"
@@ -24,7 +24,7 @@
         <div>
             {!! view_render_event('bagisto.shop.checkout.onepage.summary.item_name.before') !!}
 
-            <p class="text-base text-navyBlue max-md:text-sm max-md:font-medium">
+            <p class="text-base text-brown max-md:text-sm max-md:font-medium">
                 @{{ item.name }}
             </p>
 
@@ -80,7 +80,7 @@
                 @{{ cart.formatted_sub_total }}
             </p>
         </div>
-        
+
         <div class="flex justify-between text-right">
             <p class="text-base max-sm:text-sm">
                 @lang('shop::app.checkout.onepage.summary.sub-total-incl-tax')
@@ -133,7 +133,7 @@
 
     <!-- Shipping Rates -->
     {!! view_render_event('bagisto.shop.checkout.onepage.summary.delivery_charges.before') !!}
-        
+
     <template v-if="displayTax.shipping == 'including_tax'">
         <div class="flex justify-between text-right">
             <p class="text-base max-sm:text-sm">
@@ -156,7 +156,7 @@
                 @{{ cart.formatted_shipping_amount }}
             </p>
         </div>
-        
+
         <div class="flex justify-between text-right">
             <p class="text-base max-sm:text-sm">
                 @lang('shop::app.checkout.onepage.summary.delivery-charges-incl-tax')
@@ -200,7 +200,7 @@
     </div>
 
     <div
-        class="flex flex-col gap-2 border-y py-2"
+        class="flex flex-col gap-2 border-y border-brown-200 py-2"
         v-else
     >
         <div
@@ -213,7 +213,7 @@
 
             <p class="flex items-center gap-1 text-base font-medium max-sm:text-sm">
                 @{{ cart.formatted_tax_total }}
-                
+
                 <span
                     class="text-xl"
                     :class="{'icon-arrow-up': cart.show_taxes, 'icon-arrow-down': ! cart.show_taxes}"

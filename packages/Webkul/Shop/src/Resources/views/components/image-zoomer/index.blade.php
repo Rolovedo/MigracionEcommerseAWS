@@ -7,7 +7,7 @@
     >
         <transition
             tag="div"
-            class="bg-white"
+            class="bg-[#f5ebe0]"
             name="modal-content"
             enter-class="duration-300 ease-out"
             enter-from-class="translate-y-4 opacity-0 md:translate-y-0 md:scale-95"
@@ -17,7 +17,7 @@
             leave-to-class="translate-y-4 opacity-0 md:translate-y-0 md:scale-95"
         >
             <div
-                ref="parentContainer" 
+                ref="parentContainer"
                 class="fixed inset-0 z-10 flex transform flex-col gap-4 overflow-y-auto transition"
                 v-show="isOpen"
             >
@@ -41,10 +41,10 @@
                     @click="navigate(currentIndex += 1)"
                 >
                 </span>
-                    
+
                 <!-- Main Image -->
-                <div 
-                    ref="mediaContainer" 
+                <div
+                    ref="mediaContainer"
                     class="h-full w-full overflow-hidden"
                 >
                     <div
@@ -59,9 +59,9 @@
                             class="h-full items-center justify-center"
                             ref="slides"
                         >
-                            <video 
+                            <video
                                 class="max-h-full max-w-full transition-transform duration-300 ease-out"
-                                controls 
+                                controls
                                 v-if="attachment.type == 'video'"
                             >
                                 <source :src="attachment.url" type="video/mp4">
@@ -98,7 +98,7 @@
                                         'cursor-grabbing': isDragging && isZooming,
                                     }"
                                     :style="{transform: `translate(${translateX}px, ${translateY}px)`}"
-                                />    
+                                />
                             </template>
                         </div>
                     </div>
@@ -108,9 +108,9 @@
                 <div class="mb-4 flex justify-center gap-x-2">
                     <template v-for="(attachment, index) in attachments">
                         <img
-                            class="h-16 w-16 transform cursor-pointer rounded-md border border-navyBlue border-transparent object-cover transition-transform hover:!border-navyBlue"
+                            class="h-16 w-16 transform cursor-pointer rounded-md border border-brown border-transparent object-cover transition-transform hover:!border-brown"
                             :class="{
-                                '!border-navyBlue': currentIndex === index + 1,
+                                '!border-brown': currentIndex === index + 1,
                             }"
                             :src="attachment.url"
                             :key="index"
@@ -119,9 +119,9 @@
                         />
 
                         <video
-                            class="h-16 w-16 transform cursor-pointer rounded-md border border-navyBlue border-transparent object-cover transition-transform hover:!border-navyBlue"
+                            class="h-16 w-16 transform cursor-pointer rounded-md border border-brown border-transparent object-cover transition-transform hover:!border-brown"
                             :class="{
-                                '!border-navyBlue': currentIndex === index + 1,
+                                '!border-brown': currentIndex === index + 1,
                             }"
                             :src="attachment.url"
                             :key="index"
@@ -155,13 +155,13 @@
 
                 initialIndex: {
                     type: String,
-                    
+
                     default: 0,
                 },
             },
 
             watch: {
-                isImageZooming(newVal, oldVal) {  
+                isImageZooming(newVal, oldVal) {
                     this.currentIndex = parseInt(this.initialIndex.split('_').pop()) + 1;
 
                     this.navigate(this.currentIndex);
@@ -169,7 +169,7 @@
                     this.toggle();
                 },
             },
-        
+
             data() {
                 return {
                     isOpen: this.isImageZooming,
@@ -225,7 +225,7 @@
 
                         slides[i].style.display = 'none';
                     }
-                    
+
                     slides[this.currentIndex - 1].style.display = 'flex';
 
                     this.isZooming = false;
@@ -268,7 +268,7 @@
 
                 handleMouseMove(event) {
                     this.isMouseMoveTriggered = true;
-                    
+
                     this.isMouseDownTriggered = false;
 
                     if (! this.isDragging) {
@@ -276,9 +276,9 @@
                     }
 
                     const deltaX = event.clientX - this.startDragX;
-                    
+
                     const deltaY = event.clientY - this.startDragY;
-                    
+
                     const newTranslateY = this.translateY + deltaY;
 
                     const remainingHeight = this.$refs.parentContainer.clientHeight - this.$refs.mediaContainer.clientHeight;
@@ -288,9 +288,9 @@
                     const clampedTranslateY = Math.max(maxTranslateY, Math.min(newTranslateY, 0));
 
                     this.translateY = clampedTranslateY;
-                    
+
                     this.startDragY = event.clientY;
-                    
+
                     this.startDragX = event.clientX;
 
                     this.translateX += deltaX;
@@ -300,7 +300,7 @@
                     const deltaY = event.clientY - this.startDragY;
 
                     let newTranslateY = this.translateY - event.deltaY / Math.abs(event.deltaY) * 100;
-                    
+
                     const remainingHeight = this.$refs.parentContainer.clientHeight - this.$refs.mediaContainer.clientHeight;
 
                     const maxTranslateY = Math.min(0, window.innerHeight - (event.srcElement.height + remainingHeight));

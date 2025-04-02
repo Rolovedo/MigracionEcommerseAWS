@@ -90,9 +90,9 @@
 
             <p class="text-xs font-medium">
                 {{ core()->getConfigData('general.content.header_offer.title') }}
-                
-                <a 
-                    href="{{ core()->getConfigData('general.content.header_offer.redirection_link') }}" 
+
+                <a
+                    href="{{ core()->getConfigData('general.content.header_offer.redirection_link') }}"
                     class="underline"
                     role="button"
                 >
@@ -122,7 +122,7 @@
                             width="24"
                             height="16"
                         />
-                        
+
                         <span>
                             {{ core()->getCurrentChannel()->locales()->orderBy('name')->where('code', app()->getLocale())->value('name') }}
                         </span>
@@ -134,7 +134,7 @@
                         ></span>
                     </div>
                 </x-slot>
-            
+
                 <!-- Dropdown Content -->
                 <x-slot:content class="!p-0">
                     <v-locale-switcher></v-locale-switcher>
@@ -151,7 +151,7 @@
     >
         <div class="my-2.5 grid gap-1 overflow-auto max-md:my-0 sm:max-h-[500px]">
             <span
-                class="cursor-pointer px-5 py-2 text-base hover:bg-gray-100"
+                class="cursor-pointer px-5 py-2 text-base hover:bg-brown-100"
                 v-for="currency in currencies"
                 :class="{'bg-gray-100': currency.code == '{{ core()->getCurrentCurrencyCode() }}'}"
                 @click="change(currency)"
@@ -167,10 +167,10 @@
     >
         <div class="my-2.5 grid gap-1 overflow-auto max-md:my-0 sm:max-h-[500px]">
             <span
-                class="flex cursor-pointer items-center gap-2.5 px-5 py-2 text-base hover:bg-gray-100"
+                class="flex cursor-pointer items-center gap-2.5 px-5 py-2 text-base hover:bg-brown-100"
                 :class="{'bg-gray-100': locale.code == '{{ app()->getLocale() }}'}"
                 v-for="locale in locales"
-                @click="change(locale)"                  
+                @click="change(locale)"
             >
                 <img
                     :src="locale.logo_url || '{{ bagisto_asset('images/default-language.svg') }}'"

@@ -37,7 +37,7 @@
 
                 <x-slot:content>
                     <!-- Account Profile Hero Section -->
-                    <div class="mb-4 grid grid-cols-[auto_1fr] items-center gap-4 rounded-xl border border-zinc-200 p-2.5 max-md:mt-4">
+                    <div class="mb-4 grid grid-cols-[auto_1fr] items-center gap-4 rounded-xl border border-brown-200 p-2.5 max-md:mt-4">
                         <div>
                             <img
                                 src="{{ auth()->user()?->image_url ??  bagisto_asset('images/user-placeholder.png') }}"
@@ -58,7 +58,7 @@
 
                         @auth('customer')
                             <div class="flex flex-col justify-between gap-2.5 max-md:gap-0">
-                                <p class="font-mediums break-all text-2xl max-md:text-xl">Hello! {{ auth()->user()?->first_name }}</p>
+                                <p class="font-mediums break-all text-2xl max-md:text-xl">Hola! {{ auth()->user()?->first_name }}</p>
 
                                 <p class="text-zinc-500 no-underline max-md:text-sm">{{ auth()->user()?->email }}</p>
                             </div>
@@ -92,7 +92,7 @@
                     height="29"
                 >
             </a>
-            
+
             {!! view_render_event('bagisto.shop.components.layouts.header.mobile.logo.after') !!}
         </div>
 
@@ -126,7 +126,7 @@
                         <x-slot:toggle>
                             <span class="icon-users cursor-pointer text-2xl"></span>
                         </x-slot>
-    
+
                         <!-- Guest Dropdown -->
                         @guest('customer')
                             <x-slot:content>
@@ -134,14 +134,14 @@
                                     <p class="font-dmserif text-xl">
                                         @lang('shop::app.components.layouts.header.welcome-guest')
                                     </p>
-    
+
                                     <p class="text-sm">
                                         @lang('shop::app.components.layouts.header.dropdown-text')
                                     </p>
                                 </div>
-    
-                                <p class="mt-3 w-full border border-zinc-200"></p>
-    
+
+                                <p class="mt-3 w-full border border-brown-200"></p>
+
                                 {!! view_render_event('bagisto.shop.components.layouts.header.mobile.index.customers_action.before') !!}
 
                                 <div class="mt-6 flex gap-4">
@@ -149,25 +149,25 @@
 
                                     <a
                                         href="{{ route('shop.customer.session.create') }}"
-                                        class="m-0 mx-auto block w-max cursor-pointer rounded-2xl bg-navyBlue px-7 py-4 text-center text-base font-medium text-white ltr:ml-0 rtl:mr-0"
+                                        class="m-0 mx-auto block w-max cursor-pointer rounded-2xl bg-brown px-7 py-4 text-center text-base font-medium text-white ltr:ml-0 rtl:mr-0"
                                     >
                                         @lang('shop::app.components.layouts.header.sign-in')
                                     </a>
-    
+
                                     <a
                                         href="{{ route('shop.customers.register.index') }}"
-                                        class="m-0 mx-auto block w-max cursor-pointer rounded-2xl border-2 border-navyBlue bg-white px-7 py-3.5 text-center text-base font-medium text-navyBlue ltr:ml-0 rtl:mr-0"
+                                        class="m-0 mx-auto block w-max cursor-pointer rounded-2xl border-2 border-brown bg-lightOrange px-7 py-3.5 text-center text-base font-medium text-brown ltr:ml-0 rtl:mr-0"
                                     >
                                         @lang('shop::app.components.layouts.header.sign-up')
                                     </a>
-    
+
                                     {!! view_render_event('bagisto.shop.components.layouts.header.mobile.index.sign_in_button.after') !!}
                                 </div>
 
                                 {!! view_render_event('bagisto.shop.components.layouts.header.mobile.index.customers_action.after') !!}
                             </x-slot>
                         @endguest
-    
+
                         <!-- Customers Dropdown -->
                         @auth('customer')
                             <x-slot:content class="!p-0">
@@ -176,40 +176,40 @@
                                         @lang('shop::app.components.layouts.header.welcome')’
                                         {{ auth()->guard('customer')->user()->first_name }}
                                     </p>
-    
+
                                     <p class="text-sm">
                                         @lang('shop::app.components.layouts.header.dropdown-text')
                                     </p>
                                 </div>
-    
-                                <p class="mt-3 w-full border border-zinc-200"></p>
-    
+
+                                <p class="mt-3 w-full border border-brown-200"></p>
+
                                 <div class="mt-2.5 grid gap-1 pb-2.5">
                                     {!! view_render_event('bagisto.shop.components.layouts.header.mobile.index.profile_dropdown.links.before') !!}
-    
+
                                     <a
-                                        class="cursor-pointer px-5 py-2 text-base hover:bg-gray-100"
+                                        class="cursor-pointer px-5 py-2 text-base hover:bg-brown-100"
                                         href="{{ route('shop.customers.account.profile.index') }}"
                                     >
                                         @lang('shop::app.components.layouts.header.profile')
                                     </a>
-    
+
                                     <a
-                                        class="cursor-pointer px-5 py-2 text-base hover:bg-gray-100"
+                                        class="cursor-pointer px-5 py-2 text-base hover:bg-brown-100"
                                         href="{{ route('shop.customers.account.orders.index') }}"
                                     >
                                         @lang('shop::app.components.layouts.header.orders')
                                     </a>
-    
+
                                     @if ($showWishlist)
                                         <a
-                                            class="cursor-pointer px-5 py-2 text-base hover:bg-gray-100"
+                                            class="cursor-pointer px-5 py-2 text-base hover:bg-brown-100"
                                             href="{{ route('shop.customers.account.wishlist.index') }}"
                                         >
                                             @lang('shop::app.components.layouts.header.wishlist')
                                         </a>
                                     @endif
-    
+
                                     <!--Customers logout-->
                                     @auth('customer')
                                         <x-shop::form
@@ -217,16 +217,16 @@
                                             action="{{ route('shop.customer.session.destroy') }}"
                                             id="customerLogout"
                                         />
-    
+
                                         <a
-                                            class="cursor-pointer px-5 py-2 text-base hover:bg-gray-100"
+                                            class="cursor-pointer px-5 py-2 text-base hover:bg-brown-100"
                                             href="{{ route('shop.customer.session.destroy') }}"
                                             onclick="event.preventDefault(); document.getElementById('customerLogout').submit();"
                                         >
                                             @lang('shop::app.components.layouts.header.logout')
                                         </a>
                                     @endauth
-    
+
                                     {!! view_render_event('bagisto.shop.components.layouts.header.mobile.index.profile_dropdown.links.after') !!}
                                 </div>
                             </x-slot>
@@ -234,7 +234,7 @@
                     </x-shop::dropdown>
                 </div>
 
-                <!-- For Medium and small screen --> 
+                <!-- For Medium and small screen -->
                 <div class="md:hidden">
                     @guest('customer')
                         <a
@@ -263,8 +263,8 @@
 
     <!-- Serach Catalog Form -->
     <form action="{{ route('shop.search.index') }}" class="flex w-full items-center">
-        <label 
-            for="organic-search" 
+        <label
+            for="organic-search"
             class="sr-only"
         >
             @lang('shop::app.components.layouts.header.search')
@@ -301,7 +301,7 @@
             <template v-for="(category) in categories">
                 {!! view_render_event('bagisto.shop.components.layouts.header.mobile.category.before') !!}
 
-                <div class="flex items-center justify-between border border-b border-l-0 border-r-0 border-t-0 border-zinc-100 py-3.5 max-sm:py-2.5">
+                <div class="flex items-center justify-between border border-b border-l-0 border-r-0 border-t-0 border-brown-100 py-3.5 max-sm:py-2.5">
                     <a
                         :href="category.url"
                         class="flex items-center justify-between"
@@ -323,7 +323,7 @@
                 >
                     <ul v-if="category.children.length">
                         <li v-for="secondLevelCategory in category.children">
-                            <div class="flex items-center justify-between border border-b border-l-0 border-r-0 border-t-0 border-zinc-100 ltr:ml-3 rtl:mr-3">
+                            <div class="flex items-center justify-between border border-b border-l-0 border-r-0 border-t-0 border-brown-100 ltr:ml-3 rtl:mr-3">
                                 <a
                                     :href="secondLevelCategory.url"
                                     class="mt-5 flex items-center justify-between pb-5"
@@ -345,7 +345,7 @@
                             <div v-if="secondLevelCategory.category_show">
                                 <ul v-if="secondLevelCategory.children.length">
                                     <li v-for="thirdLevelCategory in secondLevelCategory.children">
-                                        <div class="flex items-center justify-between border border-b border-l-0 border-r-0 border-t-0 border-zinc-100 ltr:ml-3 rtl:mr-3">
+                                        <div class="flex items-center justify-between border border-b border-l-0 border-r-0 border-t-0 border-brown-100 ltr:ml-3 rtl:mr-3">
                                             <a
                                                 :href="thirdLevelCategory.url"
                                                 class="mt-5 flex items-center justify-between pb-5 ltr:ml-3 rtl:mr-3"
@@ -380,8 +380,8 @@
 
         <!-- Localization & Currency Section -->
         @if(core()->getCurrentChannel()->locales()->count() > 1 || core()->getCurrentChannel()->currencies()->count() > 1 )
-            <div class="w-full border-t bg-white">
-                <div class="fixed bottom-0 z-10 grid w-full max-w-full grid-cols-[1fr_auto_1fr] items-center justify-items-center border-t border-zinc-200 bg-white px-5 ltr:left-0 rtl:right-0">
+            <div class="w-full border-t bg-lightOrange">
+                <div class="fixed bottom-0 z-10 grid w-full max-w-full grid-cols-[1fr_auto_1fr] items-center justify-items-center border-t border-brown-200 bg-lightOrange px-5 ltr:left-0 rtl:right-0">
                     <!-- Filter Drawer -->
                     <x-shop::drawer
                         position="bottom"
@@ -418,7 +418,7 @@
                     </x-shop::drawer>
 
                     <!-- Seperator -->
-                    <span class="h-5 w-0.5 bg-zinc-200"></span>
+                    <span class="h-5 w-0.5 bg-brown-200"></span>
 
                     <!-- Sort Drawer -->
                     <x-shop::drawer
