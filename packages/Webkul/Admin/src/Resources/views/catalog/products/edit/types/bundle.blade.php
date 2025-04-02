@@ -18,7 +18,7 @@
         type="text/x-template"
         id="v-bundle-options-template"
     >
-        <div class="box-shadow relative rounded bg-white dark:bg-gray-900">
+        <div class="box-shadow relative rounded bg-white dark:border-zinc-800 dark:bg-zinc-900">
             <!-- Panel Header -->
             <div class="mb-2.5 flex justify-between gap-5 p-4">
                 <div class="flex flex-col gap-2">
@@ -30,7 +30,7 @@
                         @lang('admin::app.catalog.products.edit.types.bundle.info')
                     </p>
                 </div>
-                
+
                 <!-- Add Button -->
                 <div class="flex items-center gap-x-1">
                     <div
@@ -104,7 +104,7 @@
                                 @lang('admin::app.catalog.products.edit.types.bundle.update-create.title')
                             </p>
                         </x-slot>
-        
+
                         <!-- Modal Content -->
                         <x-slot:content>
                             <x-admin::form.control-group>
@@ -119,7 +119,7 @@
                                     ::value="selectedOption.label"
                                     :label="trans('admin::app.catalog.products.edit.types.bundle.update-create.name')"
                                 />
-        
+
                                 <x-admin::form.control-group.error control-name="label" />
                             </x-admin::form.control-group>
 
@@ -153,7 +153,7 @@
                                             @lang('admin::app.catalog.products.edit.types.bundle.update-create.multiselect')
                                         </option>
                                     </x-admin::form.control-group.control>
-        
+
                                     <x-admin::form.control-group.error control-name="type" />
                                 </x-admin::form.control-group>
 
@@ -178,17 +178,17 @@
                                             @lang('admin::app.catalog.products.edit.types.bundle.update-create.no')
                                         </option>
                                     </x-admin::form.control-group.control>
-        
+
                                     <x-admin::form.control-group.error control-name="is_required" />
                                 </x-admin::form.control-group>
                             </div>
                         </x-slot>
-        
+
                         <!-- Modal Footer -->
                         <x-slot:footer>
                             <!-- Modal Submission -->
                             <div class="flex items-center gap-x-2.5">
-                                <button 
+                                <button
                                     type="submit"
                                     class="primary-button"
                                 >
@@ -247,7 +247,7 @@
                         @{{ types[option.type].info }}
                     </p>
                 </div>
-                
+
                 <!-- Add Button -->
                 <div class="flex items-center gap-x-5">
                     <p
@@ -314,7 +314,7 @@
                                     >
                                     </label>
                                 </div>
-                                
+
                                 <!-- Image -->
                                 <div
                                     class="relative h-[60px] max-h-[60px] w-full max-w-[60px] overflow-hidden rounded"
@@ -322,12 +322,12 @@
                                 >
                                     <template v-if="! element.product.images.length">
                                         <img src="{{ bagisto_asset('images/product-placeholders/front.svg') }}">
-                                    
+
                                         <p class="absolute bottom-1.5 w-full text-center text-[6px] font-semibold text-gray-400">
                                             @lang('admin::app.catalog.products.edit.types.bundle.image-placeholder')
                                         </p>
                                     </template>
-                
+
                                     <template v-else>
                                         <img :src="element.product.images[0].url">
                                     </template>
@@ -348,16 +348,16 @@
                             <!-- Actions -->
                             <div class="grid place-content-start gap-1 ltr:text-right rtl:text-left">
                                 <p class="font-semibold text-gray-800 dark:text-white">
-                                    @{{ $admin.formatPrice(element.product.price) }}    
+                                    @{{ $admin.formatPrice(element.product.price) }}
                                 </p>
-                                
+
                                 <!-- Hidden Input -->
                                 <input
                                     type="hidden"
                                     :name="'bundle_options[' + option.id + '][products][' + element.id + '][product_id]'"
                                     :value="element.product.id"
                                 />
-                                
+
                                 <input
                                     type="hidden"
                                     :name="'bundle_options[' + option.id + '][products][' + element.id + '][sort_order]'"
@@ -373,7 +373,7 @@
                                         type="text"
                                         :name="'bundle_options[' + option.id + '][products][' + element.id + '][qty]'"
                                         v-model="element.qty"
-                                        class="min-h-[39px] w-[86px] rounded-md border px-3 py-2 text-sm text-gray-600 transition-all hover:border-gray-400 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-300"
+                                        class="min-h-[39px] w-[86px] rounded-md border px-3 py-2 text-sm text-gray-600 transition-all hover:border-gray-400 dark:border-zinc-800 dark:bg-zinc-900 dark:text-gray-300"
                                         :class="[errors['bundle_options[' + option.id + '][products][' + element.id + '][qty]'] ? 'border border-red-600 hover:border-red-600' : '']"
                                         rules="required|numeric|min_value:1"
                                         label="@lang('admin::app.catalog.products.edit.types.bundle.option.default-qty')"
@@ -388,7 +388,7 @@
                                         </p>
                                     </v-error-message>
                                 </x-admin::form.control-group>
-                                
+
                                 <p
                                     class="cursor-pointer text-red-600 transition-all hover:underline"
                                     @click="removeProduct(element)"
@@ -579,7 +579,7 @@
                 updateIsDefault: function(updatedProductOption) {
                     this.option.bundle_option_products.forEach((productOption) => {
                         if (
-                            this.option.type == 'radio' 
+                            this.option.type == 'radio'
                             || this.option.type == 'select'
                         ) {
                             productOption.is_default = productOption.product.id == updatedProductOption.product.id ? 1 : 0;

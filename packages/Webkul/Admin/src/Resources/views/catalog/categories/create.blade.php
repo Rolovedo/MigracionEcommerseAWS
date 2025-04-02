@@ -45,7 +45,7 @@
                 {!! view_render_event('bagisto.admin.catalog.categories.create.card.general.before') !!}
 
                 <!-- General -->
-                <div class="box-shadow rounded bg-white p-4 dark:bg-gray-900">
+                <div class="box-shadow rounded bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900">
                     <p class="mb-4 text-base font-semibold text-gray-800 dark:text-white">
                         @lang('admin::app.catalog.categories.create.general')
                     </p>
@@ -75,7 +75,7 @@
                                 type="text"
                                 id="name"
                                 :class="[errors['{{ 'name' }}'] ? 'border border-red-600 hover:border-red-600' : '']"
-                                class="flex min-h-[39px] w-full rounded-md border px-3 py-2 text-sm text-gray-600 transition-all hover:border-gray-400 focus:border-gray-400 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-300 dark:hover:border-gray-400 dark:focus:border-gray-400"
+                                class="flex min-h-[39px] w-full rounded-md border px-3 py-2 text-sm text-gray-600 transition-all hover:border-gray-400 focus:border-gray-400 dark:border-zinc-800 dark:bg-zinc-900 dark:text-gray-300 dark:hover:border-gray-400 dark:focus:border-gray-400"
                                 name="name"
                                 v-bind="field"
                                 placeholder="{{ trans('admin::app.catalog.categories.create.name') }}"
@@ -111,7 +111,7 @@
                 {!! view_render_event('bagisto.admin.catalog.categories.create.card.description_images.before') !!}
 
                 <!-- Description and images -->
-                <div class="box-shadow rounded bg-white p-4 dark:bg-gray-900">
+                <div class="box-shadow rounded bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900">
                     <p class="mb-4 text-base font-semibold text-gray-800 dark:text-white">
                         @lang('admin::app.catalog.categories.create.description-and-images')
                     </p>
@@ -176,7 +176,7 @@
                 {!! view_render_event('bagisto.admin.catalog.categories.create.card.seo.before') !!}
 
                 <!-- SEO Details -->
-                <div class="box-shadow rounded bg-white p-4 dark:bg-gray-900">
+                <div class="box-shadow rounded bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900">
                     <p class="mb-4 text-base font-semibold text-gray-800 dark:text-white">
                         @lang('admin::app.catalog.categories.create.seo-details')
                     </p>
@@ -219,7 +219,7 @@
                                     type="text"
                                     id="slug"
                                     :class="[errors['{{ 'slug' }}'] ? 'border border-red-600 hover:border-red-600' : '']"
-                                    class="flex min-h-[39px] w-full rounded-md border px-3 py-2 text-sm text-gray-600 transition-all hover:border-gray-400 focus:border-gray-400 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-300 dark:hover:border-gray-400 dark:focus:border-gray-400"
+                                    class="flex min-h-[39px] w-full rounded-md border px-3 py-2 text-sm text-gray-600 transition-all hover:border-gray-400 focus:border-gray-400 dark:border-zinc-800 dark:bg-zinc-900 dark:text-gray-300 dark:hover:border-gray-400 dark:focus:border-gray-400"
                                     name="slug"
                                     v-bind="field"
                                     placeholder="{{ trans('admin::app.catalog.categories.create.slug') }}"

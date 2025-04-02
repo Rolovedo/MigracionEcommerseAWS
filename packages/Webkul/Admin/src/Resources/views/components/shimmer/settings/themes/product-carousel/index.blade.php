@@ -1,5 +1,5 @@
 <div class="flex flex-1 flex-col gap-2 max-xl:flex-auto">
-    <div class="box-shadow rounded bg-white p-4 dark:bg-gray-900">
+    <div class="box-shadow rounded bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900">
         <div class="mb-2.5 flex items-center justify-between gap-x-2.5">
             <div class="flex flex-col gap-1">
                 <div class="shimmer h-[17px] w-40"></div>

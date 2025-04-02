@@ -226,41 +226,8 @@ return [
                 'channel_based' => true,
                 'options'       => [
                     [
-                        'title' => 'admin::app.configuration.index.general.magic-ai.review-translation.gpt-3-5-turbo',
-                        'value' => 'gpt-3.5-turbo',
-                    ], [
-                        'title' => 'admin::app.configuration.index.general.magic-ai.review-translation.llama2',
-                        'value' => 'llama2',
-                    ], [
-                        'title' => 'admin::app.configuration.index.general.magic-ai.review-translation.mistral',
-                        'value' => 'mistral',
-                    ], [
-                        'title' => 'admin::app.configuration.index.general.magic-ai.review-translation.dolphin-phi',
-                        'value' => 'dolphin-phi',
-                    ], [
-                        'title' => 'admin::app.configuration.index.general.magic-ai.review-translation.phi',
-                        'value' => 'phi',
-                    ], [
-                        'title' => 'admin::app.configuration.index.general.magic-ai.review-translation.starling-lm',
-                        'value' => 'starling-lm',
-                    ], [
-                        'title' => 'admin::app.configuration.index.general.magic-ai.review-translation.llama2-uncensored',
-                        'value' => 'llama2-uncensored',
-                    ], [
-                        'title' => 'admin::app.configuration.index.general.magic-ai.review-translation.llama2:13b',
-                        'value' => 'llama2:13b',
-                    ], [
-                        'title' => 'admin::app.configuration.index.general.magic-ai.review-translation.llama2:70b',
-                        'value' => 'llama2:70b',
-                    ], [
-                        'title' => 'admin::app.configuration.index.general.magic-ai.review-translation.orca-mini',
-                        'value' => 'orca-mini',
-                    ], [
-                        'title' => 'admin::app.configuration.index.general.magic-ai.review-translation.vicuna',
-                        'value' => 'vicuna',
-                    ], [
-                        'title' => 'admin::app.configuration.index.general.magic-ai.review-translation.llava',
-                        'value' => 'llava',
+                        'title' => 'admin::app.configuration.index.general.magic-ai.review-translation.gpt-4o-mini',
+                        'value' => 'gpt-4o-mini',
                     ],
                 ],
             ],
@@ -283,42 +250,9 @@ return [
                 'channel_based' => true,
                 'options'       => [
                     [
-                        'title' => 'admin::app.configuration.index.general.magic-ai.checkout-message.gpt-3-5-turbo',
-                        'value' => 'open-ai-gpt-3.5-turbo',
-                    ], [
-                        'title' => 'admin::app.configuration.index.general.magic-ai.checkout-message.llama2',
-                        'value' => 'llama2',
-                    ], [
-                        'title' => 'admin::app.configuration.index.general.magic-ai.checkout-message.mistral',
-                        'value' => 'mistral',
-                    ], [
-                        'title' => 'admin::app.configuration.index.general.magic-ai.checkout-message.dolphin-phi',
-                        'value' => 'dolphin-phi',
-                    ], [
-                        'title' => 'admin::app.configuration.index.general.magic-ai.checkout-message.phi',
-                        'value' => 'phi',
-                    ], [
-                        'title' => 'admin::app.configuration.index.general.magic-ai.checkout-message.starling-lm',
-                        'value' => 'starling-lm',
-                    ], [
-                        'title' => 'admin::app.configuration.index.general.magic-ai.checkout-message.llama2-uncensored',
-                        'value' => 'llama2-uncensored',
-                    ], [
-                        'title' => 'admin::app.configuration.index.general.magic-ai.checkout-message.llama2:13b',
-                        'value' => 'llama2:13b',
-                    ], [
-                        'title' => 'admin::app.configuration.index.general.magic-ai.checkout-message.llama2:70b',
-                        'value' => 'llama2:70b',
-                    ], [
-                        'title' => 'admin::app.configuration.index.general.magic-ai.checkout-message.orca-mini',
-                        'value' => 'orca-mini',
-                    ], [
-                        'title' => 'admin::app.configuration.index.general.magic-ai.checkout-message.vicuna',
-                        'value' => 'vicuna',
-                    ], [
-                        'title' => 'admin::app.configuration.index.general.magic-ai.checkout-message.llava',
-                        'value' => 'llava',
-                    ],
+                        'title' => 'admin::app.configuration.index.general.magic-ai.checkout-message.gpt-4o-mini',
+                        'value' => 'gpt-4o-mini',
+                    ]
                 ],
             ], [
                 'name'          => 'prompt',
@@ -1326,7 +1260,7 @@ return [
         'info' => 'admin::app.configuration.index.sales.payment-methods.info',
         'icon' => 'settings/payment-method.svg',
         'sort' => 3,
-    ], /* [
+    ], [
         'key'    => 'sales.payment_methods.cashondelivery',
         'name'   => 'admin::app.configuration.index.sales.payment-methods.cash-on-delivery',
         'info'   => 'admin::app.configuration.index.sales.payment-methods.cash-on-delivery-info',
@@ -1432,7 +1366,7 @@ return [
             ],
         ],
     ],
-    [
+    /* [
         'key'    => 'sales.payment_methods.moneytransfer',
         'name'   => 'admin::app.configuration.index.sales.payment-methods.money-transfer',
         'info'   => 'admin::app.configuration.index.sales.payment-methods.money-transfer-info',

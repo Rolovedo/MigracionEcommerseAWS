@@ -1,4 +1,4 @@
-<div class="box-shadow rounded bg-white p-4 dark:bg-gray-900">
+<div class="box-shadow rounded bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900">
     <p class="text-base font-semibold leading-none text-gray-800 dark:text-white">
         @lang('admin::app.customers.customers.view.invoices.count', ['count' => count($customer->invoices)])
     </p>
@@ -23,7 +23,7 @@
             </template>
 
             <template v-else>
-                <div class="row grid grid-cols-4 grid-rows-1 items-center border-b border-gray-200 bg-gray-50 px-4 py-2.5 text-sm font-semibold text-gray-600 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-300">
+                <div class="row grid grid-cols-4 grid-rows-1 items-center border-b border-gray-200 bg-gray-50 px-4 py-2.5 text-sm font-semibold text-gray-600 dark:border-zinc-800 dark:bg-zinc-900 dark:text-gray-300">
                     <div
                         class="flex select-none items-center gap-2.5"
                         v-for="(columnGroup, index) in [['increment_id'], ['created_at'], ['base_grand_total'], ['order_id']]"
@@ -72,7 +72,7 @@
             <template v-else>
                 <div
                     v-if="available.meta.total"
-                    class="row grid grid-cols-4 items-center border-b px-4 py-2.5 transition-all hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-950"
+                    class="row grid grid-cols-4 items-center border-b px-4 py-2.5 transition-all hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-zinc-950"
                     v-for="record in available.records"
                 >
                     <div class="flex gap-2.5">

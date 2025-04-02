@@ -1,5 +1,5 @@
 <!-- Purchase Funnel Section -->
-<div class="box-shadow relative flex-1 rounded bg-white p-4 dark:bg-gray-900">
+<div class="box-shadow relative flex-1 rounded bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900">
     <!-- Header -->
     <div class="shimmer mb-4 h-[17px] w-[150px]"></div>
 

@@ -14,7 +14,7 @@
         id="v-cart-summary-template"
     >
         <div
-            class="box-shadow rounded bg-white dark:bg-gray-900"
+            class="box-shadow rounded bg-white dark:border-zinc-800 dark:bg-zinc-900"
             id="review-step-container"
         >
             <div class="flex items-center border-b p-4 dark:border-gray-800">
@@ -51,7 +51,7 @@
                                 @{{ cart.formatted_sub_total }}
                             </p>
                         </div>
-                        
+
                         <div class="row grid grid-cols-2 grid-rows-1 justify-between gap-4 text-right">
                             <p class="text-base font-medium text-gray-600 dark:text-gray-300">
                                 @lang('admin::app.sales.orders.create.cart.summary.sub-total-incl-tax')
@@ -122,7 +122,7 @@
                                 @{{ cart.formatted_shipping_amount }}
                             </p>
                         </div>
-                        
+
                         <div class="row grid grid-cols-2 grid-rows-1 justify-between gap-4 text-right">
                             <p class="text-base font-medium text-gray-600 dark:text-gray-300">
                                 @lang('admin::app.sales.orders.create.cart.summary.shipping-amount-incl-tax')
@@ -292,10 +292,10 @@
                         prices: "{{ core()->getConfigData('sales.taxes.shopping_cart.display_prices') }}",
 
                         subtotal: "{{ core()->getConfigData('sales.taxes.shopping_cart.display_subtotal') }}",
-                        
+
                         shipping: "{{ core()->getConfigData('sales.taxes.shopping_cart.display_shipping_amount') }}",
                     },
-                    
+
                     isStoring: false,
 
                     isPlacingOrder: false,
@@ -311,7 +311,7 @@
                             this.isStoring = false;
 
                             this.$emit('coupon-applied', response.data.data);
-                  
+
                             this.$emitter.emit('add-flash', { type: 'success', message: response.data.message });
 
                             this.$refs.couponModel.toggle();

@@ -118,7 +118,7 @@ class MagicAI
      */
     public function getModelInstance(): OpenAI|Ollama
     {
-        if (in_array($this->model, ['gpt-3.5-turbo', 'dall-e-2', 'dall-e-3'])) {
+        if (in_array($this->model, ['gpt-3.5-turbo', 'gpt-4o-mini', 'dall-e-2', 'dall-e-3'])) {
             return new OpenAI(
                 $this->model,
                 $this->prompt,

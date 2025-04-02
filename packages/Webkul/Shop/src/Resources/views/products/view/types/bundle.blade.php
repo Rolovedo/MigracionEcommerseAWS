@@ -54,7 +54,7 @@
             type="text/x-template"
             id="v-product-bundle-option-item-template"
         >
-            <div class="mt-8 border-b border-zinc-200 pb-4 max-sm:mt-4 max-sm:pb-0">
+            <div class="mt-8 border-b border-brown-200 pb-4 max-sm:mt-4 max-sm:pb-0">
                 <x-shop::form.control-group>
                     <!-- Dropdown Options Container -->
                     <x-shop::form.control-group.label
@@ -107,7 +107,7 @@
                             </option>
                         </x-shop::form.control-group.control>
                     </template>
-                    
+
                     <template v-if="option.type == 'radio'">
                         <div class="grid gap-2 max-sm:gap-1">
                             <!-- None radio option if option is not required -->
@@ -165,7 +165,7 @@
                                         <span class="text-zinc-500 line-through max-sm:text-sm">
                                             @{{ product.price.regular.formatted_price }}
                                         </span>
-    
+
                                         <span class="text-black">@{{ product.price.final.formatted_price }}</span>
                                     </div>
 
@@ -280,7 +280,7 @@
                     <x-shop::quantity-changer
                         ::name="'bundle_option_qty[' + option?.id + ']'"
                         ::value="productQty"
-                        class="mt-5 w-max gap-x-4 rounded-xl !border-zinc-200 px-4 py-1.5 max-sm:my-4"
+                        class="mt-5 w-max gap-x-4 rounded-xl !border-brown-200 px-4 py-1.5 max-sm:my-4"
                         @change="qtyUpdated($event)"
                     />
                 </template>

@@ -41,7 +41,7 @@
 
                             <p class="grid text-center text-sm font-semibold text-blue-600">
                                 @lang('admin::app.components.media.images.ai-add-image-btn')
-                                
+
                                 <span class="text-xs">
                                     @lang('admin::app.components.media.images.ai-btn-info')
                                 </span>
@@ -61,7 +61,7 @@
 
                             <p class="grid text-center text-sm font-semibold text-gray-600 dark:text-gray-300">
                                 @lang('admin::app.components.media.images.add-image-btn')
-                                
+
                                 <span class="text-xs">
                                     @lang('admin::app.components.media.images.allowed-types')
                                 </span>
@@ -136,7 +136,7 @@
                                 <template v-else>
                                     <p class="truncate text-lg font-bold text-gray-800 dark:text-white">
                                         <span
-                                            class="icon-arrow-right mr-1 cursor-pointer align-middle text-2xl hover:rounded-md hover:bg-gray-100 dark:hover:bg-gray-950"
+                                            class="icon-arrow-right mr-1 cursor-pointer align-middle text-2xl hover:rounded-md hover:bg-gray-100 dark:hover:bg-zinc-950"
                                             @click="ai.images = []"
                                         ></span>
 
@@ -295,7 +295,7 @@
 
                                             <template v-else>
                                                 <span class="icon-magic text-blue-600"></span>
-                                                
+
                                                 @lang('admin::app.components.media.images.ai-generation.generate')
                                             </template>
                                         </button>
@@ -315,7 +315,7 @@
 
                                             <template v-else>
                                                 <span class="icon-magic text-2xl text-blue-600"></span>
-                                                
+
                                                 @lang('admin::app.components.media.images.ai-generation.regenerate')
                                             </template>
                                         </button>
@@ -335,7 +335,7 @@
                     </form>
                 </x-admin::form>
             </div>
-        </div>  
+        </div>
     </script>
 
     <script type="text/x-template" id="v-media-image-item-template">
@@ -346,7 +346,7 @@
                 :style="{'width': this.width, 'height': this.height}"
             />
 
-            <div class="invisible absolute bottom-0 top-0 flex w-full flex-col justify-between bg-white p-3 opacity-80 transition-all group-hover:visible dark:bg-gray-900">
+            <div class="invisible absolute bottom-0 top-0 flex w-full flex-col justify-between bg-white p-3 opacity-80 transition-all group-hover:visible dark:border-zinc-800 dark:bg-zinc-900">
                 <!-- Image Name -->
                 <p class="break-all text-xs font-semibold text-gray-600 dark:text-gray-300"></p>
 
@@ -388,7 +388,7 @@
 
             props: {
                 name: {
-                    type: String, 
+                    type: String,
                     default: 'images',
                 },
 
@@ -550,8 +550,8 @@
                 getBase64ToFile(base64, filename) {
                     var arr = base64.split(','),
                         mime = arr[0].match(/:(.*?);/)[1],
-                        bstr = atob(arr[arr.length - 1]), 
-                        n = bstr.length, 
+                        bstr = atob(arr[arr.length - 1]),
+                        n = bstr.length,
                         u8arr = new Uint8Array(n);
 
                     while (n--) {

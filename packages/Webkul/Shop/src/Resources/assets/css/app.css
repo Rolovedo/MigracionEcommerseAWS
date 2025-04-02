@@ -10,6 +10,17 @@
     font-display: block;
 }
 
+@layer base {
+    body {
+        @apply bg-lightBrown;
+    }
+}
+@layer base {
+    header {
+        @apply bg-lightOrange;
+    }
+}
+
 img.lazy {
   visibility: hidden;
 }
@@ -323,7 +334,7 @@ img.lazy {
     .icon-users:before {
         content: "\e942";
     }
-      
+
 
     .journal-scroll::-webkit-scrollbar {
         width: 14px;
@@ -346,11 +357,11 @@ img.lazy {
     }
 
     .scrollbar-width-hidden {
-        -ms-overflow-style: none; 
+        -ms-overflow-style: none;
         scrollbar-width: none;
     }
 
-    .scrollbar-width-hidden::-webkit-scrollbar { 
+    .scrollbar-width-hidden::-webkit-scrollbar {
         display: none;
     }
 
@@ -391,7 +402,7 @@ img.lazy {
     .direction-rtl {
         direction: rtl;
     }
-    
+
     .label-pending,
     .label-processing,
     .label-closed,
@@ -428,11 +439,11 @@ img.lazy {
     }
 
     .primary-button {
-        @apply flex gap-x-1.5 items-center place-content-center font-medium rounded-xl text-white bg-navyBlue border border-navyBlue px-8 py-4 max-w-max cursor-pointer transition-all hover:opacity-[0.9];
+        @apply flex gap-x-1.5 items-center place-content-center font-medium rounded-xl text-white bg-brown border border-brown px-8 py-4 max-w-max cursor-pointer transition-all hover:opacity-[0.9];
     }
-    
+
     .secondary-button {
-        @apply flex gap-x-1.5 items-center place-content-center font-medium rounded-xl bg-white text-navyBlue border border-navyBlue px-8 py-4 max-w-max cursor-pointer transition-all hover:bg-[#050e3a0d];
+        @apply flex gap-x-1.5 items-center place-content-center font-medium rounded-xl bg-lightBrown text-brown border-2 border-brown px-8 py-4 max-w-max cursor-pointer transition-all hover:bg-[#050e3a0d];
     }
 
     .shimmer {
@@ -441,7 +452,7 @@ img.lazy {
         animation-iteration-count: infinite;
         animation-name: skeleton;
         animation-timing-function: linear;
-        background: linear-gradient(to right, #F6F6F6 8%, #F0F0F0 18%, #F6F6F6 33%);
+        background: linear-gradient(to right, #f8f4ec 8%, #F0F0F0 18%, #f8f4ec 33%);
         background-size: 1250px 100%;
     }
 
@@ -459,7 +470,7 @@ img.lazy {
         0% {
             opacity: 0;
         }
-        
+
         100% {
             opacity: 1;
         }
@@ -506,7 +517,7 @@ img.lazy {
     html {
         margin-top: 0px !important;
     }
-    
+
     .break-word-custom {
         word-break: break-word;
     }

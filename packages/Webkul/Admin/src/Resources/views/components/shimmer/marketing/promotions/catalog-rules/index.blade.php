@@ -2,24 +2,24 @@
     <!-- Left sub-components -->
     <div class="flex flex-1 flex-col gap-2 max-xl:flex-auto">
         <!-- General Section -->
-        <div class="box-shadow rounded bg-white p-4 dark:bg-gray-900">
+        <div class="box-shadow rounded bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900">
             <div class="shimmer mb-4 h-5 w-16"></div>
 
             <div class="mb-4">
                 <div class="shimmer mb-1.5 h-3.5 w-16"></div>
-                
-                <div class="h-[42px] w-full rounded-md border px-3 py-2.5 dark:border-gray-800 dark:bg-gray-900"></div>
+
+                <div class="h-[42px] w-full rounded-md border px-3 py-2.5 dark:border-zinc-800 dark:bg-zinc-900"></div>
             </div>
 
             <div class="mb-1.5">
                 <div class="shimmer mb-1 h-4 w-16"></div>
-                
-                <div class="h-16 w-full rounded-md border px-3 py-2.5 dark:border-gray-800 dark:bg-gray-900"></div>
+
+                <div class="h-16 w-full rounded-md border px-3 py-2.5 dark:border-zinc-800 dark:bg-zinc-900"></div>
             </div>
         </div>
 
         <!-- Conditions Section -->
-        <div class="box-shadow rounded bg-white p-4 dark:bg-gray-900">
+        <div class="box-shadow rounded bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900">
             <div class="flex items-center justify-between gap-4">
                 <div class="shimmer h-4 w-20"></div>
 
@@ -31,7 +31,7 @@
         </div>
 
         <!-- Actions Section -->
-        <div class="box-shadow rounded bg-white p-4 dark:bg-gray-900">
+        <div class="box-shadow rounded bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900">
             <div class="shimmer mb-5 h-5 w-20"></div>
 
             <div class="flex gap-4 max-sm:flex-wrap">

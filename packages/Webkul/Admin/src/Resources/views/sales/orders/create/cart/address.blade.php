@@ -17,7 +17,7 @@
         id="v-cart-addresses-template"
     >
         <div
-            class="box-shadow rounded bg-white dark:bg-gray-900"
+            class="box-shadow rounded bg-white dark:border-zinc-800 dark:bg-zinc-900"
             id="address-step-container"
         >
             <div class="flex items-center border-b p-4 dark:border-gray-800">
@@ -61,7 +61,7 @@
                                         name="billing.id"
                                         ::id="`billing_address_id_${address.id}`"
                                         ::for="`billing_address_id_${address.id}`"
-                                        ::key="`billing_address_id_${address.id}`" 
+                                        ::key="`billing_address_id_${address.id}`"
                                         ::value="address.id"
                                         v-model="selectedAddresses.billing_address_id"
                                         rules="required"
@@ -176,7 +176,7 @@
                                                 name="shipping.id"
                                                 ::id="`shipping_address_id_${address.id}`"
                                                 ::for="`shipping_address_id_${address.id}`"
-                                                ::key="`shipping_address_id_${address.id}`" 
+                                                ::key="`shipping_address_id_${address.id}`"
                                                 ::value="address.id"
                                                 v-model="selectedAddresses.shipping_address_id"
                                                 rules="required"
@@ -325,7 +325,7 @@
                 return {
                     customerSavedAddresses: {
                         'billing': [],
-                        
+
                         'shipping': [],
                     },
 
@@ -385,7 +385,7 @@
                         });
                     } else {
                         this.selectedAddresses[type + '_address_id'] = cartAddress.id;
-                        
+
                         addresses.unshift(cartAddress);
                     }
 

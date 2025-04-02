@@ -1,5 +1,5 @@
 <!-- Wishlist Added Shimmer -->
-<div class="box-shadow relative rounded bg-white p-4 dark:bg-gray-900">
+<div class="box-shadow relative rounded bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900">
     <!-- Header -->
     <div class="mb-4 flex items-center justify-between">
         <div class="shimmer h-[17px] w-[150px]"></div>
@@ -26,7 +26,7 @@
                 <div class="shimmer h-3.5 w-3.5 rounded-md"></div>
                 <div class="shimmer h-[17px] w-[143px]"></div>
             </div>
-            
+
             <div class="flex items-center gap-1">
                 <div class="shimmer h-3.5 w-3.5 rounded-md"></div>
                 <div class="shimmer h-[17px] w-[143px]"></div>

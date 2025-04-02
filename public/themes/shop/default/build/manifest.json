@@ -1,6 +1,6 @@
 {
   "src/Resources/assets/css/app.css": {
-    "file": "assets/app-b76e0d2c.css",
+    "file": "assets/app-f5cac7b8.css",
     "isEntry": true,
     "src": "src/Resources/assets/css/app.css"
   },
@@ -43,6 +43,10 @@
   "src/Resources/assets/images/medium-product-placeholder.webp": {
     "file": "assets/medium-product-placeholder-3b1a7b7d.webp",
     "src": "src/Resources/assets/images/medium-product-placeholder.webp"
+  },
+  "src/Resources/assets/images/mercadopago.png": {
+    "file": "assets/mercadopago-e10d030a.png",
+    "src": "src/Resources/assets/images/mercadopago.png"
   },
   "src/Resources/assets/images/money-transfer.png": {
     "file": "assets/money-transfer-115da55a.png",
@@ -88,7 +92,7 @@
     "css": [
       "assets/app-05f8acf7.css"
     ],
-    "file": "assets/app-a6822c0b.js",
+    "file": "assets/app-6a134be9.js",
     "isEntry": true,
     "src": "src/Resources/assets/js/app.js"
   }

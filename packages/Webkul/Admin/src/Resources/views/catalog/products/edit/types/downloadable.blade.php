@@ -11,7 +11,7 @@
         type="text/x-template"
         id="v-downloadable-links-template"
     >
-        <div class="box-shadow relative rounded bg-white dark:bg-gray-900">
+        <div class="box-shadow relative rounded bg-white dark:border-zinc-800 dark:bg-zinc-900">
             <!-- Panel Header -->
             <div class="mb-2.5 flex justify-between gap-5 p-4">
                 <div class="flex flex-col gap-2">
@@ -23,7 +23,7 @@
                         @lang('admin::app.catalog.products.edit.types.downloadable.links.info')
                     </p>
                 </div>
-                
+
                 <!-- Add Button -->
                 <div class="flex items-center gap-x-1">
                     <div
@@ -210,7 +210,7 @@
                             <!-- Actions -->
                             <div class="grid place-content-start gap-1 text-right">
                                 <p class="font-semibold text-gray-800 dark:text-white">
-                                    @{{ $admin.formatPrice(element.price) }}    
+                                    @{{ $admin.formatPrice(element.price) }}
                                 </p>
 
                                 <div class="flex items-center gap-x-5">
@@ -255,7 +255,7 @@
                         @lang('admin::app.catalog.products.edit.types.downloadable.links.empty-info')
                     </p>
                 </div>
-                
+
                 <!-- Add Row Button -->
                 <div
                     class="secondary-button text-sm"
@@ -305,7 +305,7 @@
                                         v-model="selectedLink.title"
                                         :label="trans('admin::app.catalog.products.edit.types.downloadable.links.update-create.name')"
                                     />
-            
+
                                     <x-admin::form.control-group.error control-name="title" />
                                 </x-admin::form.control-group>
 
@@ -322,7 +322,7 @@
                                             v-model="selectedLink.price"
                                             :label="trans('admin::app.catalog.products.edit.types.downloadable.links.update-create.price')"
                                         />
-                
+
                                         <x-admin::form.control-group.error control-name="price" />
                                     </x-admin::form.control-group>
 
@@ -338,7 +338,7 @@
                                             v-model="selectedLink.downloads"
                                             :label="trans('admin::app.catalog.products.edit.types.downloadable.links.update-create.downloads')"
                                         />
-                
+
                                         <x-admin::form.control-group.error control-name="downloads" />
                                     </x-admin::form.control-group>
                                 </div>
@@ -364,7 +364,7 @@
                                                 @lang('admin::app.catalog.products.edit.types.downloadable.links.update-create.url')
                                             </option>
                                         </x-admin::form.control-group.control>
-            
+
                                         <x-admin::form.control-group.error control-name="type" />
                                     </x-admin::form.control-group>
 
@@ -374,7 +374,7 @@
                                             <x-admin::form.control-group.label class="required">
                                                 @lang('admin::app.catalog.products.edit.types.downloadable.links.update-create.file')
                                             </x-admin::form.control-group.label>
-                                            
+
                                             <x-admin::form.control-group.control
                                                 type="hidden"
                                                 name="file"
@@ -412,7 +412,7 @@
                                             >
                                                 @{{ selectedLink.file_name }}
                                             </a>
-                    
+
                                             <x-admin::form.control-group.error control-name="file" />
                                         </x-admin::form.control-group>
                                     </template>
@@ -431,7 +431,7 @@
                                                 v-model="selectedLink.url"
                                                 :label="trans('admin::app.catalog.products.edit.types.downloadable.links.update-create.url')"
                                             />
-                    
+
                                             <x-admin::form.control-group.error control-name="url" />
                                         </x-admin::form.control-group>
                                     </template>
@@ -516,7 +516,7 @@
                                                 v-model="selectedLink.sample_url"
                                                 :label="trans('admin::app.catalog.products.edit.types.downloadable.links.update-create.url')"
                                             />
-                    
+
                                             <x-admin::form.control-group.error control-name="sample_url" />
                                         </x-admin::form.control-group>
                                     </template>
@@ -533,7 +533,7 @@
         type="text/x-template"
         id="v-downloadable-samples-template"
     >
-        <div class="box-shadow relative rounded bg-white dark:bg-gray-900">
+        <div class="box-shadow relative rounded bg-white dark:border-zinc-800 dark:bg-zinc-900">
             <!-- Panel Header -->
             <div class="mb-2.5 flex justify-between gap-5 p-4">
                 <div class="flex flex-col gap-2">
@@ -545,7 +545,7 @@
                         @lang('admin::app.catalog.products.edit.types.downloadable.samples.info')
                     </p>
                 </div>
-                
+
                 <!-- Add Button -->
                 <div class="flex items-center gap-x-1">
                     <div
@@ -700,7 +700,7 @@
                         @lang('admin::app.catalog.products.edit.types.downloadable.samples.empty-info')
                     </p>
                 </div>
-                
+
                 <!-- Add Row Button -->
                 <div
                     class="secondary-button text-sm"
@@ -749,7 +749,7 @@
                                         v-model="selectedSample.title"
                                         :label="trans('admin::app.catalog.products.edit.types.downloadable.samples.update-create.name')"
                                     />
-            
+
                                     <x-admin::form.control-group.error control-name="title" />
                                 </x-admin::form.control-group>
 
@@ -774,7 +774,7 @@
                                                 @lang('admin::app.catalog.products.edit.types.downloadable.samples.update-create.url')
                                             </option>
                                         </x-admin::form.control-group.control>
-            
+
                                         <x-admin::form.control-group.error control-name="type" />
                                     </x-admin::form.control-group>
 
@@ -784,7 +784,7 @@
                                             <x-admin::form.control-group.label class="required">
                                                 @lang('admin::app.catalog.products.edit.types.downloadable.samples.update-create.file')
                                             </x-admin::form.control-group.label>
-                                            
+
                                             <x-admin::form.control-group.control
                                                 type="hidden"
                                                 name="file"
@@ -822,7 +822,7 @@
                                             >
                                                 @{{ selectedSample.file_name }}
                                             </a>
-                    
+
                                             <x-admin::form.control-group.error control-name="file" />
                                         </x-admin::form.control-group>
                                     </template>
@@ -841,7 +841,7 @@
                                                 v-model="selectedSample.url"
                                                 :label="trans('admin::app.catalog.products.edit.types.downloadable.samples.update-create.url')"
                                             />
-                    
+
                                             <x-admin::form.control-group.error control-name="url" />
                                         </x-admin::form.control-group>
                                     </template>

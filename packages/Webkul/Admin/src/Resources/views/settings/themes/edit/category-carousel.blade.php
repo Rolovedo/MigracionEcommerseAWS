@@ -9,7 +9,7 @@
         id="v-category-carousel-template"
     >
         <div class="flex flex-1 flex-col gap-2 max-xl:flex-auto">
-            <div class="box-shadow rounded bg-white p-4 dark:bg-gray-900">
+            <div class="box-shadow rounded bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900">
                 <div class="mb-2.5 flex items-center justify-between gap-x-2.5">
                     <div class="flex flex-col gap-1">
                         <p class="text-base font-semibold text-gray-800 dark:text-white">
@@ -38,7 +38,7 @@
                         <select
                             name="{{ $currentLocale->code }}[options][sort]"
                             v-bind="field"
-                            class="custom-select flex min-h-[39px] w-full rounded-md border bg-white px-3 py-1.5 text-sm font-normal text-gray-600 transition-all hover:border-gray-400 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-300"
+                            class="custom-select flex min-h-[39px] w-full rounded-md border bg-white px-3 py-1.5 text-sm font-normal text-gray-600 transition-all hover:border-gray-400 dark:border-zinc-800 dark:bg-zinc-900 dark:text-gray-300"
                             :class="[errors['{{ $currentLocale->code }}[options][filters][sort]'] ? 'border border-red-600 hover:border-red-600' : '']"
                         >
                             <option value="" selected disabled>
@@ -68,7 +68,7 @@
                         type="text"
                         name="{{ $currentLocale->code }}[options][filters][limit]"
                         value="{{ $theme->translate($currentLocale->code)->options['filters']['limit'] ?? '' }}"
-                        class="flex min-h-[39px] w-full rounded-md border px-3 py-2 text-sm text-gray-600 transition-all hover:border-gray-400 focus:border-gray-400 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-300 dark:hover:border-gray-400 dark:focus:border-gray-400"
+                        class="flex min-h-[39px] w-full rounded-md border px-3 py-2 text-sm text-gray-600 transition-all hover:border-gray-400 focus:border-gray-400 dark:border-zinc-800 dark:bg-zinc-900 dark:text-gray-300 dark:hover:border-gray-400 dark:focus:border-gray-400"
                         :class="[errors['{{ $currentLocale->code }}[options][filters][limit]'] ? 'border border-red-600 hover:border-red-600' : '']"
                         rules="required|min_value:1"
                         label="@lang('admin::app.settings.themes.edit.limit')"
@@ -109,10 +109,10 @@
                         type="hidden"
                         :name="'{{ $currentLocale->code }}[options][filters][' + filter.key +']'"
                         :value="filter.value"
-                    > 
-                
+                    >
+
                     <!-- Details -->
-                    <div 
+                    <div
                         class="flex cursor-pointer items-center justify-between gap-2.5 py-5"
                         :class="{
                             'border-b border-slate-300 dark:border-gray-800': index < options.filters.length - 1
@@ -121,7 +121,7 @@
                         <div class="flex gap-2.5">
                             <div class="grid place-content-start gap-1.5">
                                 <p class="text-gray-600 dark:text-gray-300">
-                                    <div> 
+                                    <div>
                                         @{{ "@lang('admin::app.settings.themes.edit.key')".replace(':key', filter.key) }}
                                     </div>
                                 </p>
@@ -135,10 +135,10 @@
                         <!-- Actions -->
                         <div class="grid place-content-start gap-1 text-right">
                             <div class="flex items-center gap-x-5">
-                                <p 
+                                <p
                                     class="cursor-pointer text-red-600 transition-all hover:underline"
                                     @click="remove(filter)"
-                                > 
+                                >
                                     @lang('admin::app.settings.themes.edit.delete')
                                 </p>
                             </div>
@@ -147,7 +147,7 @@
                 </div>
 
                 <!-- Filters Illustration -->
-                <div    
+                <div
                     class="grid justify-center justify-items-center gap-3.5 px-2.5 py-10"
                     v-else
                 >
@@ -167,7 +167,7 @@
                         </p>
                     </div>
 
-                    <div 
+                    <div
                         class="secondary-button"
                         @click="$refs.categoryFilterModal.toggle()"
                     >
@@ -244,7 +244,7 @@
                                         name="value"
                                         rules="required"
                                         :label="trans('admin::app.settings.themes.edit.value-input')"
-                                        :placeholder="trans('admin::app.settings.themes.edit.value-input')" 
+                                        :placeholder="trans('admin::app.settings.themes.edit.value-input')"
                                     />
                                 </template>
 
@@ -254,7 +254,7 @@
 
                         <!-- Modal Footer -->
                         <x-slot:footer>
-                            <button 
+                            <button
                                 type="submit"
                                 class="cursor-pointer rounded-md border border-blue-700 bg-blue-600 px-3 py-1.5 font-semibold text-gray-50"
                             >
@@ -317,7 +317,7 @@
             created() {
                 if (this.options === null) {
                     this.options = { filters: {} };
-                }   
+                }
 
                 if (! this.options.filters) {
                     this.options.filters = {};
@@ -330,7 +330,7 @@
                         value: this.options.filters[key]
                     }));
             },
-            
+
             methods: {
                 addFilter(params) {
                     this.options.filters.push(params);
@@ -354,4 +354,4 @@
             },
         });
     </script>
-@endPushOnce    
+@endPushOnce

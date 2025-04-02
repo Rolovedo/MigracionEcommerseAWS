@@ -2,7 +2,7 @@
     'isActive' => true,
 ])
 
-<div {{ $attributes->merge(['class' => 'box-shadow rounded bg-white dark:bg-gray-900']) }}>
+<div {{ $attributes->merge(['class' => 'box-shadow rounded bg-white dark:border-zinc-800 dark:bg-zinc-900']) }}>
     <v-accordion
         is-active="{{ $isActive }}"
         {{ $attributes }}
@@ -15,7 +15,7 @@
                     {{ $header }}
 
                     <span
-                        :class="`cursor-pointer rounded-md p-1.5 text-2xl transition-all hover:bg-gray-100 dark:hover:bg-gray-950 ${isOpen ? 'icon-arrow-up' : 'icon-arrow-down'}`"
+                        :class="`cursor-pointer rounded-md p-1.5 text-2xl transition-all hover:bg-gray-100 dark:hover:bg-zinc-950 ${isOpen ? 'icon-arrow-up' : 'icon-arrow-down'}`"
                         @click="toggle"
                     ></span>
                 </div>

@@ -10,8 +10,8 @@
             <ul>
                 @foreach ($product->downloadable_samples as $sample)
                     <li class="mb-2">
-                        <a 
-                            href="{{ route('shop.downloadable.download_sample', ['type' => 'sample', 'id' => $sample->id]) }}" 
+                        <a
+                            href="{{ route('shop.downloadable.download_sample', ['type' => 'sample', 'id' => $sample->id]) }}"
                             class="text-blue-700"
                             target="_blank"
                         >
@@ -42,12 +42,12 @@
                             label="@lang('shop::app.products.view.type.downloadable.links')"
                         >
                         </v-field>
-                        
+
                         <label
-                            class="icon-uncheck peer-checked:icon-check-box cursor-pointer text-2xl text-navyBlue peer-checked:text-navyBlue"
+                            class="icon-uncheck peer-checked:icon-check-box cursor-pointer text-2xl text-brown peer-checked:text-brown"
                             for="{{ $link->id }}"
                         ></label>
-                        
+
                         <label
                             for="{{ $link->id }}"
                             class="cursor-pointer max-sm:text-sm ltr:ml-1 rtl:mr-1"
@@ -60,7 +60,7 @@
                         $link->sample_file
                         || $link->sample_url
                     )
-                        <a 
+                        <a
                             href="{{ route('shop.downloadable.download_sample', ['type' => 'link', 'id' => $link->id]) }}"
                             target="_blank"
                             class="text-blue-700 max-sm:text-sm"

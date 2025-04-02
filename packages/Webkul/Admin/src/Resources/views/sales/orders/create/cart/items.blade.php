@@ -19,7 +19,7 @@
         type="text/x-template"
         id="v-cart-items-template"
     >
-        <div class="box-shadow rounded bg-white dark:bg-gray-900">
+        <div class="box-shadow rounded bg-white dark:border-zinc-800 dark:bg-zinc-900">
             <div class="flex justify-between p-4">
                 <p class="text-base font-semibold text-gray-800 dark:text-white">
                     @lang('admin::app.sales.orders.create.cart.items.title')
@@ -70,7 +70,7 @@
                 v-if="cart.items.length"
             >
                 <div
-                    class="row grid gap-4 border-b bg-white p-4 transition-all hover:bg-gray-50 dark:border-gray-800 dark:bg-gray-900 dark:hover:bg-gray-950"
+                    class="row grid gap-4 border-b bg-white p-4 transition-all hover:bg-gray-50 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:bg-zinc-950"
                     v-for="item in cart.items"
                 >
                     <!-- Item Information -->
@@ -83,7 +83,7 @@
                             >
                                 <template v-if="! item.product.images.length">
                                     <img
-                                        class="relative h-[60px] max-h-[60px] w-full max-w-[60px] rounded" 
+                                        class="relative h-[60px] max-h-[60px] w-full max-w-[60px] rounded"
                                         src="{{ bagisto_asset('images/product-placeholders/front.svg') }}"
                                     >
 
@@ -94,7 +94,7 @@
 
                                 <template v-else>
                                     <img
-                                        class="relative h-[60px] max-h-[60px] w-full max-w-[60px] rounded" 
+                                        class="relative h-[60px] max-h-[60px] w-full max-w-[60px] rounded"
                                         :src="item.product.images[0].url"
                                     >
                                 </template>
@@ -201,7 +201,7 @@
                 v-else
             >
                 <img src="{{ bagisto_asset('images/icon-add-product.svg') }}" class="h-20 w-20 dark:mix-blend-exclusion dark:invert">
-                
+
                 <div class="flex flex-col items-center gap-1.5">
                     <p class="text-base font-semibold text-gray-400">
                         @lang('admin::app.sales.orders.create.cart.items.empty-title')
@@ -228,7 +228,7 @@
                         <div class="relative w-full">
                             <input
                                 type="text"
-                                class="block w-full rounded-lg border bg-white py-1.5 leading-6 text-gray-600 transition-all hover:border-gray-400 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-300 ltr:pl-3 ltr:pr-10 rtl:pl-10 rtl:pr-3"
+                                class="block w-full rounded-lg border bg-white py-1.5 leading-6 text-gray-600 transition-all hover:border-gray-400 dark:border-zinc-800 dark:bg-zinc-900 dark:text-gray-300 ltr:pl-3 ltr:pr-10 rtl:pl-10 rtl:pr-3"
                                 placeholder="Search by name"
                                 v-model.lazy="searchTerm"
                                 v-debounce="500"
@@ -267,10 +267,10 @@
                                 >
                                     <template v-if="! product.images.length">
                                         <img
-                                            class="relative h-[60px] max-h-[60px] w-full max-w-[60px] rounded" 
+                                            class="relative h-[60px] max-h-[60px] w-full max-w-[60px] rounded"
                                             src="{{ bagisto_asset('images/product-placeholders/front.svg') }}"
                                         >
-                                    
+
                                         <p class="absolute bottom-1.5 w-full text-center text-[6px] font-semibold text-gray-400">
                                             @lang('admin::app.sales.orders.create.cart.items.search.product-image')
                                         </p>
@@ -417,7 +417,7 @@
                     this.isSearching = true;
 
                     let self = this;
-                    
+
                     this.$axios.get("{{ route('admin.catalog.products.search') }}", {
                             params: {
                                 query: this.searchTerm,

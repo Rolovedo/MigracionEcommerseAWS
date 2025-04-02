@@ -29,7 +29,7 @@
                 @lang('shop::app.customers.account.profile.edit.edit-profile')
             </h2>
         </div>
-    
+
         {!! view_render_event('bagisto.shop.customers.account.profile.edit.before', ['customer' => $customer]) !!}
 
         <!-- Profile Edit Form -->
@@ -38,7 +38,7 @@
             enctype="multipart/form-data"
         >
             {!! view_render_event('bagisto.shop.customers.account.profile.edit_form_controls.before', ['customer' => $customer]) !!}
-    
+
             <!-- Image -->
             <x-shop::form.control-group class="mt-4">
                 <x-shop::form.control-group.control
@@ -256,7 +256,7 @@
                 />
 
                 <label
-                    class="icon-uncheck peer-checked:icon-check-box cursor-pointer text-2xl text-navyBlue peer-checked:text-navyBlue"
+                    class="icon-uncheck peer-checked:icon-check-box cursor-pointer text-2xl text-brown peer-checked:text-brown"
                     for="is-subscribed"
                 ></label>
 

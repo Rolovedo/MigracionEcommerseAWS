@@ -46,7 +46,7 @@
                 {!! view_render_event('bagisto.admin.settings.roles.edit.card.access-control.before', ['role' => $role]) !!}
 
                 <!-- Access Control Input Fields -->
-                <div class="box-shadow rounded bg-white p-4 dark:bg-gray-900">
+                <div class="box-shadow rounded bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900">
                     <p class="mb-4 text-base font-semibold text-gray-800 dark:text-white">
                         @lang('admin::app.settings.roles.edit.access-control')
                     </p>
@@ -57,7 +57,7 @@
                         <div class="mb-4">
                             <div class="shimmer mb-1.5 h-4 w-24"></div>
 
-                            <div class="custom-select h-11 w-full rounded-md border bg-white px-3 py-2.5 text-sm font-normal text-gray-600 transition-all hover:border-gray-400 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-300 dark:hover:border-gray-400"></div>
+                            <div class="custom-select h-11 w-full rounded-md border bg-white px-3 py-2.5 text-sm font-normal text-gray-600 transition-all hover:border-gray-400 dark:border-zinc-800 dark:bg-zinc-900 dark:text-gray-300 dark:hover:border-gray-400"></div>
                         </div>
 
                         <!-- Roles Checkbox -->
@@ -166,7 +166,7 @@
 
                     <x-admin::form.control-group.error control-name="permission_type" />
                 </x-admin::form.control-group>
-                
+
                 <!-- Tree structure -->
                 <div v-if="permission_type == 'custom'">
                     <x-admin::tree.view
