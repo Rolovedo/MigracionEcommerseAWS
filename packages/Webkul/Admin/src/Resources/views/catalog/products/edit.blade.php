@@ -72,7 +72,7 @@
                             class="transparent-button px-1 py-1.5 hover:bg-gray-200 focus:bg-gray-200 dark:text-white dark:hover:bg-gray-800 dark:focus:bg-gray-800"
                         >
                             <span class="icon-store text-2xl"></span>
-                            
+
                             {{ $currentChannel->name }}
 
                             <input
@@ -90,7 +90,7 @@
                         @foreach ($channels as $channel)
                             <a
                                 href="?{{ Arr::query(['channel' => $channel->code, 'locale' => $currentLocale->code]) }}"
-                                class="flex cursor-pointer gap-2.5 px-5 py-2 text-base hover:bg-gray-100 dark:text-white dark:hover:bg-gray-950"
+                                class="flex cursor-pointer gap-2.5 px-5 py-2 text-base hover:bg-gray-100 dark:text-white dark:hover:bg-zinc-950"
                             >
                                 {{ $channel->name }}
                             </a>
@@ -109,7 +109,7 @@
                             <span class="icon-language text-2xl"></span>
 
                             {{ $currentLocale->name }}
-                            
+
                             <input
                                 type="hidden"
                                 name="locale"
@@ -125,7 +125,7 @@
                         @foreach ($currentChannel->locales->sortBy('name') as $locale)
                             <a
                                 href="?{{ Arr::query(['channel' => $currentChannel->code, 'locale' => $locale->code]) }}"
-                                class="flex gap-2.5 px-5 py-2 text-base cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-950 dark:text-white {{ $locale->code == $currentLocale->code ? 'bg-gray-100 dark:bg-gray-950' : ''}}"
+                                class="flex gap-2.5 px-5 py-2 text-base cursor-pointer hover:bg-gray-100 dark:hover:bg-zinc-950 dark:text-white {{ $locale->code == $currentLocale->code ? 'bg-gray-100 dark:bg-zinc-950' : ''}}"
                             >
                                 {{ $locale->name }}
                             </a>
@@ -158,7 +158,7 @@
                         @if ($customAttributes->isNotEmpty())
                             {!! view_render_event("bagisto.admin.catalog.product.edit.form.{$group->code}.before", ['product' => $product]) !!}
 
-                            <div class="box-shadow relative rounded bg-white p-4 dark:bg-gray-900">
+                            <div class="box-shadow relative rounded bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900">
                                 <p class="mb-4 text-base font-semibold text-gray-800 dark:text-white">
                                     {{ $group->name }}
                                 </p>
@@ -241,7 +241,7 @@
 
                 @if ($isSingleColumn && ($column == 1 || $column == 2))
                     <div class="w-[360px] max-w-full max-sm:w-full">
-                        @if ($column == 2) 
+                        @if ($column == 2)
                             <!-- Images View Blade File -->
                             @include('admin::catalog.products.edit.images')
 

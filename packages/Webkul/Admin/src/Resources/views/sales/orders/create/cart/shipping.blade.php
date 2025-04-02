@@ -17,7 +17,7 @@
         id="v-cart-shipping-methods-template"
     >
         <div
-            class="box-shadow rounded bg-white dark:bg-gray-900"
+            class="box-shadow rounded bg-white dark:border-zinc-800 dark:bg-zinc-900"
             id="shipping-step-container"
         >
             <div class="flex items-center border-b p-4 dark:border-gray-800">
@@ -38,7 +38,7 @@
                         {!! view_render_event('bagisto.admin.sales.order.create.cart.shipping.before') !!}
 
                         <label
-                            class="grid cursor-pointer gap-4 border-b p-4 transition-all hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-950"
+                            class="grid cursor-pointer gap-4 border-b p-4 transition-all hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-zinc-950"
                             v-for="rate in method.rates"
                             :for="rate.method"
                         >
@@ -93,7 +93,7 @@
                 store(selectedMethod) {
                     this.$emit('processing', 'payment');
 
-                    this.$axios.post("{{ route('admin.sales.cart.shipping_methods.store', $cart->id) }}", {    
+                    this.$axios.post("{{ route('admin.sales.cart.shipping_methods.store', $cart->id) }}", {
                             shipping_method: selectedMethod,
                         })
                         .then(response => {

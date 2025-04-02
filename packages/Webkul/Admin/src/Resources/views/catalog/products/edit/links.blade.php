@@ -1,5 +1,5 @@
 {!! view_render_event('bagisto.admin.catalog.product.edit.form.links.before', ['product' => $product]) !!}
-    
+
 <v-product-links></v-product-links>
 
 {!! view_render_event('bagisto.admin.catalog.product.edit.form.links.after', ['product' => $product]) !!}
@@ -12,7 +12,7 @@
         <div class="grid gap-2.5">
             <!-- Panel -->
             <div
-                class="box-shadow relative rounded bg-white dark:bg-gray-900"
+                class="box-shadow relative rounded bg-white dark:border-zinc-800 dark:bg-zinc-900"
                 v-for="type in types"
             >
                 <div class="mb-2.5 flex justify-between gap-5 p-4">
@@ -25,7 +25,7 @@
                             @{{ type.info }}
                         </p>
                     </div>
-                    
+
                     <!-- Add Button -->
                     <div class="flex items-center gap-x-1">
                         <div
@@ -62,12 +62,12 @@
                             >
                                 <template v-if="! product.images.length">
                                     <img src="{{ bagisto_asset('images/product-placeholders/front.svg') }}">
-                                
+
                                     <p class="absolute bottom-1.5 w-full text-center text-[6px] font-semibold text-gray-400">
                                         @lang('admin::app.catalog.products.edit.links.image-placeholder')
                                     </p>
                                 </template>
-            
+
                                 <template v-else>
                                     <img :src="product.images[0].url">
                                 </template>

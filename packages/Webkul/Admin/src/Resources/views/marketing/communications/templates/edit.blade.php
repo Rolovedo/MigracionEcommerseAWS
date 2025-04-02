@@ -44,7 +44,7 @@
                 {!! view_render_event('bagisto.admin.marketing.communications.templates.edit.card.content.before', ['template' => $template]) !!}
 
                 <!--Content -->
-                <div class="box-shadow rounded bg-white p-4 dark:bg-gray-900">
+                <div class="box-shadow rounded bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900">
                     <div class="w-full">
                         <!-- Template Textarea -->
                         <x-admin::form.control-group>
@@ -78,7 +78,7 @@
 
                 {!! view_render_event('bagisto.admin.marketing.communications.templates.edit.card.accordion.general.before', ['template' => $template]) !!}
 
-                <div class="box-shadow rounded bg-white dark:bg-gray-900">
+                <div class="box-shadow rounded bg-white dark:border-zinc-800 dark:bg-zinc-900">
                     <x-admin::accordion>
                         <x-slot:header>
                             <div class="flex items-center justify-between">

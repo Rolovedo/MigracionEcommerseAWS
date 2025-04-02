@@ -38,7 +38,7 @@
 
                         <p class="grid text-center text-sm font-semibold text-gray-600 dark:text-gray-300">
                             @lang('admin::app.components.media.videos.add-video-btn')
-                            
+
                             <span class="text-xs">
                                 @lang('admin::app.components.media.videos.allowed-types')
                             </span>
@@ -94,7 +94,7 @@
                 <source :src="video.url" type="video/mp4">
             </video>
 
-            <div class="invisible absolute bottom-0 top-0 flex w-full flex-col justify-between bg-white p-3 opacity-80 transition-all group-hover:visible dark:bg-gray-900">
+            <div class="invisible absolute bottom-0 top-0 flex w-full flex-col justify-between bg-white p-3 opacity-80 transition-all group-hover:visible dark:border-zinc-800 dark:bg-zinc-900">
                 <!-- Video Name -->
                 <p class="break-all text-xs font-semibold text-gray-600 dark:text-gray-300"></p>
 
@@ -145,7 +145,7 @@
 
             props: {
                 name: {
-                    type: String, 
+                    type: String,
                     default: 'videos',
                 },
 

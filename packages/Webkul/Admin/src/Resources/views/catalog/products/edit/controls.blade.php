@@ -12,7 +12,7 @@
                 type="text"
                 id="{{ $attribute->code }}"
                 :class="[errors['{{ $attribute->code }}'] ? 'border border-red-600 hover:border-red-600' : '']"
-                class="w-full rounded-md border px-3 py-2.5 text-sm text-gray-600 transition-all hover:border-gray-400 focus:border-gray-400 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-300 dark:hover:border-gray-400 dark:focus:border-gray-400"
+                class="w-full rounded-md border px-3 py-2.5 text-sm text-gray-600 transition-all hover:border-gray-400 focus:border-gray-400 dark:border-zinc-800 dark:bg-zinc-900 dark:text-gray-300 dark:hover:border-gray-400 dark:focus:border-gray-400"
                 name="{{ $attribute->code }}"
                 v-bind="field"
                 @if ($attribute->code == 'url_key') v-slugify @endif
@@ -31,7 +31,7 @@
             value="{{ old($attribute->code) ?: $product[$attribute->code] }}"
             :label="$attribute->admin_name"
         >
-            <x-slot:currency :class="'dark:text-gray-300 ' . ($attribute->code == 'price' ? 'bg-gray-50 dark:bg-gray-900 text-xl' : '')">
+            <x-slot:currency :class="'dark:text-gray-300 ' . ($attribute->code == 'price' ? 'bg-gray-50 dark:border-zinc-800 dark:bg-zinc-900 text-xl' : '')">
                 {{ core()->currencySymbol(core()->getBaseCurrencyCode()) }}
             </x-slot>
         </x-admin::form.control-group.control>

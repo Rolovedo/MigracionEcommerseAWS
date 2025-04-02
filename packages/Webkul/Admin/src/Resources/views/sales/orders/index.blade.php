@@ -92,7 +92,7 @@
 
             <template v-else>
                 <div
-                    class="row grid grid-cols-4 border-b px-4 py-2.5 transition-all hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-950"
+                    class="row grid grid-cols-4 border-b px-4 py-2.5 transition-all hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-zinc-950"
                     v-for="record in available.records"
                 >
                     <!-- Order Id, Created, Status Section -->
@@ -189,7 +189,7 @@
                             <div class="relative w-full">
                                 <input
                                     type="text"
-                                    class="block w-full rounded-lg border bg-white py-1.5 leading-6 text-gray-600 transition-all hover:border-gray-400 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-300 ltr:pl-3 ltr:pr-10 rtl:pl-10 rtl:pr-3"
+                                    class="block w-full rounded-lg border bg-white py-1.5 leading-6 text-gray-600 transition-all hover:border-gray-400 dark:border-zinc-800 dark:bg-zinc-900 dark:text-gray-300 ltr:pl-3 ltr:pr-10 rtl:pl-10 rtl:pr-3"
                                     placeholder="@lang('admin::app.sales.orders.index.search-customer.search-by')"
                                     v-model.lazy="searchTerm"
                                     v-debounce="500"
@@ -216,7 +216,7 @@
                             v-if="searchedCustomers.length"
                         >
                             <div
-                                class="grid cursor-pointer place-content-start gap-1.5 border-b border-slate-300 p-4 last:border-b-0 hover:bg-gray-100 dark:border-gray-800 dark:hover:bg-gray-950"
+                                class="grid cursor-pointer place-content-start gap-1.5 border-b border-slate-300 p-4 last:border-b-0 hover:bg-gray-100 dark:border-gray-800 dark:hover:bg-zinc-950"
                                 v-for="customer in searchedCustomers"
                                 @click="createCart(customer)"
                             >

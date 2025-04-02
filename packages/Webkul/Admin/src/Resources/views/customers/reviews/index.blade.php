@@ -121,7 +121,7 @@
 
                     <template v-else>
                         <div
-                            class="row grid grid-cols-[2fr_1fr_minmax(150px,_4fr)_0.5fr] border-b px-4 py-2.5 transition-all hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-950"
+                            class="row grid grid-cols-[2fr_1fr_minmax(150px,_4fr)_0.5fr] border-b px-4 py-2.5 transition-all hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-zinc-950"
                             v-for="record in available.records"
                         >
                             <!-- Name, Product, Description -->

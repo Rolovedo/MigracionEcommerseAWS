@@ -1,4 +1,4 @@
-<div class="box-shadow rounded bg-white dark:bg-gray-900">
+<div class="box-shadow rounded bg-white dark:border-zinc-800 dark:bg-zinc-900">
     <div class="flex items-center justify-between p-4">
         <div class="shimmer h-[17px] w-[108px]"></div>
 

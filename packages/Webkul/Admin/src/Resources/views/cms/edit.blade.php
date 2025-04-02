@@ -56,7 +56,7 @@
             <div class="flex items-center gap-x-1">
                 <!-- Locale Switcher -->
                 <x-admin::dropdown
-                    position="bottom-{{ core()->getCurrentLocale()->direction === 'ltr' ? 'left' : 'right' }}" 
+                    position="bottom-{{ core()->getCurrentLocale()->direction === 'ltr' ? 'left' : 'right' }}"
                     :class="core()->getAllLocales()->count() <= 1 ? 'hidden' : ''"
                 >
                     <!-- Dropdown Toggler -->
@@ -68,7 +68,7 @@
                             <span class="icon-language text-2xl"></span>
 
                             {{ $currentLocale->name }}
-                            
+
                             <input
                                 type="hidden"
                                 name="locale"
@@ -84,7 +84,7 @@
                         @foreach (core()->getAllLocales() as $locale)
                             <a
                                 href="?{{ Arr::query(['locale' => $locale->code]) }}"
-                                class="flex gap-2.5 px-5 py-2 text-base  cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-950 dark:text-white {{ $locale->code == $currentLocale->code ? 'bg-gray-100 dark:bg-gray-950' : ''}}"
+                                class="flex gap-2.5 px-5 py-2 text-base  cursor-pointer hover:bg-gray-100 dark:hover:bg-zinc-950 dark:text-white {{ $locale->code == $currentLocale->code ? 'bg-gray-100 dark:bg-zinc-950' : ''}}"
                             >
                                 {{ $locale->name }}
                             </a>
@@ -102,7 +102,7 @@
                 {!! view_render_event('bagisto.admin.cms.pages.edit.card.content.before', ['page' => $page]) !!}
 
                 <!--Content -->
-                <div class="box-shadow rounded bg-white p-4 dark:bg-gray-900">
+                <div class="box-shadow rounded bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900">
                     <p class="mb-4 text-base font-semibold text-gray-800 dark:text-white">
                         @lang('admin::app.cms.edit.description')
                     </p>
@@ -133,7 +133,7 @@
                 {!! view_render_event('bagisto.admin.cms.pages.edit.card.seo.before', ['page' => $page]) !!}
 
                 <!-- SEO Input Fields -->
-                <div class="box-shadow rounded bg-white p-4 dark:bg-gray-900">
+                <div class="box-shadow rounded bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900">
                     <p class="mb-4 text-base font-semibold text-gray-800 dark:text-white">
                         @lang('admin::app.cms.edit.seo')
                     </p>
@@ -271,13 +271,13 @@
 
                                 <label
                                     class="cursor-pointer text-xs font-medium text-gray-600 dark:text-gray-300"
-                                    for="channels_{{ $channel->id }}" 
+                                    for="channels_{{ $channel->id }}"
                                 >
                                     {{ core()->getChannelName($channel) }}
                                 </label>
                             </x-admin::form.control-group>
                         @endforeach
-                        
+
                         <x-admin::form.control-group.error control-name="channels[]" />
                     </x-slot>
                 </x-admin::accordion>

@@ -15,7 +15,7 @@
         </template>
 
         <template v-else>
-            <div class="box-shadow relative flex-1 rounded bg-white p-4 dark:bg-gray-900">
+            <div class="box-shadow relative flex-1 rounded bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900">
                 <!-- Header -->
                 <div class="mb-4 flex items-center justify-between">
                     <p class="text-base font-semibold text-gray-600 dark:text-white">
@@ -33,10 +33,10 @@
                 <!-- Content -->
                 <div class="grid gap-4">
                     <template v-if="report.statistics.length">
-                        <div class="table-responsive grid w-full overflow-hidden rounded bg-white dark:bg-gray-900">
+                        <div class="table-responsive grid w-full overflow-hidden rounded bg-white dark:border-zinc-800 dark:bg-zinc-900">
                             <!-- Table Header -->
                             <div
-                                class="row grid grid-cols-4 grid-rows-1 items-center gap-2.5 border-b bg-gray-50 px-4 py-2.5 font-semibold text-gray-600 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-300"
+                                class="row grid grid-cols-4 grid-rows-1 items-center gap-2.5 border-b bg-gray-50 px-4 py-2.5 font-semibold text-gray-600 dark:border-zinc-800 dark:bg-zinc-900 dark:text-gray-300"
                                 style="grid-template-columns: repeat(3, minmax(0, 1fr));"
                             >
                                 <div class="flex gap-2.5">
@@ -60,7 +60,7 @@
 
                             <!-- Table Body -->
                             <div
-                                class="row grid items-center gap-2.5 border-b px-4 py-4 text-gray-600 transition-all hover:bg-gray-50 dark:border-gray-800 dark:text-gray-300 dark:hover:bg-gray-950"
+                                class="row grid items-center gap-2.5 border-b px-4 py-4 text-gray-600 transition-all hover:bg-gray-50 dark:border-gray-800 dark:text-gray-300 dark:hover:bg-zinc-950"
                                 style="grid-template-columns: repeat(3, minmax(0, 1fr));"
                                 v-for="record in report.statistics"
                             >

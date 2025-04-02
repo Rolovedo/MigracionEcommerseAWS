@@ -5,12 +5,12 @@
     </x-slot>
 
     <!-- Error page Information -->
-	<div class="flex h-[100vh] items-center justify-center bg-white dark:bg-gray-900">
+	<div class="flex h-[100vh] items-center justify-center bg-white dark:border-zinc-800 dark:bg-zinc-900">
         <div class="flex max-w-[745px] items-center gap-5">
             <div class="w-full">
                 @php
-                    $logoUrl = core()->getConfigData('general.design.admin_logo.logo_image') 
-                                ? Storage::url(core()->getConfigData('general.design.admin_logo.logo_image')) 
+                    $logoUrl = core()->getConfigData('general.design.admin_logo.logo_image')
+                                ? Storage::url(core()->getConfigData('general.design.admin_logo.logo_image'))
                                 : bagisto_asset('images/logo.svg');
                 @endphp
 

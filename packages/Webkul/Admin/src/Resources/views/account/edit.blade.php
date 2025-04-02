@@ -25,7 +25,7 @@
 
                 <!-- Save Button -->
                 <div class="flex items-center gap-x-2.5">
-                    <button 
+                    <button
                         type="submit"
                         class="primary-button"
                     >
@@ -40,7 +40,7 @@
              <!-- Left sub Component -->
              <div class="flex flex-1 flex-col gap-2">
                  <!-- General -->
-                 <div class="box-shadow rounded bg-white p-4 dark:bg-gray-900">
+                 <div class="box-shadow rounded bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900">
                     <p class="mb-4 text-base font-semibold text-gray-800 dark:text-white">
                         @lang('admin::app.account.edit.general')
                     </p>

@@ -42,7 +42,7 @@
                 {!! view_render_event('bagisto.admin.marketing.communications.templates.create.card.content.before') !!}
 
                 <!--Content -->
-                <div class="box-shadow rounded bg-white p-4 dark:bg-gray-900">
+                <div class="box-shadow rounded bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900">
                     <div class="mb-2.5">
                         <!-- Template Textarea -->
                         <x-admin::form.control-group>
@@ -73,7 +73,7 @@
             <!-- Right sub-component -->
             <div class="flex w-[360px] max-w-full flex-col gap-2 max-sm:w-full">
                 <!-- General -->
-                <div class="box-shadow rounded bg-white dark:bg-gray-900">
+                <div class="box-shadow rounded bg-white dark:border-zinc-800 dark:bg-zinc-900">
 
                     {!! view_render_event('bagisto.admin.marketing.communications.templates.create.card.accordion.general.before') !!}
 

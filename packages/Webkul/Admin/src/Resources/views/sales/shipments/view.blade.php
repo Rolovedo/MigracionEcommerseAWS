@@ -28,7 +28,7 @@
         <!-- Left sub-component -->
         <div class="flex flex-1 flex-col gap-2 max-xl:flex-auto">
             <!-- General -->
-            <div class="box-shadow rounded bg-white dark:bg-gray-900">
+            <div class="box-shadow rounded bg-white dark:border-zinc-800 dark:bg-zinc-900">
                 <p class="mb-4 p-4 text-base font-semibold text-gray-800 dark:text-white">
                     @lang('admin::app.sales.shipments.view.ordered-items') ({{count($shipment->items)}})
                 </p>

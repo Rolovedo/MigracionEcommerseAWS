@@ -16,12 +16,12 @@
 
         <!-- Purchase Funnel Section -->
         <template v-else>
-            <div class="box-shadow relative flex-1 rounded bg-white p-4 dark:bg-gray-900">
+            <div class="box-shadow relative flex-1 rounded bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900">
                 <!-- Header -->
                 <p class="mb-4 text-base font-semibold text-gray-600 dark:text-white">
                     @lang('admin::app.reporting.sales.index.purchase-funnel')
                 </p>
-                
+
                 <!-- Content -->
                 <div class="grid grid-cols-4 gap-6">
                     <!-- Total Visits -->
