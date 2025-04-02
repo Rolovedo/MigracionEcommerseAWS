@@ -41,8 +41,8 @@
                         <div class="flex flex-wrap gap-7 max-md:gap-4 max-sm:gap-2.5">
                             <div
                                 class="relative cursor-pointer max-md:max-w-full max-md:flex-auto"
-                                v-for="(payment, index) in methods"
-                            >
+                                v-for="(payment, index) in filteredMethods"
+                            >{{-- if deleted from below, change this variable from filteredMethods to methods--}}
                                 {!! view_render_event('bagisto.shop.checkout.payment-method.before') !!}
 
                                 <input
@@ -122,10 +122,44 @@
                     default: () => null,
                 },
             },
+            //delete this in future if u need more payment methods from here
+            data() {
+                return {
+                    filteredMethods: null
+                }
+            },
 
+            created() {
+                if (this.methods) {
+                    this.filterMethodsBySort();
+                }
+            },
+
+            watch: {
+                methods: {
+                    handler() {
+                        this.filterMethodsBySort();
+                    },
+                    deep: true
+                }
+            },
+            //to here
             emits: ['processing', 'processed'],
 
             methods: {
+                //delete this in future if u need more payment methods from here
+                filterMethodsBySort() {
+                    this.filteredMethods = Object.values(this.methods).filter(method =>
+                        method.sort == 1
+                    );
+
+                    const filteredObj = {};
+                    this.filteredMethods.forEach(method => {
+                        filteredObj[method.method] = method;
+                    });
+                    this.filteredMethods = filteredObj;
+                },
+                //to here
                 store(selectedMethod) {
                     this.$emit('processing', 'review');
 
