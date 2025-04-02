@@ -11,76 +11,92 @@ class GeoLocationRedirect
 {
     public function handle(Request $request, Closure $next)
     {
-        // No redirecciona el admin
         if (str_starts_with($request->path(), 'admin')) {
             return $next($request);
         }
 
-        try {
-            // Obtener la IP real del cliente
-            $ip = $this->getClientIP();
-            Log::info('IP detectada: ' . $ip);
-
-            // Usar ipapi.co para geolocalización
-            $response = Http::get("https://ipapi.co/{$ip}/json/");
-            $data = $response->json();
-
-            Log::info('Datos de localización:', is_array($data) ? $data : []);
-
-            if (isset($data['country_code'])) {
-                $countryCode = strtoupper($data['country_code']);
-                Log::info('País detectado: ' . $countryCode);
-
-                // Definir las redirecciones por país
-                $redirectUrls = [
-                    'AR' => 'https://javm.tech', // Prueba de redirección 
-                    'CL' => 'https://chile.javm.tech', // Prueba de redirección chile
-                    'CO' => null // Se queda en la página actual
-                ];
-
-                // Redirigir si el país está en nuestra lista
-                if (isset($redirectUrls[$countryCode]) && $redirectUrls[$countryCode] !== null) {
-                    Log::info('Redirigiendo a: ' . $redirectUrls[$countryCode]);
-                    return redirect()->away($redirectUrls[$countryCode]);
-                }
-            }
-        } catch (\Exception $e) {
-            Log::error('Error en la detección de ubicación: ' . $e->getMessage());
+        if ($request->cookie('geo_redirected')) {
+            return $next($request);
         }
 
-        return $next($request);
+        if (preg_match('/\.(css|js|png|jpg|jpeg|gif|svg)$/i', $request->getRequestUri())) {
+            return $next($request);
+        }
+
+        $currentUrl = $request->fullUrl();
+        $geoData = session('geo_location');
+
+        if (!$geoData) {
+            try {
+                $ip = $this->getClientIP();
+                $response = Http::timeout(5)->get("http://ipwho.is/{$ip}");
+                $data = $response->json();
+
+                if (!is_array($data) || !isset($data['success']) || $data['success'] !== true) {
+                    Log::error('La API de geolocalización devolvió datos inválidos o un error.');
+                    $data = [];
+                }
+
+                session(['geo_location' => $data]);
+                $geoData = $data;
+            } catch (\Exception $e) {
+                Log::error('Error en la detección de ubicación: ' . $e->getMessage());
+                $geoData = [];
+            }
+        }
+
+        if (isset($geoData['country_code'])) {
+            $countryCode = strtoupper($geoData['country_code']);
+            Log::info('País detectado: ' . $countryCode);
+
+            $redirectUrls = config('geolocation.redirects', [
+                'AR' => 'https://argentina.javm.tech',
+                'CL' => 'https://chile.javm.tech',
+                'CO' => null,
+            ]);
+
+            if (isset($redirectUrls[$countryCode]) && $redirectUrls[$countryCode] !== null) {
+                $targetUrl = $redirectUrls[$countryCode];
+
+                if ($currentUrl !== $targetUrl) {
+                    $cookie = cookie()->forever('geo_redirected', 'true', null, null, false, false);
+
+                    return redirect()->away($targetUrl)->withCookie($cookie);
+                }
+            }
+        }
+
+        $cookie = cookie()->forever('geo_redirected', 'true', null, null, false, false);
+
+        return $next($request)->withCookie($cookie);
     }
 
     private function getClientIP()
     {
-        // Verificar encabezados comunes para proxies y CDNs
         $headers = [
-            'HTTP_CF_CONNECTING_IP', // Cloudflare
-            'HTTP_X_FORWARDED_FOR',  // Proxy estándar
-            'HTTP_X_REAL_IP',        // Nginx proxy
-            'HTTP_CLIENT_IP',        // Proxy compartido
-            'HTTP_X_FORWARDED',      // Proxy general
-            'HTTP_FORWARDED_FOR',    // Proxy general
-            'HTTP_FORWARDED',        // Estándar RFC
-            'REMOTE_ADDR',           // IP directa
+            'HTTP_CF_CONNECTING_IP',
+            'HTTP_X_FORWARDED_FOR',
+            'HTTP_X_REAL_IP',
+            'HTTP_CLIENT_IP',
+            'HTTP_X_FORWARDED',
+            'HTTP_FORWARDED_FOR',
+            'HTTP_FORWARDED',
+            'REMOTE_ADDR',
         ];
-        
+
+        usleep(100000);
+
+
         foreach ($headers as $header) {
             if (isset($_SERVER[$header])) {
-                // Muchos proxies separan las IPs con comas
-                // La primera es la IP del cliente original
                 $ips = explode(',', $_SERVER[$header]);
                 $ip = trim($ips[0]);
-                
-                // Validar que sea una IP válida
                 if (filter_var($ip, FILTER_VALIDATE_IP)) {
-                    Log::info('IP obtenida desde encabezado ' . $header . ': ' . $ip);
                     return $ip;
                 }
             }
         }
-        
-        // Si todo falla, usar la que proporciona Laravel
+
         return request()->ip();
     }
 }
